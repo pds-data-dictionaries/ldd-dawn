@@ -221,6 +221,7 @@
 		</DD_Value_Domain>
 	</DD_Attribute>     
 
+	<!-- Framing Camera (FC) attributes -->
 	<DD_Attribute>
 		<name>callamp_delay_time</name>
 		<version_id>1.0</version_id>
@@ -1789,7 +1790,6 @@
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
 		<definition>
-
 Same as global keyword START_TIME; allows one label to specify
 both YYYY-MM-DD and YYYY-DDD without using a list.</definition>
 		<DD_Value_Domain>
@@ -1804,7 +1804,6 @@ both YYYY-MM-DD and YYYY-DDD without using a list.</definition>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
 		<definition>
-
 Same as global keyword STOP_TIME; allows one label to specify
 both YYYY-MM-DD and YYYY-DDD without using a list.</definition>
 		<DD_Value_Domain>
@@ -1812,41 +1811,138 @@ both YYYY-MM-DD and YYYY-DDD without using a list.</definition>
 			<value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
-	<DD_Class>
-		<name>Dawn</name>
+	
+	<!-- Visual and Infrared Spectrometer (VIR) Attributes -->
+	<DD_Attribute>
+		<name>frame_parameter_unit</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.Dawn</local_identifier>
+		<local_identifier>dawn.frame_parameter_unit</local_identifier>
+		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The Dawn class is the container for Dawn mission-specific metadata elements.
+		<definition>
+This keyword defines the units of FRAME_PARAMETER that define the individual
+frame parameters of an instrument that transfers single frames to the mass
+memory of the spacecraft or the instrument. The FRAME_PARAMETER element is
+also accompanied by the element FRAME_PARAMETER_DESC, e.g.
+FRAME_PARAMETER_DESC = ('EXPOSURE_DURATION', 'FRAME_SUMMING',
+'EXTERNAL_REPETITION_TIME', 'EXTERNAL DARK_ACQUISITION_RATE')</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>instrument_temperature_unit</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.instrument_temperature_unit</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+The units of instrument or some part of an instrument; for example:
+FOCAL PLANE, TELESCOPE, SPECTROMETER, CRYOCOOLER</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>vir_ir_start_x_position</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_ir_start_x_position</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword gives the X coordinate of the first CCD pixel used on
+the IR FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>vir_ir_start_y_position</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_ir_start_y_position</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword gives the Y coordinate of the first CCD pixel used on
+the IR FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>scan_parameter</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.scan_parameter</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Same as global keyword SCAN_PARAMETER
+                                      but allows negative values</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>scan_parameter_unit</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.scan_parameter_unit</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword defines the units of
+                                      DAWN:SCAN_PARAMETER</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>vir_vis_start_x_position</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_vis_start_x_position</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword gives the X coordinate of the first CCD pixel used on
+the VIS FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>vir_vis_start_y_position</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_vis_start_y_position</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword gives the Y coordinate of the first CCD pixel used on
+the VIS FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<!-- Framing Camera (FC) Class -->
+	<DD_Class>
+		<name>fc</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.fc</local_identifier>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The Dawn "fc" class is the container for Dawn Framing Camera (FC) specific metadata elements.
 		</definition>
-
-		<!-- so that this class has element definition in the schema -->
-		<element_flag>true</element_flag>
-		<DD_Association>
-			<identifier_reference>dawn.mission_phase_name</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>*</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.spacecraft_clock_start_count</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.spacecraft_clock_stop_count</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.standard_data_product_id</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-
+		
+		<element_flag>false</element_flag>
+		
 		<DD_Association>
 			<local_identifier>dawn.callamp_delay_time</local_identifier>
 			<reference_type>attribute_of</reference_type>
@@ -2213,6 +2309,117 @@ both YYYY-MM-DD and YYYY-DDD without using a list.</definition>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
+	</DD_Class>
+
+	<!-- Visual and Infrared Spectrometer (VIR) Class -->
+	<DD_Class>
+		<name>vir</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir</local_identifier>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The Dawn "vir" class is the container for Dawn Visual and Infrared Spectrometer (VIR) specific metadata elements.
+		</definition>
+		
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<local_identifier>dawn.frame_parameter_unit</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.instrument_temperature_unit</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.vir_ir_start_x_position</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.vir_ir_start_y_position</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.scan_parameter</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.scan_parameter_unit</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.vir_vis_start_x_position</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.vir_vis_start_y_position</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+
+	<DD_Class>
+		<name>Dawn</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn</local_identifier>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The Dawn class is the container for Dawn mission-specific metadata elements.
+		</definition>
+
+		<!-- so that this class has element definition in the schema -->
+		<element_flag>true</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.mission_phase_name</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>*</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.spacecraft_clock_start_count</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.spacecraft_clock_stop_count</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.standard_data_product_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>dawn.fc</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>dawn.vir</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
 	</DD_Class>
 
 </Ingest_LDD>

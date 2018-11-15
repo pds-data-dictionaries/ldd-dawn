@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.0.0.0 - Wed Nov 14 15:17:30 PST 2018 -->
+  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.0.0.0 - Thu Nov 15 08:00:02 PST 2018 -->
   <!-- Generated from the PDS4 Information Model Version 1.9.0.0 - System Build 8a -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -38,6 +38,21 @@
       <xs:element name="spacecraft_clock_start_count" type="dawn:spacecraft_clock_start_count" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spacecraft_clock_stop_count" type="dawn:spacecraft_clock_stop_count" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="standard_data_product_id" nillable="true" type="dawn:standard_data_product_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fc" type="dawn:fc" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir" type="dawn:vir" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:mission_phase_name = ('CERES ENCOUNTER', 'CERES EXTENDED GRAND (CXG)', 'CERES EXTENDED JULING (CXJ)', 'CERES EXTENDED LAMO (CXL)', 'CERES EXTENDED MISSION', 'CERES EXTENDED OPPOSITION (CXO)', 'CERES SCIENCE APPROACH (CSA)', 'CERES SCIENCE HAMO (CSH)', 'CERES SCIENCE LAMO (CSL)', 'CERES SCIENCE RC3 (CSR)', 'CERES SCIENCE SURVEY (CSS)', 'CERES TRANSFER TO GRAND (CTG)', 'CERES TRANSFER TO HAMO (CTH)', 'CERES TRANSFER TO JULING (CTJ)', 'CERES TRANSFER TO LAMO (CTL)', 'CERES TRANSFER TO OPPOSITION (CTO)', 'CERES TRANSFER TO SURVEY (CTS)', 'EARTH-MARS CRUISE (EMC)', 'END OF CERES EXTENDED MISSION', 'END OF PRIME MISSION', 'INITIAL CHECKOUT (ICO)', 'Launch', 'MARS GRAVITY ASSIST (MGA)', 'MARS-VESTA CRUISE (MVC)', 'VESTA ENCOUNTER', 'VESTA SCIENCE APPROACH (VSA)', 'VESTA SCIENCE HAMO (VSH)', 'VESTA SCIENCE HAMO 2 (VH2)', 'VESTA SCIENCE LAMO (VSL)', 'VESTA SCIENCE SURVEY (VSS)', 'VESTA TRANSFER TO CERES (VTC)', 'VESTA TRANSFER TO HAMO (VTH)', 'VESTA TRANSFER TO HAMO 2 (VT2)', 'VESTA TRANSFER TO LAMO (VTL)', 'VESTA-CERES CRUISE (VCC)')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="fc">
+    <xs:annotation>
+      <xs:documentation>The Dawn "fc" class is the container for Dawn
+        Framing Camera (FC) specific metadata elements.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
       <xs:element name="callamp_delay_time" type="dawn:callamp_delay_time" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="callamp_duty" type="dawn:callamp_duty" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="callamp_enable_flag" type="dawn:callamp_enable_flag" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -101,7 +116,6 @@
       <xs:element name="alt_stop_time" type="dawn:alt_stop_time" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="dawn:mission_phase_name = ('CERES ENCOUNTER', 'CERES EXTENDED GRAND (CXG)', 'CERES EXTENDED JULING (CXJ)', 'CERES EXTENDED LAMO (CXL)', 'CERES EXTENDED MISSION', 'CERES EXTENDED OPPOSITION (CXO)', 'CERES SCIENCE APPROACH (CSA)', 'CERES SCIENCE HAMO (CSH)', 'CERES SCIENCE LAMO (CSL)', 'CERES SCIENCE RC3 (CSR)', 'CERES SCIENCE SURVEY (CSS)', 'CERES TRANSFER TO GRAND (CTG)', 'CERES TRANSFER TO HAMO (CTH)', 'CERES TRANSFER TO JULING (CTJ)', 'CERES TRANSFER TO LAMO (CTL)', 'CERES TRANSFER TO OPPOSITION (CTO)', 'CERES TRANSFER TO SURVEY (CTS)', 'EARTH-MARS CRUISE (EMC)', 'END OF CERES EXTENDED MISSION', 'END OF PRIME MISSION', 'INITIAL CHECKOUT (ICO)', 'Launch', 'MARS GRAVITY ASSIST (MGA)', 'MARS-VESTA CRUISE (MVC)', 'VESTA ENCOUNTER', 'VESTA SCIENCE APPROACH (VSA)', 'VESTA SCIENCE HAMO (VSH)', 'VESTA SCIENCE HAMO 2 (VH2)', 'VESTA SCIENCE LAMO (VSL)', 'VESTA SCIENCE SURVEY (VSS)', 'VESTA TRANSFER TO CERES (VTC)', 'VESTA TRANSFER TO HAMO (VTH)', 'VESTA TRANSFER TO HAMO 2 (VT2)', 'VESTA TRANSFER TO LAMO (VTL)', 'VESTA-CERES CRUISE (VCC)')"/> -->
     <!-- <xs:assert test="dawn:callamp_enable_flag = ('OFF', 'ON')"/> -->
     <!-- <xs:assert test="dawn:data_routing_id = ('Op-Nav', 'Science 1', 'Science 1', 'Science 1', 'Science 1')"/> -->
     <!-- <xs:assert test=")"/> -->
@@ -118,6 +132,34 @@
     <!-- <xs:assert test="dawn:mcu_motor_flag = ('OFF', 'ON')"/> -->
     <!-- <xs:assert test="dawn:pcu_hardware_id = ('2.04', '3.05')"/> -->
     <!-- <xs:assert test="dawn:use_pre_clear = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="vir">
+    <xs:annotation>
+      <xs:documentation>The Dawn "vir" class is the container for Dawn
+        Visual and Infrared Spectrometer (VIR) specific metadata
+        elements. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="frame_parameter_unit" type="dawn:frame_parameter_unit" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="instrument_temperature_unit" type="dawn:instrument_temperature_unit" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_ir_start_x_position" type="dawn:vir_ir_start_x_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_ir_start_y_position" type="dawn:vir_ir_start_y_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="scan_parameter" type="dawn:scan_parameter" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="scan_parameter_unit" type="dawn:scan_parameter_unit" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_vis_start_x_position" type="dawn:vir_vis_start_x_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_vis_start_y_position" type="dawn:vir_vis_start_y_position" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
     <!-- <xs:assert test=")"/> -->
     <!-- <xs:assert test=")"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
@@ -308,6 +350,22 @@
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="0"/>
      <xs:maxInclusive value="63"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="frame_parameter_unit">
+    <xs:annotation>
+      <xs:documentation> This keyword defines the units of
+        FRAME_PARAMETER that define the individual frame parameters of
+        an instrument that transfers single frames to the mass memory of
+        the spacecraft or the instrument. The FRAME_PARAMETER element is
+        also accompanied by the element FRAME_PARAMETER_DESC, e.g.
+        FRAME_PARAMETER_DESC = ('EXPOSURE_DURATION', 'FRAME_SUMMING',
+        'EXTERNAL_REPETITION_TIME', 'EXTERNAL
+        DARK_ACQUISITION_RATE')</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -541,6 +599,17 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="instrument_temperature_unit">
+    <xs:annotation>
+      <xs:documentation> The units of instrument or some part of an
+        instrument; for example: FOCAL PLANE, TELESCOPE, SPECTROMETER,
+        CRYOCOOLER</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="mcu_flag">
     <xs:annotation>
       <xs:documentation>OFF = MCU is disabled, mechanisms cannot be
@@ -615,6 +684,28 @@
     <xs:restriction base="pds:ASCII_String">
      <xs:minInclusive value="N/A"/>
      <xs:maxInclusive value="N/A"/>
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="scan_parameter">
+    <xs:annotation>
+      <xs:documentation>Same as global keyword SCAN_PARAMETER but allows
+        negative values</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="scan_parameter_unit">
+    <xs:annotation>
+      <xs:documentation>This keyword defines the units of
+        DAWN:SCAN_PARAMETER</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
      <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -1059,6 +1150,62 @@
     	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_ir_start_x_position">
+    <xs:annotation>
+      <xs:documentation> This keyword gives the X coordinate of the
+        first CCD pixel used on the IR FPA. This quantity determines the
+        correspondence between wavelength and spectral
+        channels.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_ir_start_y_position">
+    <xs:annotation>
+      <xs:documentation> This keyword gives the Y coordinate of the
+        first CCD pixel used on the IR FPA. This quantity determines the
+        correspondence between wavelength and spectral
+        channels.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_vis_start_x_position">
+    <xs:annotation>
+      <xs:documentation> This keyword gives the X coordinate of the
+        first CCD pixel used on the VIS FPA. This quantity determines
+        the correspondence between wavelength and spectral
+        channels.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_vis_start_y_position">
+    <xs:annotation>
+      <xs:documentation> This keyword gives the Y coordinate of the
+        first CCD pixel used on the VIS FPA. This quantity determines
+        the correspondence between wavelength and spectral
+        channels.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 </xs:schema>

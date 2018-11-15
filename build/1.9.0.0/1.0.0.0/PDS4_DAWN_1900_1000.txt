@@ -2,7 +2,7 @@ PDS4 Local Data Dictionary Processing Report
 
 Configuration:
    LDDTool Version        0.2.1.3
-   Time                   Wed Nov 14 15:17:30 PST 2018
+   Time                   Thu Nov 15 08:00:02 PST 2018
    Core Schemas           [PDS4_PDS_1900.xsd]
    Core Schematrons       [PDS4_PDS_1900.sch]
    Common Model Version   1.9.0.0
@@ -23,9 +23,9 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                1
-   Attributes             65
-   Associations           65
+   Classes                3
+   Attributes             73
+   Associations           75
    Error messages         0
    Warning messages       2
    Information messages   91
@@ -641,35 +641,55 @@ Parsed Input - Attributes:
    value data type        ASCII_Date_Time_YMD_UTC
    description             Same as global keyword STOP_TIME; allows one label to specify both YYYY-MM-DD and YYYY-DDD without using a list.
 
+   name                   frame_parameter_unit
+   version                1.5
+   value data type        ASCII_String
+   description             This keyword defines the units of FRAME_PARAMETER that define the individual frame parameters of an instrument that transfers single frames to the mass memory of the spacecraft or the instrument. The FRAME_PARAMETER element is also accompanied by the element FRAME_PARAMETER_DESC, e.g. FRAME_PARAMETER_DESC = ('EXPOSURE_DURATION', 'FRAME_SUMMING', 'EXTERNAL_REPETITION_TIME', 'EXTERNAL DARK_ACQUISITION_RATE')
+
+   name                   instrument_temperature_unit
+   version                1.5
+   value data type        ASCII_String
+   description             The units of instrument or some part of an instrument; for example: FOCAL PLANE, TELESCOPE, SPECTROMETER, CRYOCOOLER
+
+   name                   vir_ir_start_x_position
+   version                1.5
+   value data type        ASCII_Real
+   description             This keyword gives the X coordinate of the first CCD pixel used on the IR FPA. This quantity determines the correspondence between wavelength and spectral channels.
+
+   name                   vir_ir_start_y_position
+   version                1.5
+   value data type        ASCII_Real
+   description             This keyword gives the Y coordinate of the first CCD pixel used on the IR FPA. This quantity determines the correspondence between wavelength and spectral channels.
+
+   name                   scan_parameter
+   version                1.5
+   value data type        ASCII_Real
+   description            Same as global keyword SCAN_PARAMETER but allows negative values
+
+   name                   scan_parameter_unit
+   version                1.5
+   value data type        ASCII_String
+   description            This keyword defines the units of DAWN:SCAN_PARAMETER
+
+   name                   vir_vis_start_x_position
+   version                1.5
+   value data type        ASCII_Real
+   description             This keyword gives the X coordinate of the first CCD pixel used on the VIS FPA. This quantity determines the correspondence between wavelength and spectral channels.
+
+   name                   vir_vis_start_y_position
+   version                1.5
+   value data type        ASCII_Real
+   description             This keyword gives the Y coordinate of the first CCD pixel used on the VIS FPA. This quantity determines the correspondence between wavelength and spectral channels.
+
 Parsed Input - Classes:
 
-   name                   Dawn
-   description            The Dawn class is the container for Dawn mission-specific metadata elements. 
+   name                   fc
+   description            The Dawn "fc" class is the container for Dawn Framing Camera (FC) specific metadata elements. 
    is abstract            false
    is choice              false
    subclass of            USER
 
    Associations
-
-      local identifier      dawn.mission_phase_name
-      minimum occurrences   0
-      maximum occurrences   *
-      reference type        attribute_of
-
-      local identifier      dawn.spacecraft_clock_start_count
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      dawn.spacecraft_clock_stop_count
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      dawn.standard_data_product_id
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
 
       local identifier      dawn.callamp_delay_time
       minimum occurrences   0
@@ -975,5 +995,91 @@ Parsed Input - Classes:
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
+
+   name                   vir
+   description            The Dawn "vir" class is the container for Dawn Visual and Infrared Spectrometer (VIR) specific metadata elements. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.frame_parameter_unit
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.instrument_temperature_unit
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.vir_ir_start_x_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.vir_ir_start_y_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.scan_parameter
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.scan_parameter_unit
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.vir_vis_start_x_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.vir_vis_start_y_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Dawn
+   description            The Dawn class is the container for Dawn mission-specific metadata elements. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.mission_phase_name
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      dawn.spacecraft_clock_start_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.spacecraft_clock_stop_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.standard_data_product_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.fc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.vir
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
 
 End of Report
