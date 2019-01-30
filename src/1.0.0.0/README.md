@@ -8,15 +8,11 @@ Steward: ppi
 
 ## Classes
 
-### Dawn
-The Dawn class is the container for Dawn mission-specific metadata elements.
+### fc
+The Dawn "fc" class is the container for Dawn Framing Camera (FC) specific metadata elements.
 
 Attribute    | Min Occur. | Max Occur.
 ------------ | ---------- | -----------
-[mission_phase_name](#mission_phase_name) | 0 | *
-[spacecraft_clock_start_count](#spacecraft_clock_start_count) | 0 | 1
-[spacecraft_clock_stop_count](#spacecraft_clock_stop_count) | 0 | 1
-[standard_data_product_id](#standard_data_product_id) | 0 | 1
 [callamp_delay_time](#callamp_delay_time) | 0 | 1
 [callamp_duty](#callamp_duty) | 0 | 1
 [callamp_enable_flag](#callamp_enable_flag) | 0 | 1
@@ -78,6 +74,32 @@ Attribute    | Min Occur. | Max Occur.
 [v_m5_analog](#v_m5_analog) | 0 | 1
 [alt_start_time](#alt_start_time) | 0 | 1
 [alt_stop_time](#alt_stop_time) | 0 | 1
+
+### vir
+The Dawn "vir" class is the container for Dawn Visual and Infrared Spectrometer (VIR) specific metadata elements.
+
+Attribute    | Min Occur. | Max Occur.
+------------ | ---------- | -----------
+[frame_parameter_unit](#frame_parameter_unit) | 0 | 1
+[instrument_temperature_unit](#instrument_temperature_unit) | 0 | 1
+[vir_ir_start_x_position](#vir_ir_start_x_position) | 0 | 1
+[vir_ir_start_y_position](#vir_ir_start_y_position) | 0 | 1
+[scan_parameter](#scan_parameter) | 0 | 1
+[scan_parameter_unit](#scan_parameter_unit) | 0 | 1
+[vir_vis_start_x_position](#vir_vis_start_x_position) | 0 | 1
+[vir_vis_start_y_position](#vir_vis_start_y_position) | 0 | 1
+
+### Dawn
+The Dawn class is the container for Dawn mission-specific metadata elements.
+
+Attribute    | Min Occur. | Max Occur.
+------------ | ---------- | -----------
+[mission_phase_name](#mission_phase_name) | 0 | *
+[spacecraft_clock_start_count](#spacecraft_clock_start_count) | 0 | 1
+[spacecraft_clock_stop_count](#spacecraft_clock_stop_count) | 0 | 1
+[standard_data_product_id](#standard_data_product_id) | 0 | 1
+[fc](#fc) | 0 | 1
+[vir](#vir) | 0 | 1
 ## Attributes
 
 
@@ -1438,6 +1460,86 @@ Same as global keyword STOP_TIME; allows one label to specify
 both YYYY-MM-DD and YYYY-DDD without using a list.
 
 Type: ASCII_Date_Time_YMD_UTC  
+Units: undefined  
+
+
+
+### frame_parameter_unit
+This keyword defines the units of FRAME_PARAMETER that define the individual
+frame parameters of an instrument that transfers single frames to the mass
+memory of the spacecraft or the instrument. The FRAME_PARAMETER element is
+also accompanied by the element FRAME_PARAMETER_DESC, e.g.
+FRAME_PARAMETER_DESC = ('EXPOSURE_DURATION', 'FRAME_SUMMING',
+'EXTERNAL_REPETITION_TIME', 'EXTERNAL DARK_ACQUISITION_RATE')
+
+Type: ASCII_String  
+Units: undefined  
+
+
+
+### instrument_temperature_unit
+The units of instrument or some part of an instrument; for example:
+FOCAL PLANE, TELESCOPE, SPECTROMETER, CRYOCOOLER
+
+Type: ASCII_String  
+Units: undefined  
+
+
+
+### vir_ir_start_x_position
+This keyword gives the X coordinate of the first CCD pixel used on
+the IR FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.
+
+Type: ASCII_Real  
+Units: undefined  
+
+
+
+### vir_ir_start_y_position
+This keyword gives the Y coordinate of the first CCD pixel used on
+the IR FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.
+
+Type: ASCII_Real  
+Units: undefined  
+
+
+
+### scan_parameter
+Same as global keyword SCAN_PARAMETER
+                                      but allows negative values
+
+Type: ASCII_Real  
+Units: undefined  
+
+
+
+### scan_parameter_unit
+This keyword defines the units of
+                                      DAWN:SCAN_PARAMETER
+
+Type: ASCII_String  
+Units: undefined  
+
+
+
+### vir_vis_start_x_position
+This keyword gives the X coordinate of the first CCD pixel used on
+the VIS FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.
+
+Type: ASCII_Real  
+Units: undefined  
+
+
+
+### vir_vis_start_y_position
+This keyword gives the Y coordinate of the first CCD pixel used on
+the VIS FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.
+
+Type: ASCII_Real  
 Units: undefined  
 
 

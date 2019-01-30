@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.0.0.0 - Thu Nov 15 08:00:02 PST 2018 -->
-  <!-- Generated from the PDS4 Information Model Version 1.9.0.0 - System Build 8a -->
+  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.0.0.0 - Wed Jan 30 11:40:05 PST 2019 -->
+  <!-- Generated from the PDS4 Information Model Version 1.11.0.0 - System Build 9a -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.9.0.0 - pds: - Common Dictionary - N/A                                  -->
+  <!-- 1.11.0.0 - pds: - Common Dictionary - N/A                                 -->
   <!-- 1.0.0.0 - dawn: - Dawn - ldd-dawn-s.xml                                   -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://pds.nasa.gov/pds4/dawn/v1"
-    xmlns:dawn="http://pds.nasa.gov/pds4/dawn/v1"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/dawn/v1"
+    xmlns:dawn="http://pds.nasa.gov/pds4/mission/dawn/v1"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
     version="1.0.0.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1900.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
@@ -169,7 +169,7 @@
       <xs:documentation>This section contains the simpleTypes that provide more constraints
         than those at the base data type level. The simpleTypes defined here build on the base data
         types. This is another component of the common dictionary and therefore falls within the
-        pds namespace.
+        common namespace.
       </xs:documentation>
     </xs:annotation>
 
@@ -198,9 +198,9 @@
   <xs:simpleType name="callamp_delay_time">
     <xs:annotation>
       <xs:documentation>Callamp switch on delay measured in microseconds
-        after START_TIME. Callamp can be switched on before (< 193000
-        µs), at (= 193000 µs), or after (> 193000 µs) begin of exposure.
-        </xs:documentation>
+        after START_TIME. Callamp can be switched on before (less than
+        193000 µs), at (= 193000 µs), or after (greater than 193000 µs)
+        begin of exposure. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="0"/>
@@ -220,7 +220,6 @@
         percentage.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="0.0"/>
      <xs:maxInclusive value="100.0"/>
 	   </xs:restriction>
@@ -244,7 +243,6 @@
         (24MHz / 240).</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="0.0"/>
      <xs:maxInclusive value="250.0"/>
 	   </xs:restriction>
@@ -269,8 +267,6 @@
         describe the test environment.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_String">
-     <xs:minInclusive value="N/A"/>
-     <xs:maxInclusive value="N/A"/>
      <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -309,8 +305,6 @@
         software</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_String">
-     <xs:minInclusive value="N/A"/>
-     <xs:maxInclusive value="N/A"/>
      <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -448,7 +442,6 @@
         mA</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -464,7 +457,6 @@
         mA</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -480,7 +472,6 @@
         mA</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -496,7 +487,6 @@
         mA</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -512,7 +502,6 @@
         mA</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -528,7 +517,6 @@
         mA</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -544,7 +532,6 @@
         mA</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -560,7 +547,6 @@
         mA</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -576,7 +562,6 @@
         limit red: -10 mA</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -660,8 +645,6 @@
         indicate the responsible operator of the test.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_String">
-     <xs:minInclusive value="N/A"/>
-     <xs:maxInclusive value="N/A"/>
      <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -682,8 +665,6 @@
         describe the purpose of the test.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_String">
-     <xs:minInclusive value="N/A"/>
-     <xs:maxInclusive value="N/A"/>
      <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -694,7 +675,6 @@
         negative values</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
@@ -756,8 +736,6 @@
         describe the subject used during the test.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_String">
-     <xs:minInclusive value="N/A"/>
-     <xs:maxInclusive value="N/A"/>
      <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -773,7 +751,6 @@
         Upper limit red: +45.0 deg C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -792,7 +769,6 @@
         C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -810,7 +786,6 @@
         C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -829,7 +804,6 @@
         limit red: +80.0 deg C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -847,7 +821,6 @@
         C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -864,7 +837,6 @@
         Upper limit red: +90.0 deg C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -882,7 +854,6 @@
         C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -900,7 +871,6 @@
         C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -918,7 +888,6 @@
         C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -936,7 +905,6 @@
         C Note: This is not a motor temperature!</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -954,7 +922,6 @@
         C</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-999.999"/>
      <xs:maxInclusive value="999.999"/>
 	   </xs:restriction>
@@ -967,8 +934,6 @@
         test</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_String">
-     <xs:minInclusive value="N/A"/>
-     <xs:maxInclusive value="N/A"/>
      <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -979,8 +944,6 @@
         define the lamp that was used during the test.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_String">
-     <xs:minInclusive value="N/A"/>
-     <xs:maxInclusive value="N/A"/>
      <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -991,8 +954,6 @@
         library</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_String">
-     <xs:minInclusive value="N/A"/>
-     <xs:maxInclusive value="N/A"/>
      <xs:minLength value="1"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -1019,7 +980,6 @@
         V</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -1035,7 +995,6 @@
         17.0 V</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -1051,7 +1010,6 @@
         V</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -1067,7 +1025,6 @@
         3.0 V</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -1083,7 +1040,6 @@
         3.9 V</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -1099,7 +1055,6 @@
         5.8 V</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -1115,7 +1070,6 @@
         V</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -1131,7 +1085,6 @@
         -4.5 V</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -1147,7 +1100,6 @@
         limit red: -4.5 V</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-9999.999"/>
      <xs:maxInclusive value="9999.999"/>
 	   </xs:restriction>
@@ -1161,7 +1113,6 @@
         channels.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
@@ -1175,7 +1126,6 @@
         channels.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
@@ -1189,7 +1139,6 @@
         channels.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
@@ -1203,7 +1152,6 @@
         channels.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-    	<xs:pattern value='[-+]?[0-9]+(\.?[0-9]+)?([eE][-+]?[0-9]+)?'/>
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
