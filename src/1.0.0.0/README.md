@@ -186,8 +186,8 @@ Callamp switch on delay measured in
                                     microseconds after START_TIME.
 
                                     Callamp can be switched on before 
-                                    (&lt; 193000 µs), at (= 193000 µs), or after
-                                    (&gt; 193000 µs) begin of exposure.
+                                    (less than 193000 µs), at (= 193000 µs), or after
+                                    (greater than 193000 µs) begin of exposure.
 
 Type: ASCII_Integer  
 Units: undefined  
@@ -271,8 +271,6 @@ This keyword was used during ground tests to
 
 Type: ASCII_String  
 Units: undefined  
-Minimum Value: N/A  
-Maximum Value: N/A  
 
 
 
@@ -325,8 +323,6 @@ Current version of the FC onboard software
 
 Type: ASCII_String  
 Units: undefined  
-Minimum Value: N/A  
-Maximum Value: N/A  
 
 
 
@@ -819,8 +815,6 @@ This keyword was used during ground tests to
 
 Type: ASCII_String  
 Units: undefined  
-Minimum Value: N/A  
-Maximum Value: N/A  
 
 
 
@@ -846,8 +840,6 @@ This keyword was used during ground tests to
 
 Type: ASCII_String  
 Units: undefined  
-Minimum Value: N/A  
-Maximum Value: N/A  
 
 
 
@@ -857,8 +849,6 @@ This keyword was used during ground tests to
 
 Type: ASCII_String  
 Units: undefined  
-Minimum Value: N/A  
-Maximum Value: N/A  
 
 
 
@@ -869,8 +859,6 @@ This keyword was used during ground tests to
 
 Type: ASCII_String  
 Units: undefined  
-Minimum Value: N/A  
-Maximum Value: N/A  
 
 
 
@@ -881,8 +869,6 @@ This keyword was used during ground tests to
 
 Type: ASCII_String  
 Units: undefined  
-Minimum Value: N/A  
-Maximum Value: N/A  
 
 
 
@@ -1198,8 +1184,6 @@ Current version of the FC UDP library
 
 Type: ASCII_String  
 Units: undefined  
-Minimum Value: N/A  
-Maximum Value: N/A  
 
 
 
