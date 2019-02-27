@@ -2362,6 +2362,8 @@ wavelength and spectral channels.</definition>
 		<submitter_name>S. Joy</submitter_name>
 		<definition>The Dawn class is the container for Dawn mission-specific metadata elements.
 		</definition>
+		<abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag> 
 
 		<!-- so that this class has element definition in the schema -->
 		<element_flag>true</element_flag>
