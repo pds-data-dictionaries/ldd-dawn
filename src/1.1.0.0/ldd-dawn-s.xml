@@ -1933,9 +1933,25 @@ wavelength and spectral channels.</definition>
 		  <minimum_value>1</minimum_value>
 		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
 		</DD_Value_Domain>
-	  </DD_Attribute>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>grand_start_sclk</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand_start_sclk</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>The first SCLK for which this readout is applicable</definition>
+		<DD_Value_Domain>
+		  <enumeration_flag>false</enumeration_flag>
+		  <value_data_type>ASCII_Integer</value_data_type>
+		  <minimum_value>1</minimum_value>
+		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
 	
-	  <DD_Attribute>
+	<DD_Attribute>
 		<name>grand_last_record</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.grand_last_record</local_identifier>
@@ -1948,9 +1964,25 @@ wavelength and spectral channels.</definition>
 		  <minimum_value>1</minimum_value>
 		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
 		</DD_Value_Domain>
-	  </DD_Attribute>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>grand_stop_sclk</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand_stop_sclk</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>The last SCLK for which this readout is applicable</definition>
+		<DD_Value_Domain>
+		  <enumeration_flag>false</enumeration_flag>
+		  <value_data_type>ASCII_Integer</value_data_type>
+		  <minimum_value>1</minimum_value>
+		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
 	
-	  <DD_Attribute>
+	<DD_Attribute>
 		<name>grand_interval</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.grand_interval</local_identifier>
@@ -1963,7 +1995,7 @@ wavelength and spectral channels.</definition>
 		  <minimum_value>1</minimum_value>
 		  <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
 		</DD_Value_Domain>
-	  </DD_Attribute>
+	</DD_Attribute>
 	
 
 	<DD_Class>
@@ -1971,7 +2003,7 @@ wavelength and spectral channels.</definition>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.TELREADOUT</local_identifier>
 		<submitter_name>GRaND Instrument</submitter_name>
-		<definition>A single scaler accumulation interval, and the first and last records for which the interval was in effect.</definition>
+		<definition>A single scaler accumulation interval, and the first and last records and SCLKs for which the interval was in effect.</definition>
 		<DD_Association>
 		  <identifier_reference>dawn.grand_first_record</identifier_reference>
 		  <reference_type>attribute_of</reference_type>
@@ -1984,6 +2016,18 @@ wavelength and spectral channels.</definition>
 		  <minimum_occurrences>1</minimum_occurrences>
 		  <maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.grand_start_sclk</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
+		  <DD_Association>
+			<identifier_reference>dawn.grand_stop_sclk</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
 		<DD_Association>
 		  <identifier_reference>dawn.grand_interval</identifier_reference>
 		  <reference_type>attribute_of</reference_type>
@@ -2011,7 +2055,7 @@ wavelength and spectral channels.</definition>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.TELSOH</local_identifier>
 		<submitter_name>GRaND Instrument</submitter_name>
-		<definition>A single state-of-health accumulation interval, and the first and last records for which the interval was in effect.</definition>
+		<definition>A single state-of-health accumulation interval, and the first and last records and SCLKs for which the interval was in effect.</definition>
 		<DD_Association>
 		  <identifier_reference>dawn.grand_first_record</identifier_reference>
 		  <reference_type>attribute_of</reference_type>
@@ -2025,6 +2069,18 @@ wavelength and spectral channels.</definition>
 		  <maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
+			<identifier_reference>dawn.grand_start_sclk</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
+		  <DD_Association>
+			<identifier_reference>dawn.grand_stop_sclk</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
+		  <DD_Association>
 		  <identifier_reference>dawn.grand_interval</identifier_reference>
 		  <reference_type>attribute_of</reference_type>
 		  <minimum_occurrences>1</minimum_occurrences>
