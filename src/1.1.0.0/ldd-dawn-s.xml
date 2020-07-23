@@ -1954,7 +1954,7 @@ wavelength and spectral channels.</definition>
 		<name>grand_interval</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.grand_interval</local_identifier>
-		<nillable_flag>false</nillable_flag>
+		<nillable_flag>true</nillable_flag>
 		<submitter_name>GRaND Instrument</submitter_name>
 		<definition>The duration of the interval.</definition>
 		<DD_Value_Domain>
