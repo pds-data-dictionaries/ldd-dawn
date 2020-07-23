@@ -1996,7 +1996,20 @@ wavelength and spectral channels.</definition>
 		  <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
-	
+
+	<DD_Attribute>
+		<name>comment</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.comment</local_identifier>
+		<nillable_flag>true</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>Remarks about the containing object.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
 
 	<DD_Class>
 		<name>TELREADOUT</name>
@@ -2034,7 +2047,13 @@ wavelength and spectral channels.</definition>
 		  <minimum_occurrences>1</minimum_occurrences>
 		  <maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
-	</DD_Class>
+		<DD_Association>
+			<identifier_reference>dawn.comment</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
+	  </DD_Class>
 
 	<DD_Class>
 	<name>TELREADOUT_List</name>
@@ -2086,6 +2105,12 @@ wavelength and spectral channels.</definition>
 		  <minimum_occurrences>1</minimum_occurrences>
 		  <maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.comment</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+	    </DD_Association>
 	</DD_Class>
 	
 	<DD_Class>
