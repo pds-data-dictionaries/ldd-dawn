@@ -7,15 +7,19 @@
    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.xsd">
 
 	<name>Dawn</name>
-	<ldd_version_id>1.0.0.0</ldd_version_id>
+	<ldd_version_id>1.1.0.0</ldd_version_id>
 	<full_name>Steven P. Joy</full_name>
 	<steward_id>ppi</steward_id>
 	<namespace_id>dawn</namespace_id>
     <comment> 
       v1.0.0.0  2018-11-14
-        -  Created PDS4 LDD based on PDS3 Catalog file content.
+		-  Created PDS4 LDD based on PDS3 Catalog file content.
+      v1.1.0.0  2020-07-23
+		-  Added support for GRaND instrument
+		
+		
 	</comment>
-	<last_modification_date_time>2018-11-14T13:13:52.459Z</last_modification_date_time>
+	<last_modification_date_time>2020-07-23T22:00:00.000Z</last_modification_date_time>
 
 
 	<DD_Attribute>
@@ -1915,6 +1919,133 @@ wavelength and spectral channels.</definition>
 			<value_data_type>ASCII_Real</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>grand_first_record</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand_first_record</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>The first record (1-based, inclusive) for which this readout is applicable</definition>
+		<DD_Value_Domain>
+		  <enumeration_flag>false</enumeration_flag>
+		  <value_data_type>ASCII_Integer</value_data_type>
+		  <minimum_value>1</minimum_value>
+		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+		</DD_Value_Domain>
+	  </DD_Attribute>
+	
+	  <DD_Attribute>
+		<name>grand_last_record</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand_last_record</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>The last record (1-based, inclusive) for which this interval is applicable</definition>
+		<DD_Value_Domain>
+		  <enumeration_flag>false</enumeration_flag>
+		  <value_data_type>ASCII_Integer</value_data_type>
+		  <minimum_value>1</minimum_value>
+		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+		</DD_Value_Domain>
+	  </DD_Attribute>
+	
+	  <DD_Attribute>
+		<name>grand_interval</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand_interval</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>The duration of the interval.</definition>
+		<DD_Value_Domain>
+		  <enumeration_flag>false</enumeration_flag>
+		  <value_data_type>ASCII_Integer</value_data_type>
+		  <minimum_value>1</minimum_value>
+		  <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+		</DD_Value_Domain>
+	  </DD_Attribute>
+	
+
+	<DD_Class>
+		<name>TELREADOUT</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.TELREADOUT</local_identifier>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>A single scaler accumulation interval, and the first and last records for which the interval was in effect.</definition>
+		<DD_Association>
+		  <identifier_reference>dawn.grand_first_record</identifier_reference>
+		  <reference_type>attribute_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+		  <identifier_reference>dawn.grand_last_record</identifier_reference>
+		  <reference_type>attribute_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+		  <identifier_reference>dawn.grand_interval</identifier_reference>
+		  <reference_type>attribute_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+
+	<DD_Class>
+	<name>TELREADOUT_List</name>
+	<version_id>1.0</version_id>
+	<local_identifier>dawn.TELREADOUT_List</local_identifier>
+	<submitter_name>GRaND Instrument</submitter_name>
+	<definition>A list of scaler accumulation intervals, along with the records for which they were in effect.</definition>
+	<DD_Association>
+		<identifier_reference>dawn.TELREADOUT</identifier_reference>
+		<reference_type>component_of</reference_type>
+		<minimum_occurrences>1</minimum_occurrences>
+		<maximum_occurrences>*</maximum_occurrences>
+	</DD_Association>
+	</DD_Class>
+
+	<DD_Class>
+		<name>TELSOH</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.TELSOH</local_identifier>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>A single state-of-health accumulation interval, and the first and last records for which the interval was in effect.</definition>
+		<DD_Association>
+		  <identifier_reference>dawn.grand_first_record</identifier_reference>
+		  <reference_type>attribute_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+		  <identifier_reference>dawn.grand_last_record</identifier_reference>
+		  <reference_type>attribute_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+		  <identifier_reference>dawn.grand_interval</identifier_reference>
+		  <reference_type>attribute_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>TELSOH_List</name>
+		<version_id>1.0</version_id>
+		<local_identifier>grand.TELSOH_List</local_identifier>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>A list of state-of-health accumulation intervals, along with the records for which they were in effect.</definition>
+		<DD_Association>
+		  <identifier_reference>grand.TELSOH</identifier_reference>
+		  <reference_type>component_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>unbounded</maximum_occurrences>
+		</DD_Association>
+	  </DD_Class>
+		
 	
 	<!-- Framing Camera (FC) Class -->
 	<DD_Class>
@@ -2356,12 +2487,42 @@ wavelength and spectral channels.</definition>
 	</DD_Class>
 
 	<DD_Class>
+		<name>grand</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand</local_identifier>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>GRaND parameters</definition>
+		<element_flag>true</element_flag>
+		<DD_Association>
+		  <identifier_reference>pds.Local_Internal_Reference</identifier_reference>
+		  <reference_type>component_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+		  <identifier_reference>grand.TELREADOUT_List</identifier_reference>
+		  <reference_type>component_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+		  <identifier_reference>grand.TELSOH_List</identifier_reference>
+		  <reference_type>component_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	  </DD_Class>
+
+
+	<DD_Class>
 		<name>Dawn</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.Dawn</local_identifier>
 		<submitter_name>S. Joy</submitter_name>
 		<definition>The Dawn class is the container for Dawn mission-specific metadata elements.
 		</definition>
+		<abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag> 
 
 		<!-- so that this class has element definition in the schema -->
 		<element_flag>true</element_flag>
@@ -2404,6 +2565,24 @@ wavelength and spectral channels.</definition>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
+		<DD_Association>
+			<identifier_reference>dawn.grand</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
 	</DD_Class>
+
+	<DD_Rule>
+		<local_identifier>grand_parameters_ref</local_identifier>
+		<rule_context>dawn:grand/pds:Local_Internal_Reference</rule_context>
+		<DD_Rule_Statement>
+		  <rule_type>Assert</rule_type>
+		  <rule_test>pds:local_reference_type = ('grand_parameters_to_table')</rule_test>
+		  <rule_message>In the grand:GRaND_Parameters class, the attribute pds:reference_type must be equal to 'grand_parameters_to_table'.</rule_message>
+		</DD_Rule_Statement>
+	  </DD_Rule>
+	
 
 </Ingest_LDD>
