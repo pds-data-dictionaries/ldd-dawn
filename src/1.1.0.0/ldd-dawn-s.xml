@@ -2116,11 +2116,11 @@ wavelength and spectral channels.</definition>
 	<DD_Class>
 		<name>TELSOH_List</name>
 		<version_id>1.0</version_id>
-		<local_identifier>grand.TELSOH_List</local_identifier>
+		<local_identifier>dawn.TELSOH_List</local_identifier>
 		<submitter_name>GRaND Instrument</submitter_name>
 		<definition>A list of state-of-health accumulation intervals, along with the records for which they were in effect.</definition>
 		<DD_Association>
-		  <identifier_reference>grand.TELSOH</identifier_reference>
+		  <identifier_reference>dawn.TELSOH</identifier_reference>
 		  <reference_type>component_of</reference_type>
 		  <minimum_occurrences>1</minimum_occurrences>
 		  <maximum_occurrences>unbounded</maximum_occurrences>
@@ -2581,13 +2581,13 @@ wavelength and spectral channels.</definition>
 		  <maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-		  <identifier_reference>grand.TELREADOUT_List</identifier_reference>
+		  <identifier_reference>dawn.TELREADOUT_List</identifier_reference>
 		  <reference_type>component_of</reference_type>
 		  <minimum_occurrences>1</minimum_occurrences>
 		  <maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-		  <identifier_reference>grand.TELSOH_List</identifier_reference>
+		  <identifier_reference>dawn.TELSOH_List</identifier_reference>
 		  <reference_type>component_of</reference_type>
 		  <minimum_occurrences>1</minimum_occurrences>
 		  <maximum_occurrences>1</maximum_occurrences>
