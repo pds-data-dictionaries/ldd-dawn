@@ -1920,20 +1920,6 @@ wavelength and spectral channels.</definition>
 		</DD_Value_Domain>
 	</DD_Attribute>
 
-	<DD_Attribute>
-		<name>grand_first_record</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.grand_first_record</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>GRaND Instrument</submitter_name>
-		<definition>The first record (1-based, inclusive) for which this readout is applicable</definition>
-		<DD_Value_Domain>
-		  <enumeration_flag>false</enumeration_flag>
-		  <value_data_type>ASCII_Integer</value_data_type>
-		  <minimum_value>1</minimum_value>
-		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
 
 	<DD_Attribute>
 		<name>grand_start_sclk</name>
@@ -1942,22 +1928,6 @@ wavelength and spectral channels.</definition>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>GRaND Instrument</submitter_name>
 		<definition>The first SCLK for which this readout is applicable</definition>
-		<DD_Value_Domain>
-		  <enumeration_flag>false</enumeration_flag>
-		  <value_data_type>ASCII_Integer</value_data_type>
-		  <minimum_value>1</minimum_value>
-		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-
-	
-	<DD_Attribute>
-		<name>grand_last_record</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.grand_last_record</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>GRaND Instrument</submitter_name>
-		<definition>The last record (1-based, inclusive) for which this interval is applicable</definition>
 		<DD_Value_Domain>
 		  <enumeration_flag>false</enumeration_flag>
 		  <value_data_type>ASCII_Integer</value_data_type>
@@ -2018,27 +1988,15 @@ wavelength and spectral channels.</definition>
 		<submitter_name>GRaND Instrument</submitter_name>
 		<definition>A single scaler accumulation interval, and the first and last records and SCLKs for which the interval was in effect.</definition>
 		<DD_Association>
-		  <identifier_reference>dawn.grand_first_record</identifier_reference>
-		  <reference_type>attribute_of</reference_type>
-		  <minimum_occurrences>0</minimum_occurrences>
-		  <maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-		  <identifier_reference>dawn.grand_last_record</identifier_reference>
-		  <reference_type>attribute_of</reference_type>
-		  <minimum_occurrences>0</minimum_occurrences>
-		  <maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
 			<identifier_reference>dawn.grand_start_sclk</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
+			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		  </DD_Association>
 		  <DD_Association>
 			<identifier_reference>dawn.grand_stop_sclk</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
+			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		  </DD_Association>
 		<DD_Association>
@@ -2076,27 +2034,15 @@ wavelength and spectral channels.</definition>
 		<submitter_name>GRaND Instrument</submitter_name>
 		<definition>A single state-of-health accumulation interval, and the first and last records and SCLKs for which the interval was in effect.</definition>
 		<DD_Association>
-		  <identifier_reference>dawn.grand_first_record</identifier_reference>
-		  <reference_type>attribute_of</reference_type>
-		  <minimum_occurrences>0</minimum_occurrences>
-		  <maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-		  <identifier_reference>dawn.grand_last_record</identifier_reference>
-		  <reference_type>attribute_of</reference_type>
-		  <minimum_occurrences>0</minimum_occurrences>
-		  <maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
 			<identifier_reference>dawn.grand_start_sclk</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
+			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		  </DD_Association>
 		  <DD_Association>
 			<identifier_reference>dawn.grand_stop_sclk</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
+			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		  </DD_Association>
 		  <DD_Association>
@@ -2665,34 +2611,4 @@ wavelength and spectral channels.</definition>
 		</DD_Rule_Statement>
 	  </DD_Rule>
 	
-	<DD_Rule>
-		<local_identifier>grand_telsoh_records</local_identifier>
-		<rule_context>dawn:TELSOH | dawn:TELREADOUT</rule_context>
-		<DD_Rule_Statement>
-			<rule_type>Assert</rule_type>
-			<rule_test>dawn:grand_first_record or dawn:grand_start_sclk</rule_test>
-			<rule_message>Both grand_first_record and grand_start_sclk may not be omitted. (You may use one or the other, or both)</rule_message>
-		</DD_Rule_Statement>
-		<DD_Rule_Statement>
-			<rule_type>Assert</rule_type>
-			<rule_test>not (dawn:grand_first_record) or (dawn:grand_first_record and dawn:grand_last_record)</rule_test>
-			<rule_message>grand_last_record must be specified if grand_first_record is specified</rule_message>
-		</DD_Rule_Statement>
-		<DD_Rule_Statement>
-			<rule_type>Assert</rule_type>
-			<rule_test>not (dawn:grand_last_record) or (dawn:grand_first_record and dawn:grand_last_record)</rule_test>
-			<rule_message>grand_first_record must be specified if grand_last_record is specified</rule_message>
-		</DD_Rule_Statement>
-		<DD_Rule_Statement>
-			<rule_type>Assert</rule_type>
-			<rule_test>not (dawn:grand_start_sclk) or (dawn:grand_start_sclk and dawn:grand_stop_sclk)</rule_test>
-			<rule_message>grand_stop_sclk must be specified if grand_start_sclk is specified</rule_message>
-		</DD_Rule_Statement>
-		<DD_Rule_Statement>
-			<rule_type>Assert</rule_type>
-			<rule_test>not (dawn:grand_stop_sclk) or (dawn:grand_start_sclk and dawn:grand_stop_sclk)</rule_test>
-			<rule_message>grand_start_sclk must be specified if grand_stop_sclk is specified</rule_message>
-		</DD_Rule_Statement>
-	</DD_Rule>
-
 </Ingest_LDD>
