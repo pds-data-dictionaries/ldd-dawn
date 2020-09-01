@@ -1,0 +1,1202 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        0.2.1.5b
+   Time                   Tue Sep 01 16:24:06 MST 2020
+   Core Schemas           [PDS4_PDS_1B00.xsd]
+   Core Schematrons       [PDS4_PDS_1B00.sch]
+   Common Model Version   1.11.0.0
+   Object Model           [UpperModel.pont]
+   Data Dictionary        [dd11179.pins]
+   Configuration File     [MDPTNConfigClassDisp.xml]
+   Glossary               [Glossary.pins]
+   Document Spec          [DMDocument.pins]
+
+Parameters:
+   Input File             [ldd-dawn-s.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         true
+   Mission LDD            false
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                8
+   Attributes             77
+   Associations           89
+   Error messages         0
+   Warning messages       2
+   Information messages   85
+
+Detailed validation messages
+   WARNING  Header:  - New steward has been specified:ppi
+   WARNING  Header:  - New namespace id has been specified:dawn
+   INFO     Attribute: <mission_phase_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+   INFO     Attribute: <mission_phase_name> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <spacecraft_clock_start_count> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <spacecraft_clock_stop_count> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <callamp_delay_time> - The default minimum value provided by the attribute's data type is being overridden with 0
+   INFO     Attribute: <callamp_delay_time> - The default maximum value provided by the attribute's data type is being overridden with 10000000
+   INFO     Attribute: <callamp_duty> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+   INFO     Attribute: <callamp_duty> - The default maximum value provided by the attribute's data type is being overridden with 100.0
+   INFO     Attribute: <callamp_frequency> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+   INFO     Attribute: <callamp_frequency> - The default maximum value provided by the attribute's data type is being overridden with 250.0
+   INFO     Attribute: <callamp_strobe_time> - The default minimum value provided by the attribute's data type is being overridden with 0
+   INFO     Attribute: <callamp_strobe_time> - The default maximum value provided by the attribute's data type is being overridden with 10000000
+   INFO     Attribute: <filter_encoder> - The default minimum value provided by the attribute's data type is being overridden with 0
+   INFO     Attribute: <filter_encoder> - The default maximum value provided by the attribute's data type is being overridden with 63
+   INFO     Attribute: <front_door_encoder> - The default minimum value provided by the attribute's data type is being overridden with 0
+   INFO     Attribute: <front_door_encoder> - The default maximum value provided by the attribute's data type is being overridden with 63
+   INFO     Attribute: <i_12> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <i_12> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <i_16> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <i_16> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <i_28> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <i_28> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <i_2_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <i_2_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <i_3_3> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <i_3_3> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <i_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <i_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <i_5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <i_5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <i_m5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <i_m5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <i_m5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <i_m5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <purpose> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <t_baffle> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_baffle> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_ccd> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_ccd> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_cover_motor> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_cover_motor> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_csc> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_csc> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_dcdc> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_dcdc> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_dpu> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_dpu> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_f12> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_f12> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_filter_motor> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_filter_motor> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_lens_barrel> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_lens_barrel> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_rad_motor> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_rad_motor> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <t_structure> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+   INFO     Attribute: <t_structure> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+   INFO     Attribute: <v_12> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <v_12> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <v_16> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <v_16> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <v_28> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <v_28> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <v_2_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <v_2_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <v_3_3> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <v_3_3> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <v_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <v_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <v_5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <v_5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <v_m5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <v_m5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <v_m5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+   INFO     Attribute: <v_m5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+   INFO     Attribute: <grand_start_sclk> - The default minimum value provided by the attribute's data type is being overridden with 1
+   INFO     Attribute: <grand_stop_sclk> - The default minimum value provided by the attribute's data type is being overridden with 1
+   INFO     Attribute: <grand_interval> - The default minimum value provided by the attribute's data type is being overridden with 1
+   INFO     Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+
+Parsed Input - Header:
+   LDD Name               Dawn
+   LDD Version            1.1.0.0
+   Full Name              Steven P. Joy
+   Steward                ppi
+   Namespace Id           dawn
+   Comment                 
+      v1.0.0.0  2018-11-14
+		-  Created PDS4 LDD based on PDS3 Catalog file content.
+      v1.1.0.0  2020-07-23
+		-  Added support for GRaND instrument
+		
+		
+	
+   Last Modification Time 2020-07-23T22:00:00.000Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   mission_phase_name
+   version                1.11
+   value data type        ASCII_Short_String_Collapsed
+   description            The mission_phase_name attribute provides the mission-defined name of a mission phase.
+   maximum characters     255
+   permissible value - value meaning
+      Launch - 2007-09-27T11:34
+      INITIAL CHECKOUT (ICO) - 2007-09-27 to 2008-01-19T00:00
+      EARTH-MARS CRUISE (EMC) - 2008-01-19T00:00 to 2009-02-16T00:00
+      MARS GRAVITY ASSIST (MGA) - 2009-02-16T00:00 to 2010-03-23T00:00
+      MARS-VESTA CRUISE (MVC) - 2010-03-23T00:00 to 2011-05-03T10:49
+      VESTA ENCOUNTER - 2011-05-03T10:49 to 2012-09-10T21:50
+      VESTA SCIENCE APPROACH (VSA) - 2011-05-03T10:49 to 2011-08-11T12:00
+      VESTA SCIENCE SURVEY (VSS) - 2011-08-11T12:00 to 2011-08-31T20:26
+      VESTA TRANSFER TO HAMO (VTH) - 2011-08-31T20:26 to 2011-09-29T09:59
+      VESTA SCIENCE HAMO (VSH) - 2011-09-29T09:59 to 2011-11-02T10:40
+      VESTA TRANSFER TO LAMO (VTL) - 2011-11-02T10:40 to 2011-12-12T22:44
+      VESTA SCIENCE LAMO (VSL) - 2011-12-12T22:44 to 2012-05-01T11:50
+      VESTA TRANSFER TO HAMO 2 (VT2) - 2012-05-01T11:50 to 2012-06-15T10:00
+      VESTA SCIENCE HAMO 2 (VH2) - 2012-06-15T10:00 to 2012-07-25T15:10
+      VESTA TRANSFER TO CERES (VTC) - 2012-07-25T15:10 to 2012-09-10T21:50
+      VESTA-CERES CRUISE (VCC) - 2012-09-10T21:50 to 2014-12-26T02:50
+      CERES ENCOUNTER - 2014-12-26T02:50 to 2016-06-01
+      CERES SCIENCE APPROACH (CSA) - 2014-12-26T02:50 to 2015-04-24T00:00
+      CERES SCIENCE RC3 (CSR) - 2015-04-24T00:00 to 2015-05-09T10:00
+      CERES TRANSFER TO SURVEY (CTS) - 2015-05-09T10:00 to 2015-06-04T12:00
+      CERES SCIENCE SURVEY (CSS) - 2015-06-04T12:00 to 2015-07-01T00:00
+      CERES TRANSFER TO HAMO (CTH) - 2015-07-01T00:00 to 2015-08-16T23:59
+      CERES SCIENCE HAMO (CSH) - 2015-08-16T23:59 to 2015-10-23T20:30
+      CERES TRANSFER TO LAMO (CTL) - 2015-10-23:20:30 to 2015-12-16T01:00
+      CERES SCIENCE LAMO (CSL) - 2015-12-16T01:00 to 2016-06-19T12:00
+      END OF PRIME MISSION - 2016-06-19T12:00
+      CERES EXTENDED MISSION - 2016-06-19T12:00 to 2017-07-01T00:00
+      CERES EXTENDED LAMO (CXL) - 2016-06-19T12:00 to 2016-09-02T12:00
+      CERES TRANSFER TO JULING (CTJ) - 2016-09-02T12:00 to 2016-10-10T00:00
+      CERES EXTENDED JULING (CXJ) - 2016-10-10T00:00 to 2016-11-03T12:00
+      CERES TRANSFER TO GRAND (CTG) - 2016-11-03T12:00 to 2016-12-14T00:00
+      CERES EXTENDED GRAND (CXG) - 2016-12-14T00:00 to 2017-02-23T00:00
+      CERES TRANSFER TO OPPOSITION (CTO) - 2017-02-23T00:00 to 2017-04-28T00:00
+      CERES EXTENDED OPPOSITION (CXO) - 2017-04-28T00:00 to 2017-07-01T00:00
+      END OF CERES EXTENDED MISSION - 2018-10-31T23:59
+
+   name                   spacecraft_clock_start_count
+   version                1.11
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_start_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
+
+   name                   spacecraft_clock_stop_count
+   version                1.11
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_stop_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
+
+   name                   standard_data_product_id
+   version                1.11
+   value data type        ASCII_Short_String_Collapsed
+   description            The standard_data_product_id keyword is used to identify data products of the same processing level that are not otherwise indentified by being in different collections within the bundle.
+   nillable               true
+
+   name                   callamp_delay_time
+   version                1.11
+   value data type        ASCII_Integer
+   description            Callamp switch on delay measured in microseconds after START_TIME. Callamp can be switched on before (less than 193000 µs), at (= 193000 µs), or after (greater than 193000 µs) begin of exposure. 
+   minimum value          0
+   maximum value          10000000
+
+   name                   callamp_duty
+   version                1.11
+   value data type        ASCII_Real
+   description            The callamp can be run at various duty cycles between 0.0 % and 100.0 % by using only every other pulse of the callamp frequency to trigger the callamp. DAWN_CALLAMP_DUTY = CALLAMP_FREQUENCY / Value * 100 % Example: Value = 1.0 : DAWN_CALLAMP_DUTY = 100 % Value = 2.5 : DAWN_CALLAMP_DUTY = 40 % This calculation is done internally in the camera, the user commands the requensted duty cycle in percentage.
+   minimum value          0.0
+   maximum value          100.0
+
+   name                   callamp_enable_flag
+   version                1.11
+   value data type        ASCII_String
+   description            OFF = callamp set to disabled ON = callamp set to enabled
+   permissible value - value meaning
+      OFF - TBD_Ingest_LDD
+      ON - TBD_Ingest_LDD
+
+   name                   callamp_frequency
+   version                1.11
+   value data type        ASCII_Real
+   description            The callamp frequency is determined by the internal 24 MHz clock and an integer divisor. CALLAMP_FREQUENCY = 24 MHz / Value The standard callamp frequency is 100 kHz (24MHz / 240).
+   minimum value          0.0
+   maximum value          250.0
+
+   name                   callamp_strobe_time
+   version                1.11
+   value data type        ASCII_Integer
+   description            Callamp strobe time is measured in microseconds after callamp switch on. callamp switch off time = START_TIME + DAWN_CALLAMP_DELAY_TIME + DAWN_CALLAMP_STROBE_TIME
+   minimum value          0
+   maximum value          10000000
+
+   name                   chamber
+   version                1.11
+   value data type        ASCII_String
+   description            This keyword was used during ground tests to describe the test environment.
+
+   name                   data_routing_id
+   version                1.11
+   value data type        ASCII_String
+   description            This keyword describes the priority of the acquired image and thus how it was handled on board. Op-Nav = The image is processed with highest priority and streamed into VR10 of the s/c. Science 1 = The image is processed with high priority and streamed into VR8 of the s/c. Science 2 = The image is processed with mid priority and streamed into VR8 of the s/c. Science 3 = The image is processed with low priority and streamed into VR8 of the s/c. Science 4 = The image is processed with least priority and streamed into VR8 of the s/c. 
+   permissible value - value meaning
+      Op-Nav - TBD_Ingest_LDD
+      Science 1 - TBD_Ingest_LDD
+      Science 1 - TBD_Ingest_LDD
+      Science 1 - TBD_Ingest_LDD
+      Science 1 - TBD_Ingest_LDD
+
+   name                   dpu_hardware_id
+   version                1.11
+   value data type        ASCII_String
+   description            Both DPUs for FC1 and FC2 have the same DPU ID because they are identical.
+
+   name                   dpu_software_version
+   version                1.11
+   value data type        ASCII_String
+   description            Current version of the FC onboard software
+
+   name                   fee_flag
+   version                1.11
+   value data type        ASCII_String
+   description            OFF = FEE is disabled, images cannot be acquired ON = FEE is enabled, images can be acquired
+   permissible value - value meaning
+      OFF - TBD_Ingest_LDD
+      ON - TBD_Ingest_LDD
+
+   name                   fee_hardware_id
+   version                1.11
+   value data type        ASCII_String
+   description            017.10.10 = FEE ID of FC1 (FS1) 017.09.09 = FEE ID of FC2 (FM2) 063.15.15 indicates that the FEE is off or busy and cannot transmit its ID.
+   permissible value - value meaning
+      017.09.09 - TBD_Ingest_LDD
+      017.10.10 - TBD_Ingest_LDD
+
+   name                   filter_encoder
+   version                1.11
+   value data type        ASCII_Integer
+   description            FILTER_NUMBER = (((64 + 4 + encoderOnClearFilter - FILTER_ENCODER) / 8) MOD 8) + 1 encoderOnClearFilter is a hardware-dependent constant filterEncoder is the current readout of the encoder filterNumber return a value in the range [1..8]. All the operation are integer operations, MOD represents modulo and / is the integer division. The subtraction is negative (F1 - Fx) because the encoder value decreases with increasing filter number.
+   minimum value          0
+   maximum value          63
+
+   name                   front_dood_status_id
+   version                1.11
+   value data type        ASCII_String
+   description            CLOSED = Front Door, covering the aperture, is closed. DOOR = Front Door is open.
+   permissible value - value meaning
+      CLOSED - TBD_Ingest_LDD
+      OPEN - TBD_Ingest_LDD
+
+   name                   front_door_encoder
+   version                1.11
+   value data type        ASCII_Integer
+   description            The Front Door is closed if FRONT_DOOR_ENCODER shows the nominal value +/- 1 and otherwise is open.
+   minimum value          0
+   maximum value          63
+
+   name                   fsa_shoot_enable_flag
+   version                1.11
+   value data type        ASCII_String
+   description            Fail Safe Actuator: OFF = The Fail Safe Actuator for the Front Door is disabled. ON = The Fail Safe Actuator for the Front Door is enabled. FSA_SHOOT_FLAG can be switched ON now.
+   permissible value - value meaning
+      OFF - TBD_Ingest_LDD
+      ON - TBD_Ingest_LDD
+
+   name                   fsa_shoot_flag
+   version                1.11
+   value data type        ASCII_String
+   description            Fail Safe Actuator: OFF = The Fail Safe Actuator for the Front Door is switched off. ON = The Fail Safe Actuator for the Front Door is switched on.
+   permissible value - value meaning
+      OFF - TBD_Ingest_LDD
+      ON - TBD_Ingest_LDD
+
+   name                   heater0_flag
+   version                1.11
+   value data type        ASCII_String
+   description            Camera Head Heater: OFF = The CH heater (HEATER0) is switched on. ON = The CH heater (HEATER0) is switched off. The heater produces 4.4 W (5.6 Ohm at +5 V)
+   permissible value - value meaning
+      OFF - TBD_Ingest_LDD
+      ON - TBD_Ingest_LDD
+
+   name                   heater1_flag
+   version                1.11
+   value data type        ASCII_String
+   description            Baffle Heater: OFF = The Baffle heater (HEATER1) is switched on. ON = The Baffle heater (HEATER1) is switched off. The heater produces 1.0 W (26 Ohm at +5 V)
+   permissible value - value meaning
+      OFF - TBD_Ingest_LDD
+      ON - TBD_Ingest_LDD
+
+   name                   image_acquire_mode
+   version                1.11
+   value data type        ASCII_String
+   description            This keyword describes the mode of image acquisition. NORMAL = The image was acquired with Front Door open. DARK = The image was acquired with Front Door closed and the Callamp off. FLATFIELD = The image was acquired with Front Door closed and the Callamp on. STORAGE = The image shows the readout of the storage area of the CCD. SERIAL = The artificial image shows the readout of the serial register. TEST_CH = The artificial iamge shows a test pattern with DNs from 0 to 16382.
+   permissible value - value meaning
+      NORMAL - TBD_Ingest_LDD
+      DARK - TBD_Ingest_LDD
+      FLATFIELD - TBD_Ingest_LDD
+      STORAGE - TBD_Ingest_LDD
+      SERIAL - TBD_Ingest_LDD
+      TEST_CH - TBD_Ingest_LDD
+
+   name                   i_12
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: C12FEE Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.02 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_12 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 50 mA Lower limit yellow: 60 mA Upper limit yellow: 100 mA Upper limit red: 200 mA
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   i_16
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: C16V15 Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.009 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_16 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 20 mA Lower limit yellow: 30 mA Upper limit yellow: 60 mA Upper limit red: 100 mA
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   i_28
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: C28M Location: PCU H/K Sensor: MAIN +28V Current Monitor Sensor Type: Current Sensor Gain: 0.0016 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_28 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 200 mA Lower limit yellow: 250 mA Upper limit yellow: 1200 mA Upper limit red: 1400 mA
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   i_2_5
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: C2.5AN Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.15 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_2_5 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 250 mA Lower limit yellow: 300 mA Upper limit yellow: 900 mA Upper limit red: 1000 mA
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   i_3_3
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: C3.3AN Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.15 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_3_3 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 100 mA Lower limit yellow: 170 mA Upper limit yellow: 850 mA Upper limit red: 1400 mA
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   i_5
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: C5FEE Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.05 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_2_5 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 100 mA Lower limit yellow: 250 mA Upper limit yellow: 350 mA Upper limit red: 400 mA
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   i_5_analog
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: C5AN Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.2 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_5_ANALOG = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 75 mA Lower limit yellow: 100 mA Upper limit yellow: 1150 mA Upper limit red: 1300 mA
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   i_m5
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: C-5FEE Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: -0.015 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_M5 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: -200 mA Lower limit yellow: -120 mA Upper limit yellow: -60 mA Upper limit red: -30 mA
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   i_m5_analog
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: C-5AN Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: -0.015 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_M5_ANALOG = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: -100 mA Lower limit yellow: -60 mA Upper limit yellow: -20 mA Upper limit red: -10 mA
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   mcu_flag
+   version                1.11
+   value data type        ASCII_String
+   description            OFF = MCU is disabled, mechanisms cannot be moved ON = MCU is enabled, mechanisms (filterwheel and front door) can be moved
+   permissible value - value meaning
+      OFF - TBD_Ingest_LDD
+      ON - TBD_Ingest_LDD
+
+   name                   mcu_hardware_id
+   version                1.11
+   value data type        ASCII_String
+   description            10 = MCU ID of FC1 (FS1) 12 = MCU ID of FC2 (FM2)
+   permissible value - value meaning
+      10 - TBD_Ingest_LDD
+      12 - TBD_Ingest_LDD
+
+   name                   mcu_motor_flag
+   version                1.11
+   value data type        ASCII_String
+   description            OFF = Both motors (Front Door and Filterwheel) are unpowered. ON = Both motors are powered. Either to hold their position or to move to another position. 
+   permissible value - value meaning
+      OFF - TBD_Ingest_LDD
+      ON - TBD_Ingest_LDD
+
+   name                   operator
+   version                1.11
+   value data type        ASCII_String
+   description            This keyword was used during ground tests to indicate the responsible operator of the test.
+
+   name                   pcu_hardware_id
+   version                1.11
+   value data type        ASCII_String
+   description            3.05 = PCU ID of FC1 (FS1) 2.04 = PCU ID of FC2 (FM2)
+   permissible value - value meaning
+      2.04 - TBD_Ingest_LDD
+      3.05 - TBD_Ingest_LDD
+
+   name                   purpose
+   version                1.11
+   value data type        ASCII_String
+   description            This keyword was used during ground tests to describe the purpose of the test.
+
+   name                   subject
+   version                1.11
+   value data type        ASCII_String
+   description            This keyword was used during ground tests to describe the subject used during the test.
+
+   name                   target
+   version                1.11
+   value data type        ASCII_String
+   description            This keyword was used during ground tests to describe the target the FC was pointing at during the test
+
+   name                   test_lamp
+   version                1.11
+   value data type        ASCII_String
+   description            This keyword was used during ground tests to define the lamp that was used during the test.
+
+   name                   t_baffle
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: TBF Location: Baffle H/K Sensor: Baffle Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -2.1 Sensor Offset FC2: -3.1 T_BAFFLE = DN * Gain + Offset + Sensor Offset + 273.150 [deg C] T_BAFFLE = DN * Gain + Offset + Sensor Offset [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +40.0 deg C Upper limit red: +45.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_ccd
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: HK-Tccd Location: DPU H/K Sensor: FEE CCD Thermistor Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -5.240 Sensor Offset FC2: -3.960 T_CCD = DN * Gain + Offset + Sensor Offset [deg C] T_CCD = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] The CCD is passively cooled, the CCD-heaters are for non-operation mode only. Lower limit red: -95.0 deg C Lower limit yellow: -75.0 deg C Upper limit yellow: +35.0 deg C Upper limit red: +40.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_cover_motor
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: TCM Location: Front Door H/K Sensor: FD Motor Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -2.1 Sensor Offset FC2: -1.1 T_COVER_MOTOR = DN * Gain + Offset + Sensor Offset [deg C] T_COVER_MOTOR = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +50.0 deg C Upper limit red: +60.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_csc
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: HK-Tpcu3 Location: PCU H/K Sensor: PCU Board Thermistor 1 (PCU Center Screw Thermistor) Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -3.210 Sensor Offset FC2: -3.210 T_CSC = DN * Gain + Offset + Sensor Offset [deg C] T_CSC = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] The CCD is passively cooled, the CCD-heaters are for non-operation mode only. Lower limit red: -40.0 deg C Lower limit yellow: -35.0 deg C Upper limit yellow: +70.0 deg C Upper limit red: +80.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_dcdc
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: HK-Tpcu1 Location: PCU H/K Sensor: PCU Converter Board Thermistor Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -1.980 Sensor Offset FC2: -1.980 T_DCDC = DN * Gain + Offset + Sensor Offset [deg C] T_DCDC = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -40.0 deg C Lower limit yellow: -35.0 deg C Upper limit yellow: +70.0 deg C Upper limit red: +80.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_dpu
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: HK-Tdpu Location: DPU H/K Sensor: DPU Board Thermistor Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -7.960 Sensor Offset FC2: -3.960 T_DPU = DN * Gain + Offset + Sensor Offset [deg C] T_DPU = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -40.0 deg C Lower limit yellow: -35.0 deg C Upper limit yellow: +80.0 deg C Upper limit red: +90.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_f12
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: HK-Tpcu2 Location: PCU H/K Sensor: PCU Board Thermistor 1 (PCU FEE 12 V I/F Thermistor) Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -2.580 Sensor Offset FC2: -2.580 T_F12 = DN * Gain + Offset + Sensor Offset [deg C] T_F12 = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -40.0 deg C Lower limit yellow: -35.0 deg C Upper limit yellow: +70.0 deg C Upper limit red: +80.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_filter_motor
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: TFM Location: Filter Wheel H/K Sensor: Filter Motor Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -3.1 Sensor Offset FC2: -2.1 T_FILTER_MOTOR = DN * Gain + Offset + Sensor Offset [deg C] T_FILTER_MOTOR = DN * Gain + Offset\ + Sensor Offset + 273.150 [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +50.0 deg C Upper limit red: +60.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_lens_barrel
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: TLB Location: Lens Barrel H/K Sensor: Lens Barrel Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -1.1 Sensor Offset FC2: -1.1 T_LENS_BARREL = DN * Gain + Offset + Sensor Offset [deg C] T_LENS_BARREL = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +40.0 deg C Upper limit red: +45.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_rad_motor
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: TRD Location: Radiator H/K Sensor: Radiator Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -1.1 Sensor Offset FC2: -1.1 T_RAD_MOTOR = DN * Gain + Offset + Sensor Offset [deg C] T_RAD_MOTOR = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -115.0 deg C Lower limit yellow: -95.0 deg C Upper limit yellow: +35.0 deg C Upper limit red: +40.0 deg C Note: This is not a motor temperature!
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   t_structure
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: TCS Location: Camera Head H/K Sensor: CH Structure Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -3.1 Sensor Offset FC2: -4.1 T_STRUCTURE = DN * Gain + Offset + Sensor Offset [deg C] T_STRUCTURE = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +40.0 deg C Upper limit red: +45.0 deg C
+   minimum value          -999.999
+   maximum value          999.999
+
+   name                   udplib_software_version
+   version                1.11
+   value data type        ASCII_String
+   description            Current version of the FC UDP library
+
+   name                   use_pre_clear
+   version                1.11
+   value data type        ASCII_String
+   description            OFF = No pre-clear of the CCD prior to an image acquisition. ON = A pre-clear of the CCD, 193 ms prior to an image acquisition, removes all charge that is on the CCD at this moment
+   permissible value - value meaning
+      OFF - TBD_Ingest_LDD
+      ON - TBD_Ingest_LDD
+
+   name                   v_12
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: V12FEE Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.0012 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_12 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 11.0 V Lower limit yellow: 11.7 V Upper limit yellow: 12.5 V Upper limit red: 13.0 V
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   v_16
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: V16V15 Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.000165 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_16 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 14.7 V Lower limit yellow: 15.2 V Upper limit yellow: 16.5 V Upper limit red: 17.0 V
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   v_28
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: V28M Location: PCU H/K Sensor: Main +28V Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.04 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_28 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 20.0 V Lower limit yellow: 21.5 V Upper limit yellow: 35.5 V Upper limit red: 37.0 V
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   v_2_5
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: V2.5AN Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00025 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_2_5 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 2.1 V Lower limit yellow: 2.3 V Upper limit yellow: 2.8 V Upper limit red: 3.0 V
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   v_3_3
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: V3.3AN Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00033 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_3_3 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 3.0 V Lower limit yellow: 3.2 V Upper limit yellow: 3.7 V Upper limit red: 3.9 V
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   v_5
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: V5FEE Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00052 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_5 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 4.5 V Lower limit yellow: 4.7 V Upper limit yellow: 5.5 V Upper limit red: 5.8 V
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   v_5_analog
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: V5AN Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00052 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_5_ANALOG = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 4.5 V Lower limit yellow: 4.7 V Upper limit yellow: 5.5 V Upper limit red: 5.8 V
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   v_m5
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: V-5FEE Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: -0.0005 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_M5 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: -5.8 V Lower limit yellow: -5.5 V Upper limit yellow: -4.7 V Upper limit red: -4.5 V
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   v_m5_analog
+   version                1.11
+   value data type        ASCII_Real
+   description            Name: V-5AN Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: -0.0005 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_M5_ANALOG = DN * Gain + Offset + Sensor Offset [V] Lower limit red: -5.8 V Lower limit yellow: -5.5 V Upper limit yellow: -4.7 V Upper limit red: -4.5 V
+   minimum value          -9999.999
+   maximum value          9999.999
+
+   name                   alt_start_time
+   version                1.11
+   value data type        ASCII_Date_Time_YMD_UTC
+   description             Same as global keyword START_TIME; allows one label to specify both YYYY-MM-DD and YYYY-DDD without using a list.
+
+   name                   alt_stop_time
+   version                1.11
+   value data type        ASCII_Date_Time_YMD_UTC
+   description             Same as global keyword STOP_TIME; allows one label to specify both YYYY-MM-DD and YYYY-DDD without using a list.
+
+   name                   frame_parameter_unit
+   version                1.11
+   value data type        ASCII_String
+   description             This keyword defines the units of FRAME_PARAMETER that define the individual frame parameters of an instrument that transfers single frames to the mass memory of the spacecraft or the instrument. The FRAME_PARAMETER element is also accompanied by the element FRAME_PARAMETER_DESC, e.g. FRAME_PARAMETER_DESC = ('EXPOSURE_DURATION', 'FRAME_SUMMING', 'EXTERNAL_REPETITION_TIME', 'EXTERNAL DARK_ACQUISITION_RATE')
+
+   name                   instrument_temperature_unit
+   version                1.11
+   value data type        ASCII_String
+   description             The units of instrument or some part of an instrument; for example: FOCAL PLANE, TELESCOPE, SPECTROMETER, CRYOCOOLER
+
+   name                   vir_ir_start_x_position
+   version                1.11
+   value data type        ASCII_Real
+   description             This keyword gives the X coordinate of the first CCD pixel used on the IR FPA. This quantity determines the correspondence between wavelength and spectral channels.
+
+   name                   vir_ir_start_y_position
+   version                1.11
+   value data type        ASCII_Real
+   description             This keyword gives the Y coordinate of the first CCD pixel used on the IR FPA. This quantity determines the correspondence between wavelength and spectral channels.
+
+   name                   scan_parameter
+   version                1.11
+   value data type        ASCII_Real
+   description            Same as global keyword SCAN_PARAMETER but allows negative values
+
+   name                   scan_parameter_unit
+   version                1.11
+   value data type        ASCII_String
+   description            This keyword defines the units of DAWN:SCAN_PARAMETER
+
+   name                   vir_vis_start_x_position
+   version                1.11
+   value data type        ASCII_Real
+   description             This keyword gives the X coordinate of the first CCD pixel used on the VIS FPA. This quantity determines the correspondence between wavelength and spectral channels.
+
+   name                   vir_vis_start_y_position
+   version                1.11
+   value data type        ASCII_Real
+   description             This keyword gives the Y coordinate of the first CCD pixel used on the VIS FPA. This quantity determines the correspondence between wavelength and spectral channels.
+
+   name                   grand_start_sclk
+   version                1.11
+   value data type        ASCII_Integer
+   description            The first SCLK for which this readout is applicable
+   minimum value          1
+
+   name                   grand_stop_sclk
+   version                1.11
+   value data type        ASCII_Integer
+   description            The last SCLK for which this readout is applicable
+   minimum value          1
+
+   name                   grand_interval
+   version                1.11
+   value data type        ASCII_Integer
+   description            The duration of the interval.
+   nillable               true
+   minimum value          1
+   unit of measure type   Units_of_Time
+
+   name                   comment
+   version                1.11
+   value data type        ASCII_String
+   description            Remarks about the containing object.
+   nillable               true
+
+Parsed Input - Classes:
+
+   name                   TELREADOUT
+   description            A single scaler accumulation interval, and the first and last records and SCLKs for which the interval was in effect.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.grand_start_sclk
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.grand_stop_sclk
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.grand_interval
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.comment
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   TELREADOUT_List
+   description            A list of scaler accumulation intervals, along with the records for which they were in effect.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.TELREADOUT
+      minimum occurrences   1
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   TELSOH
+   description            A single state-of-health accumulation interval, and the first and last records and SCLKs for which the interval was in effect.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.grand_start_sclk
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.grand_stop_sclk
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.grand_interval
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.comment
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   TELSOH_List
+   description            A list of state-of-health accumulation intervals, along with the records for which they were in effect.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.TELSOH
+      minimum occurrences   1
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   fc
+   description            The Dawn "fc" class is the container for Dawn Framing Camera (FC) specific metadata elements. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.callamp_delay_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.callamp_duty
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.callamp_enable_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.callamp_frequency
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.callamp_strobe_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.chamber
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.data_routing_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.dpu_hardware_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.dpu_software_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.fee_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.fee_hardware_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.filter_encoder
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.front_dood_status_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.front_door_encoder
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.fsa_shoot_enable_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.fsa_shoot_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.heater0_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.heater1_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.image_acquire_mode
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.i_12
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.i_16
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.i_28
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.i_2_5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.i_3_3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.i_5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.i_5_analog
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.i_m5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.i_m5_analog
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.mcu_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.mcu_hardware_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.mcu_motor_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.operator
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.pcu_hardware_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.purpose
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.subject
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.target
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.test_lamp
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_baffle
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_ccd
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_cover_motor
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_csc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_dcdc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_dpu
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_f12
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_filter_motor
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_lens_barrel
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_rad_motor
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.t_structure
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.udplib_software_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.use_pre_clear
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.v_12
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.v_16
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.v_28
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.v_2_5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.v_3_3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.v_5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.v_5_analog
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.v_m5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.v_m5_analog
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.alt_start_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.alt_stop_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   vir
+   description            The Dawn "vir" class is the container for Dawn Visual and Infrared Spectrometer (VIR) specific metadata elements. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.frame_parameter_unit
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.instrument_temperature_unit
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.vir_ir_start_x_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.vir_ir_start_y_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.scan_parameter
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.scan_parameter_unit
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.vir_vis_start_x_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.vir_vis_start_y_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   grand
+   description            GRaND parameters
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      pds.Local_Internal_Reference
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.TELREADOUT_List
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.TELSOH_List
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        component_of
+
+   name                   Dawn
+   description            The Dawn class is the container for Dawn mission-specific metadata elements. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.mission_phase_name
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      dawn.spacecraft_clock_start_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.spacecraft_clock_stop_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.standard_data_product_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.fc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.vir
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.grand
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+End of Report

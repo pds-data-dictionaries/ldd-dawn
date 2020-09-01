@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.11.0.0 - Tue Sep 01 16:24:06 MST 2020 -->
+  <!-- Generated from the PDS4 Information Model Version 1.11.0.0 - System Build 9a -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.11.0.0 - pds: - Common Dictionary - N/A                                 -->
+  <!-- 1.11.0.0 - dawn: - Dawn - ldd-dawn-s.xml                                  -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/dawn/v1"
+    xmlns:dawn="http://pds.nasa.gov/pds4/dawn/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.11.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+ 
+      v1.0.0.0  2018-11-14
+		-  Created PDS4 LDD based on PDS3 Catalog file content.
+      v1.1.0.0  2020-07-23
+		-  Added support for GRaND instrument
+		
+		
+	
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Dawn" type="dawn:Dawn"> </xs:element>
+  <xs:element name="grand" type="dawn:grand"> </xs:element>
+
+  <xs:complexType name="Dawn">
+    <xs:annotation>
+      <xs:documentation>The Dawn class is the container for Dawn
+        mission-specific metadata elements. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="mission_phase_name" type="dawn:mission_phase_name" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="spacecraft_clock_start_count" type="dawn:spacecraft_clock_start_count" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_stop_count" type="dawn:spacecraft_clock_stop_count" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="standard_data_product_id" nillable="true" type="dawn:standard_data_product_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fc" type="dawn:fc" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir" type="dawn:vir" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="grand" type="dawn:grand" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:mission_phase_name = ('CERES ENCOUNTER', 'CERES EXTENDED GRAND (CXG)', 'CERES EXTENDED JULING (CXJ)', 'CERES EXTENDED LAMO (CXL)', 'CERES EXTENDED MISSION', 'CERES EXTENDED OPPOSITION (CXO)', 'CERES SCIENCE APPROACH (CSA)', 'CERES SCIENCE HAMO (CSH)', 'CERES SCIENCE LAMO (CSL)', 'CERES SCIENCE RC3 (CSR)', 'CERES SCIENCE SURVEY (CSS)', 'CERES TRANSFER TO GRAND (CTG)', 'CERES TRANSFER TO HAMO (CTH)', 'CERES TRANSFER TO JULING (CTJ)', 'CERES TRANSFER TO LAMO (CTL)', 'CERES TRANSFER TO OPPOSITION (CTO)', 'CERES TRANSFER TO SURVEY (CTS)', 'EARTH-MARS CRUISE (EMC)', 'END OF CERES EXTENDED MISSION', 'END OF PRIME MISSION', 'INITIAL CHECKOUT (ICO)', 'Launch', 'MARS GRAVITY ASSIST (MGA)', 'MARS-VESTA CRUISE (MVC)', 'VESTA ENCOUNTER', 'VESTA SCIENCE APPROACH (VSA)', 'VESTA SCIENCE HAMO (VSH)', 'VESTA SCIENCE HAMO 2 (VH2)', 'VESTA SCIENCE LAMO (VSL)', 'VESTA SCIENCE SURVEY (VSS)', 'VESTA TRANSFER TO CERES (VTC)', 'VESTA TRANSFER TO HAMO (VTH)', 'VESTA TRANSFER TO HAMO 2 (VT2)', 'VESTA TRANSFER TO LAMO (VTL)', 'VESTA-CERES CRUISE (VCC)')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="TELREADOUT">
+    <xs:annotation>
+      <xs:documentation>A single scaler accumulation interval, and the
+        first and last records and SCLKs for which the interval was in
+        effect.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="grand_start_sclk" type="dawn:grand_start_sclk" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="grand_stop_sclk" type="dawn:grand_stop_sclk" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="grand_interval" nillable="true" type="dawn:grand_interval" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="comment" nillable="true" type="dawn:comment" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TELREADOUT_List">
+    <xs:annotation>
+      <xs:documentation>A list of scaler accumulation intervals, along
+        with the records for which they were in
+        effect.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TELREADOUT" type="dawn:TELREADOUT" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TELSOH">
+    <xs:annotation>
+      <xs:documentation>A single state-of-health accumulation interval,
+        and the first and last records and SCLKs for which the interval
+        was in effect.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="grand_start_sclk" type="dawn:grand_start_sclk" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="grand_stop_sclk" type="dawn:grand_stop_sclk" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="grand_interval" nillable="true" type="dawn:grand_interval" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="comment" nillable="true" type="dawn:comment" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TELSOH_List">
+    <xs:annotation>
+      <xs:documentation>A list of state-of-health accumulation
+        intervals, along with the records for which they were in
+        effect.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TELSOH" type="dawn:TELSOH" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fc">
+    <xs:annotation>
+      <xs:documentation>The Dawn "fc" class is the container for Dawn
+        Framing Camera (FC) specific metadata elements.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="callamp_delay_time" type="dawn:callamp_delay_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="callamp_duty" type="dawn:callamp_duty" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="callamp_enable_flag" type="dawn:callamp_enable_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="callamp_frequency" type="dawn:callamp_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="callamp_strobe_time" type="dawn:callamp_strobe_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chamber" type="dawn:chamber" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="data_routing_id" type="dawn:data_routing_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dpu_hardware_id" type="dawn:dpu_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dpu_software_version" type="dawn:dpu_software_version" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fee_flag" type="dawn:fee_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fee_hardware_id" type="dawn:fee_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="filter_encoder" type="dawn:filter_encoder" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="front_dood_status_id" type="dawn:front_dood_status_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="front_door_encoder" type="dawn:front_door_encoder" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fsa_shoot_enable_flag" type="dawn:fsa_shoot_enable_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fsa_shoot_flag" type="dawn:fsa_shoot_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="heater0_flag" type="dawn:heater0_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="heater1_flag" type="dawn:heater1_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="image_acquire_mode" type="dawn:image_acquire_mode" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_12" type="dawn:i_12" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_16" type="dawn:i_16" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_28" type="dawn:i_28" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_2_5" type="dawn:i_2_5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_3_3" type="dawn:i_3_3" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_5" type="dawn:i_5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_5_analog" type="dawn:i_5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_m5" type="dawn:i_m5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_m5_analog" type="dawn:i_m5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mcu_flag" type="dawn:mcu_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mcu_hardware_id" type="dawn:mcu_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mcu_motor_flag" type="dawn:mcu_motor_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="operator" type="dawn:operator" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="pcu_hardware_id" type="dawn:pcu_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="purpose" type="dawn:purpose" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="subject" type="dawn:subject" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="target" type="dawn:target" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="test_lamp" type="dawn:test_lamp" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_baffle" type="dawn:t_baffle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_ccd" type="dawn:t_ccd" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_cover_motor" type="dawn:t_cover_motor" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_csc" type="dawn:t_csc" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_dcdc" type="dawn:t_dcdc" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_dpu" type="dawn:t_dpu" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_f12" type="dawn:t_f12" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_filter_motor" type="dawn:t_filter_motor" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_lens_barrel" type="dawn:t_lens_barrel" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_rad_motor" type="dawn:t_rad_motor" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="t_structure" type="dawn:t_structure" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="udplib_software_version" type="dawn:udplib_software_version" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="use_pre_clear" type="dawn:use_pre_clear" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="v_12" type="dawn:v_12" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="v_16" type="dawn:v_16" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="v_28" type="dawn:v_28" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="v_2_5" type="dawn:v_2_5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="v_3_3" type="dawn:v_3_3" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="v_5" type="dawn:v_5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="v_5_analog" type="dawn:v_5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="v_m5" type="dawn:v_m5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="v_m5_analog" type="dawn:v_m5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="alt_start_time" type="dawn:alt_start_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="alt_stop_time" type="dawn:alt_stop_time" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:callamp_enable_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:data_routing_id = ('Op-Nav', 'Science 1', 'Science 1', 'Science 1', 'Science 1')"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test="dawn:fee_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:fee_hardware_id = ('017.09.09', '017.10.10')"/> -->
+    <!-- <xs:assert test="dawn:front_dood_status_id = ('CLOSED', 'OPEN')"/> -->
+    <!-- <xs:assert test="dawn:fsa_shoot_enable_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:fsa_shoot_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:heater0_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:heater1_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:image_acquire_mode = ('DARK', 'FLATFIELD', 'NORMAL', 'SERIAL', 'STORAGE', 'TEST_CH')"/> -->
+    <!-- <xs:assert test="dawn:mcu_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:mcu_hardware_id = ('10', '12')"/> -->
+    <!-- <xs:assert test="dawn:mcu_motor_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:pcu_hardware_id = ('2.04', '3.05')"/> -->
+    <!-- <xs:assert test="dawn:use_pre_clear = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="grand">
+    <xs:annotation>
+<xs:documentation>GRaND parameters</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="pds:Local_Internal_Reference" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="TELREADOUT_List" type="dawn:TELREADOUT_List" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="TELSOH_List" type="dawn:TELSOH_List" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vir">
+    <xs:annotation>
+      <xs:documentation>The Dawn "vir" class is the container for Dawn
+        Visual and Infrared Spectrometer (VIR) specific metadata
+        elements. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="frame_parameter_unit" type="dawn:frame_parameter_unit" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="instrument_temperature_unit" type="dawn:instrument_temperature_unit" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_ir_start_x_position" type="dawn:vir_ir_start_x_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_ir_start_y_position" type="dawn:vir_ir_start_y_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="scan_parameter" type="dawn:scan_parameter" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="scan_parameter_unit" type="dawn:scan_parameter_unit" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_vis_start_x_position" type="dawn:vir_vis_start_x_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_vis_start_y_position" type="dawn:vir_vis_start_y_position" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="alt_start_time">
+    <xs:annotation>
+      <xs:documentation> Same as global keyword START_TIME; allows one
+        label to specify both YYYY-MM-DD and YYYY-DDD without using a
+        list.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD_UTC">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSZ" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="alt_stop_time">
+    <xs:annotation>
+      <xs:documentation> Same as global keyword STOP_TIME; allows one
+        label to specify both YYYY-MM-DD and YYYY-DDD without using a
+        list.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD_UTC">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSZ" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="callamp_delay_time">
+    <xs:annotation>
+      <xs:documentation>Callamp switch on delay measured in microseconds
+        after START_TIME. Callamp can be switched on before (less than
+        193000 µs), at (= 193000 µs), or after (greater than 193000 µs)
+        begin of exposure. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="10000000"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="callamp_duty">
+    <xs:annotation>
+      <xs:documentation>The callamp can be run at various duty cycles
+        between 0.0 % and 100.0 % by using only every other pulse of the
+        callamp frequency to trigger the callamp. DAWN_CALLAMP_DUTY =
+        CALLAMP_FREQUENCY / Value * 100 % Example: Value = 1.0 :
+        DAWN_CALLAMP_DUTY = 100 % Value = 2.5 : DAWN_CALLAMP_DUTY = 40 %
+        This calculation is done internally in the camera, the user
+        commands the requensted duty cycle in
+        percentage.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0.0"/>
+     <xs:maxInclusive value="100.0"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="callamp_enable_flag">
+    <xs:annotation>
+      <xs:documentation>OFF = callamp set to disabled ON = callamp set
+        to enabled</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="callamp_frequency">
+    <xs:annotation>
+      <xs:documentation>The callamp frequency is determined by the
+        internal 24 MHz clock and an integer divisor. CALLAMP_FREQUENCY
+        = 24 MHz / Value The standard callamp frequency is 100 kHz
+        (24MHz / 240).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0.0"/>
+     <xs:maxInclusive value="250.0"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="callamp_strobe_time">
+    <xs:annotation>
+      <xs:documentation>Callamp strobe time is measured in microseconds
+        after callamp switch on. callamp switch off time = START_TIME +
+        DAWN_CALLAMP_DELAY_TIME +
+        DAWN_CALLAMP_STROBE_TIME</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="10000000"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="chamber">
+    <xs:annotation>
+      <xs:documentation>This keyword was used during ground tests to
+        describe the test environment.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="comment">
+    <xs:annotation>
+      <xs:documentation>Remarks about the containing
+        object.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pds:ASCII_String">
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="data_routing_id">
+    <xs:annotation>
+      <xs:documentation>This keyword describes the priority of the
+        acquired image and thus how it was handled on board. Op-Nav =
+        The image is processed with highest priority and streamed into
+        VR10 of the s/c. Science 1 = The image is processed with high
+        priority and streamed into VR8 of the s/c. Science 2 = The image
+        is processed with mid priority and streamed into VR8 of the s/c.
+        Science 3 = The image is processed with low priority and
+        streamed into VR8 of the s/c. Science 4 = The image is processed
+        with least priority and streamed into VR8 of the s/c.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dpu_hardware_id">
+    <xs:annotation>
+      <xs:documentation>Both DPUs for FC1 and FC2 have the same DPU ID
+        because they are identical.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dpu_software_version">
+    <xs:annotation>
+      <xs:documentation>Current version of the FC onboard
+        software</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="fee_flag">
+    <xs:annotation>
+      <xs:documentation>OFF = FEE is disabled, images cannot be acquired
+        ON = FEE is enabled, images can be acquired</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="fee_hardware_id">
+    <xs:annotation>
+      <xs:documentation>017.10.10 = FEE ID of FC1 (FS1) 017.09.09 = FEE
+        ID of FC2 (FM2) 063.15.15 indicates that the FEE is off or busy
+        and cannot transmit its ID.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="filter_encoder">
+    <xs:annotation>
+      <xs:documentation>FILTER_NUMBER = (((64 + 4 + encoderOnClearFilter
+        - FILTER_ENCODER) / 8) MOD 8) + 1 encoderOnClearFilter is a
+        hardware-dependent constant filterEncoder is the current readout
+        of the encoder filterNumber return a value in the range [1..8].
+        All the operation are integer operations, MOD represents modulo
+        and / is the integer division. The subtraction is negative (F1 -
+        Fx) because the encoder value decreases with increasing filter
+        number.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="63"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="frame_parameter_unit">
+    <xs:annotation>
+      <xs:documentation> This keyword defines the units of
+        FRAME_PARAMETER that define the individual frame parameters of
+        an instrument that transfers single frames to the mass memory of
+        the spacecraft or the instrument. The FRAME_PARAMETER element is
+        also accompanied by the element FRAME_PARAMETER_DESC, e.g.
+        FRAME_PARAMETER_DESC = ('EXPOSURE_DURATION', 'FRAME_SUMMING',
+        'EXTERNAL_REPETITION_TIME', 'EXTERNAL
+        DARK_ACQUISITION_RATE')</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="front_dood_status_id">
+    <xs:annotation>
+      <xs:documentation>CLOSED = Front Door, covering the aperture, is
+        closed. DOOR = Front Door is open.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="front_door_encoder">
+    <xs:annotation>
+      <xs:documentation>The Front Door is closed if FRONT_DOOR_ENCODER
+        shows the nominal value +/- 1 and otherwise is
+        open.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="63"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="fsa_shoot_enable_flag">
+    <xs:annotation>
+      <xs:documentation>Fail Safe Actuator: OFF = The Fail Safe Actuator
+        for the Front Door is disabled. ON = The Fail Safe Actuator for
+        the Front Door is enabled. FSA_SHOOT_FLAG can be switched ON
+        now.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="fsa_shoot_flag">
+    <xs:annotation>
+      <xs:documentation>Fail Safe Actuator: OFF = The Fail Safe Actuator
+        for the Front Door is switched off. ON = The Fail Safe Actuator
+        for the Front Door is switched on.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="grand_interval_WO_Units">
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="1"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="grand_interval">
+    <xs:annotation>
+<xs:documentation>The duration of the interval.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:grand_interval_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="grand_start_sclk">
+    <xs:annotation>
+      <xs:documentation>The first SCLK for which this readout is
+        applicable</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="1"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="grand_stop_sclk">
+    <xs:annotation>
+      <xs:documentation>The last SCLK for which this readout is
+        applicable</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="1"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="heater0_flag">
+    <xs:annotation>
+      <xs:documentation>Camera Head Heater: OFF = The CH heater
+        (HEATER0) is switched on. ON = The CH heater (HEATER0) is
+        switched off. The heater produces 4.4 W (5.6 Ohm at +5
+        V)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="heater1_flag">
+    <xs:annotation>
+      <xs:documentation>Baffle Heater: OFF = The Baffle heater (HEATER1)
+        is switched on. ON = The Baffle heater (HEATER1) is switched
+        off. The heater produces 1.0 W (26 Ohm at +5
+        V)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="i_12">
+    <xs:annotation>
+      <xs:documentation>Name: C12FEE Location: PCU H/K Sensor: PCU
+        Current Monitor Sensor Type: Current Sensor Gain: 0.02 Offset: 0
+        Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_12 = DN * Gain +
+        Offset + Sensor Offset [mA] Lower limit red: 50 mA Lower limit
+        yellow: 60 mA Upper limit yellow: 100 mA Upper limit red: 200
+        mA</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="i_16">
+    <xs:annotation>
+      <xs:documentation>Name: C16V15 Location: PCU H/K Sensor: PCU
+        Current Monitor Sensor Type: Current Sensor Gain: 0.009 Offset:
+        0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_16 = DN * Gain +
+        Offset + Sensor Offset [mA] Lower limit red: 20 mA Lower limit
+        yellow: 30 mA Upper limit yellow: 60 mA Upper limit red: 100
+        mA</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="i_28">
+    <xs:annotation>
+      <xs:documentation>Name: C28M Location: PCU H/K Sensor: MAIN +28V
+        Current Monitor Sensor Type: Current Sensor Gain: 0.0016 Offset:
+        0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_28 = DN * Gain +
+        Offset + Sensor Offset [mA] Lower limit red: 200 mA Lower limit
+        yellow: 250 mA Upper limit yellow: 1200 mA Upper limit red: 1400
+        mA</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="i_2_5">
+    <xs:annotation>
+      <xs:documentation>Name: C2.5AN Location: PCU H/K Sensor: PCU
+        Current Monitor Sensor Type: Current Sensor Gain: 0.15 Offset: 0
+        Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_2_5 = DN * Gain +
+        Offset + Sensor Offset [mA] Lower limit red: 250 mA Lower limit
+        yellow: 300 mA Upper limit yellow: 900 mA Upper limit red: 1000
+        mA</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="i_3_3">
+    <xs:annotation>
+      <xs:documentation>Name: C3.3AN Location: PCU H/K Sensor: PCU
+        Current Monitor Sensor Type: Current Sensor Gain: 0.15 Offset: 0
+        Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_3_3 = DN * Gain +
+        Offset + Sensor Offset [mA] Lower limit red: 100 mA Lower limit
+        yellow: 170 mA Upper limit yellow: 850 mA Upper limit red: 1400
+        mA</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="i_5">
+    <xs:annotation>
+      <xs:documentation>Name: C5FEE Location: PCU H/K Sensor: PCU
+        Current Monitor Sensor Type: Current Sensor Gain: 0.05 Offset: 0
+        Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_2_5 = DN * Gain +
+        Offset + Sensor Offset [mA] Lower limit red: 100 mA Lower limit
+        yellow: 250 mA Upper limit yellow: 350 mA Upper limit red: 400
+        mA</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="i_5_analog">
+    <xs:annotation>
+      <xs:documentation>Name: C5AN Location: PCU H/K Sensor: PCU Current
+        Monitor Sensor Type: Current Sensor Gain: 0.2 Offset: 0 Sensor
+        Offset FC1: 0 Sensor Offset FC2: 0 I_5_ANALOG = DN * Gain +
+        Offset + Sensor Offset [mA] Lower limit red: 75 mA Lower limit
+        yellow: 100 mA Upper limit yellow: 1150 mA Upper limit red: 1300
+        mA</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="i_m5">
+    <xs:annotation>
+      <xs:documentation>Name: C-5FEE Location: PCU H/K Sensor: PCU
+        Current Monitor Sensor Type: Current Sensor Gain: -0.015 Offset:
+        0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_M5 = DN * Gain +
+        Offset + Sensor Offset [mA] Lower limit red: -200 mA Lower limit
+        yellow: -120 mA Upper limit yellow: -60 mA Upper limit red: -30
+        mA</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="i_m5_analog">
+    <xs:annotation>
+      <xs:documentation>Name: C-5AN Location: PCU H/K Sensor: PCU
+        Current Monitor Sensor Type: Current Sensor Gain: -0.015 Offset:
+        0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_M5_ANALOG = DN *
+        Gain + Offset + Sensor Offset [mA] Lower limit red: -100 mA
+        Lower limit yellow: -60 mA Upper limit yellow: -20 mA Upper
+        limit red: -10 mA</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="image_acquire_mode">
+    <xs:annotation>
+      <xs:documentation>This keyword describes the mode of image
+        acquisition. NORMAL = The image was acquired with Front Door
+        open. DARK = The image was acquired with Front Door closed and
+        the Callamp off. FLATFIELD = The image was acquired with Front
+        Door closed and the Callamp on. STORAGE = The image shows the
+        readout of the storage area of the CCD. SERIAL = The artificial
+        image shows the readout of the serial register. TEST_CH = The
+        artificial iamge shows a test pattern with DNs from 0 to
+        16382.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="instrument_temperature_unit">
+    <xs:annotation>
+      <xs:documentation> The units of instrument or some part of an
+        instrument; for example: FOCAL PLANE, TELESCOPE, SPECTROMETER,
+        CRYOCOOLER</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mcu_flag">
+    <xs:annotation>
+      <xs:documentation>OFF = MCU is disabled, mechanisms cannot be
+        moved ON = MCU is enabled, mechanisms (filterwheel and front
+        door) can be moved</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mcu_hardware_id">
+    <xs:annotation>
+      <xs:documentation>10 = MCU ID of FC1 (FS1) 12 = MCU ID of FC2
+        (FM2)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mcu_motor_flag">
+    <xs:annotation>
+      <xs:documentation>OFF = Both motors (Front Door and Filterwheel)
+        are unpowered. ON = Both motors are powered. Either to hold
+        their position or to move to another position.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mission_phase_name">
+    <xs:annotation>
+      <xs:documentation>The mission_phase_name attribute provides the
+        mission-defined name of a mission phase.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="operator">
+    <xs:annotation>
+      <xs:documentation>This keyword was used during ground tests to
+        indicate the responsible operator of the test.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="pcu_hardware_id">
+    <xs:annotation>
+      <xs:documentation>3.05 = PCU ID of FC1 (FS1) 2.04 = PCU ID of FC2
+        (FM2)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="purpose">
+    <xs:annotation>
+      <xs:documentation>This keyword was used during ground tests to
+        describe the purpose of the test.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="scan_parameter">
+    <xs:annotation>
+      <xs:documentation>Same as global keyword SCAN_PARAMETER but allows
+        negative values</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="scan_parameter_unit">
+    <xs:annotation>
+      <xs:documentation>This keyword defines the units of
+        DAWN:SCAN_PARAMETER</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_start_count">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_start_count attribute
+        provides the value of the spacecraft clock at the beginning of a
+        time period of interest. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='[1-9]/[0-9]{9}(.[0-9]{3})?'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_stop_count">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_stop_count attribute
+        provides the value of the spacecraft clock at the beginning of a
+        time period of interest. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='[1-9]/[0-9]{9}(.[0-9]{3})?'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="standard_data_product_id">
+    <xs:annotation>
+      <xs:documentation>The standard_data_product_id keyword is used to
+        identify data products of the same processing level that are not
+        otherwise indentified by being in different collections within
+        the bundle.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pds:ASCII_Short_String_Collapsed">
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="subject">
+    <xs:annotation>
+      <xs:documentation>This keyword was used during ground tests to
+        describe the subject used during the test.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_baffle">
+    <xs:annotation>
+      <xs:documentation>Name: TBF Location: Baffle H/K Sensor: Baffle
+        Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor
+        Offset FC1: -2.1 Sensor Offset FC2: -3.1 T_BAFFLE = DN * Gain +
+        Offset + Sensor Offset + 273.150 [deg C] T_BAFFLE = DN * Gain +
+        Offset + Sensor Offset [Kelvin] Lower limit red: -55.0 deg C
+        Lower limit yellow: -50.0 deg C Upper limit yellow: +40.0 deg C
+        Upper limit red: +45.0 deg C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_ccd">
+    <xs:annotation>
+      <xs:documentation>Name: HK-Tccd Location: DPU H/K Sensor: FEE CCD
+        Thermistor Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor
+        Offset FC1: -5.240 Sensor Offset FC2: -3.960 T_CCD = DN * Gain +
+        Offset + Sensor Offset [deg C] T_CCD = DN * Gain + Offset +
+        Sensor Offset + 273.150 [Kelvin] The CCD is passively cooled,
+        the CCD-heaters are for non-operation mode only. Lower limit
+        red: -95.0 deg C Lower limit yellow: -75.0 deg C Upper limit
+        yellow: +35.0 deg C Upper limit red: +40.0 deg
+        C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_cover_motor">
+    <xs:annotation>
+      <xs:documentation>Name: TCM Location: Front Door H/K Sensor: FD
+        Motor Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5
+        Sensor Offset FC1: -2.1 Sensor Offset FC2: -1.1 T_COVER_MOTOR =
+        DN * Gain + Offset + Sensor Offset [deg C] T_COVER_MOTOR = DN *
+        Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit
+        red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit
+        yellow: +50.0 deg C Upper limit red: +60.0 deg
+        C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_csc">
+    <xs:annotation>
+      <xs:documentation>Name: HK-Tpcu3 Location: PCU H/K Sensor: PCU
+        Board Thermistor 1 (PCU Center Screw Thermistor) Sensor Type:
+        AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -3.210 Sensor
+        Offset FC2: -3.210 T_CSC = DN * Gain + Offset + Sensor Offset
+        [deg C] T_CSC = DN * Gain + Offset + Sensor Offset + 273.150
+        [Kelvin] The CCD is passively cooled, the CCD-heaters are for
+        non-operation mode only. Lower limit red: -40.0 deg C Lower
+        limit yellow: -35.0 deg C Upper limit yellow: +70.0 deg C Upper
+        limit red: +80.0 deg C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_dcdc">
+    <xs:annotation>
+      <xs:documentation>Name: HK-Tpcu1 Location: PCU H/K Sensor: PCU
+        Converter Board Thermistor Sensor Type: AD590 Gain: 0.0373
+        Offset: -273 Sensor Offset FC1: -1.980 Sensor Offset FC2: -1.980
+        T_DCDC = DN * Gain + Offset + Sensor Offset [deg C] T_DCDC = DN
+        * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit
+        red: -40.0 deg C Lower limit yellow: -35.0 deg C Upper limit
+        yellow: +70.0 deg C Upper limit red: +80.0 deg
+        C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_dpu">
+    <xs:annotation>
+      <xs:documentation>Name: HK-Tdpu Location: DPU H/K Sensor: DPU
+        Board Thermistor Sensor Type: AD590 Gain: 0.0373 Offset: -273
+        Sensor Offset FC1: -7.960 Sensor Offset FC2: -3.960 T_DPU = DN *
+        Gain + Offset + Sensor Offset [deg C] T_DPU = DN * Gain + Offset
+        + Sensor Offset + 273.150 [Kelvin] Lower limit red: -40.0 deg C
+        Lower limit yellow: -35.0 deg C Upper limit yellow: +80.0 deg C
+        Upper limit red: +90.0 deg C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_f12">
+    <xs:annotation>
+      <xs:documentation>Name: HK-Tpcu2 Location: PCU H/K Sensor: PCU
+        Board Thermistor 1 (PCU FEE 12 V I/F Thermistor) Sensor Type:
+        AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -2.580 Sensor
+        Offset FC2: -2.580 T_F12 = DN * Gain + Offset + Sensor Offset
+        [deg C] T_F12 = DN * Gain + Offset + Sensor Offset + 273.150
+        [Kelvin] Lower limit red: -40.0 deg C Lower limit yellow: -35.0
+        deg C Upper limit yellow: +70.0 deg C Upper limit red: +80.0 deg
+        C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_filter_motor">
+    <xs:annotation>
+      <xs:documentation>Name: TFM Location: Filter Wheel H/K Sensor:
+        Filter Motor Thermistor Sensor Type: AD590 Gain: 0.9975 Offset:
+        -129.5 Sensor Offset FC1: -3.1 Sensor Offset FC2: -2.1
+        T_FILTER_MOTOR = DN * Gain + Offset + Sensor Offset [deg C]
+        T_FILTER_MOTOR = DN * Gain + Offset\ + Sensor Offset + 273.150
+        [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0
+        deg C Upper limit yellow: +50.0 deg C Upper limit red: +60.0 deg
+        C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_lens_barrel">
+    <xs:annotation>
+      <xs:documentation>Name: TLB Location: Lens Barrel H/K Sensor: Lens
+        Barrel Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5
+        Sensor Offset FC1: -1.1 Sensor Offset FC2: -1.1 T_LENS_BARREL =
+        DN * Gain + Offset + Sensor Offset [deg C] T_LENS_BARREL = DN *
+        Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit
+        red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit
+        yellow: +40.0 deg C Upper limit red: +45.0 deg
+        C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_rad_motor">
+    <xs:annotation>
+      <xs:documentation>Name: TRD Location: Radiator H/K Sensor:
+        Radiator Thermistor Sensor Type: AD590 Gain: 0.9975 Offset:
+        -129.5 Sensor Offset FC1: -1.1 Sensor Offset FC2: -1.1
+        T_RAD_MOTOR = DN * Gain + Offset + Sensor Offset [deg C]
+        T_RAD_MOTOR = DN * Gain + Offset + Sensor Offset + 273.150
+        [Kelvin] Lower limit red: -115.0 deg C Lower limit yellow: -95.0
+        deg C Upper limit yellow: +35.0 deg C Upper limit red: +40.0 deg
+        C Note: This is not a motor temperature!</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="t_structure">
+    <xs:annotation>
+      <xs:documentation>Name: TCS Location: Camera Head H/K Sensor: CH
+        Structure Thermistor Sensor Type: AD590 Gain: 0.9975 Offset:
+        -129.5 Sensor Offset FC1: -3.1 Sensor Offset FC2: -4.1
+        T_STRUCTURE = DN * Gain + Offset + Sensor Offset [deg C]
+        T_STRUCTURE = DN * Gain + Offset + Sensor Offset + 273.150
+        [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0
+        deg C Upper limit yellow: +40.0 deg C Upper limit red: +45.0 deg
+        C</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-999.999"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="target">
+    <xs:annotation>
+      <xs:documentation>This keyword was used during ground tests to
+        describe the target the FC was pointing at during the
+        test</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="test_lamp">
+    <xs:annotation>
+      <xs:documentation>This keyword was used during ground tests to
+        define the lamp that was used during the test.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="udplib_software_version">
+    <xs:annotation>
+      <xs:documentation>Current version of the FC UDP
+        library</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="use_pre_clear">
+    <xs:annotation>
+      <xs:documentation>OFF = No pre-clear of the CCD prior to an image
+        acquisition. ON = A pre-clear of the CCD, 193 ms prior to an
+        image acquisition, removes all charge that is on the CCD at this
+        moment</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_String">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="v_12">
+    <xs:annotation>
+      <xs:documentation>Name: V12FEE Location: PCU H/K Sensor: PCU
+        Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.0012 Offset:
+        0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_12 = DN * Gain +
+        Offset + Sensor Offset [V] Lower limit red: 11.0 V Lower limit
+        yellow: 11.7 V Upper limit yellow: 12.5 V Upper limit red: 13.0
+        V</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="v_16">
+    <xs:annotation>
+      <xs:documentation>Name: V16V15 Location: PCU H/K Sensor: PCU
+        Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.000165
+        Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_16 = DN *
+        Gain + Offset + Sensor Offset [V] Lower limit red: 14.7 V Lower
+        limit yellow: 15.2 V Upper limit yellow: 16.5 V Upper limit red:
+        17.0 V</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="v_28">
+    <xs:annotation>
+      <xs:documentation>Name: V28M Location: PCU H/K Sensor: Main +28V
+        Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.04 Offset: 0
+        Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_28 = DN * Gain +
+        Offset + Sensor Offset [V] Lower limit red: 20.0 V Lower limit
+        yellow: 21.5 V Upper limit yellow: 35.5 V Upper limit red: 37.0
+        V</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="v_2_5">
+    <xs:annotation>
+      <xs:documentation>Name: V2.5AN Location: PCU H/K Sensor: PCU
+        Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00025
+        Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_2_5 = DN *
+        Gain + Offset + Sensor Offset [V] Lower limit red: 2.1 V Lower
+        limit yellow: 2.3 V Upper limit yellow: 2.8 V Upper limit red:
+        3.0 V</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="v_3_3">
+    <xs:annotation>
+      <xs:documentation>Name: V3.3AN Location: PCU H/K Sensor: PCU
+        Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00033
+        Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_3_3 = DN *
+        Gain + Offset + Sensor Offset [V] Lower limit red: 3.0 V Lower
+        limit yellow: 3.2 V Upper limit yellow: 3.7 V Upper limit red:
+        3.9 V</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="v_5">
+    <xs:annotation>
+      <xs:documentation>Name: V5FEE Location: PCU H/K Sensor: PCU
+        Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00052
+        Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_5 = DN *
+        Gain + Offset + Sensor Offset [V] Lower limit red: 4.5 V Lower
+        limit yellow: 4.7 V Upper limit yellow: 5.5 V Upper limit red:
+        5.8 V</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="v_5_analog">
+    <xs:annotation>
+      <xs:documentation>Name: V5AN Location: PCU H/K Sensor: PCU Voltage
+        Monitor Sensor Type: Voltage Sensor Gain: 0.00052 Offset: 0
+        Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_5_ANALOG = DN * Gain
+        + Offset + Sensor Offset [V] Lower limit red: 4.5 V Lower limit
+        yellow: 4.7 V Upper limit yellow: 5.5 V Upper limit red: 5.8
+        V</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="v_m5">
+    <xs:annotation>
+      <xs:documentation>Name: V-5FEE Location: PCU H/K Sensor: PCU
+        Voltage Monitor Sensor Type: Voltage Sensor Gain: -0.0005
+        Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_M5 = DN *
+        Gain + Offset + Sensor Offset [V] Lower limit red: -5.8 V Lower
+        limit yellow: -5.5 V Upper limit yellow: -4.7 V Upper limit red:
+        -4.5 V</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="v_m5_analog">
+    <xs:annotation>
+      <xs:documentation>Name: V-5AN Location: PCU H/K Sensor: PCU
+        Voltage Monitor Sensor Type: Voltage Sensor Gain: -0.0005
+        Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_M5_ANALOG
+        = DN * Gain + Offset + Sensor Offset [V] Lower limit red: -5.8 V
+        Lower limit yellow: -5.5 V Upper limit yellow: -4.7 V Upper
+        limit red: -4.5 V</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-9999.999"/>
+     <xs:maxInclusive value="9999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_ir_start_x_position">
+    <xs:annotation>
+      <xs:documentation> This keyword gives the X coordinate of the
+        first CCD pixel used on the IR FPA. This quantity determines the
+        correspondence between wavelength and spectral
+        channels.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_ir_start_y_position">
+    <xs:annotation>
+      <xs:documentation> This keyword gives the Y coordinate of the
+        first CCD pixel used on the IR FPA. This quantity determines the
+        correspondence between wavelength and spectral
+        channels.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_vis_start_x_position">
+    <xs:annotation>
+      <xs:documentation> This keyword gives the X coordinate of the
+        first CCD pixel used on the VIS FPA. This quantity determines
+        the correspondence between wavelength and spectral
+        channels.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_vis_start_y_position">
+    <xs:annotation>
+      <xs:documentation> This keyword gives the Y coordinate of the
+        first CCD pixel used on the VIS FPA. This quantity determines
+        the correspondence between wavelength and spectral
+        channels.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
