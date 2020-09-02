@@ -1,0 +1,2614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.sch"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.xsd">
+
+	<name>Dawn</name>
+	<ldd_version_id>1.1.0.0</ldd_version_id>
+	<full_name>Steven P. Joy</full_name>
+	<steward_id>ppi</steward_id>
+	<namespace_id>dawn</namespace_id>
+    <comment> 
+      v1.0.0.0  2018-11-14
+		-  Created PDS4 LDD based on PDS3 Catalog file content.
+      v1.1.0.0  2020-07-23
+		-  Added support for GRaND instrument
+		
+		
+	</comment>
+	<last_modification_date_time>2020-07-23T22:00:00.000Z</last_modification_date_time>
+
+
+	<DD_Attribute>
+		<name>mission_phase_name</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.mission_phase_name</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The mission_phase_name attribute provides the mission-defined 
+			   name of a mission phase.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<maximum_characters>255</maximum_characters>
+			<DD_Permissible_Value>
+				<value>Launch</value>
+				<value_meaning>2007-09-27T11:34</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>INITIAL CHECKOUT (ICO)</value>
+				<value_meaning>2007-09-27 to 2008-01-19T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>EARTH-MARS CRUISE (EMC)</value>
+				<value_meaning>2008-01-19T00:00 to 2009-02-16T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>MARS GRAVITY ASSIST (MGA)</value>
+				<value_meaning>2009-02-16T00:00 to 2010-03-23T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>MARS-VESTA CRUISE (MVC)</value>
+				<value_meaning>2010-03-23T00:00 to 2011-05-03T10:49</value_meaning>
+			</DD_Permissible_Value>    
+			<DD_Permissible_Value>
+				<value>VESTA ENCOUNTER</value>
+				<value_meaning>2011-05-03T10:49 to 2012-09-10T21:50</value_meaning>
+			</DD_Permissible_Value>    
+			<DD_Permissible_Value>
+				<value>VESTA SCIENCE APPROACH (VSA)</value>
+				<value_meaning>2011-05-03T10:49 to 2011-08-11T12:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>VESTA SCIENCE SURVEY (VSS)</value>
+				<value_meaning>2011-08-11T12:00 to 2011-08-31T20:26</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>VESTA TRANSFER TO HAMO (VTH)</value>
+				<value_meaning>2011-08-31T20:26 to 2011-09-29T09:59</value_meaning>
+			</DD_Permissible_Value>    
+			<DD_Permissible_Value>
+				<value>VESTA SCIENCE HAMO (VSH)</value>
+				<value_meaning>2011-09-29T09:59 to 2011-11-02T10:40</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>VESTA TRANSFER TO LAMO (VTL)</value>
+				<value_meaning>2011-11-02T10:40 to 2011-12-12T22:44</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>VESTA SCIENCE LAMO (VSL)</value>
+				<value_meaning>2011-12-12T22:44 to 2012-05-01T11:50</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>VESTA TRANSFER TO HAMO 2 (VT2)</value>
+				<value_meaning>2012-05-01T11:50 to 2012-06-15T10:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>VESTA SCIENCE HAMO 2 (VH2)</value>
+				<value_meaning>2012-06-15T10:00 to 2012-07-25T15:10</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>VESTA TRANSFER TO CERES (VTC)</value>
+				<value_meaning>2012-07-25T15:10 to 2012-09-10T21:50</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>VESTA-CERES CRUISE (VCC)</value>
+				<value_meaning>2012-09-10T21:50 to 2014-12-26T02:50</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES ENCOUNTER</value>
+				<value_meaning>2014-12-26T02:50 to 2016-06-01</value_meaning>
+			</DD_Permissible_Value>           
+			<DD_Permissible_Value>
+				<value>CERES SCIENCE APPROACH (CSA)</value>
+				<value_meaning>2014-12-26T02:50 to 2015-04-24T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES SCIENCE RC3 (CSR)</value>
+				<value_meaning>2015-04-24T00:00 to 2015-05-09T10:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES TRANSFER TO SURVEY (CTS)</value>
+				<value_meaning>2015-05-09T10:00 to 2015-06-04T12:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES SCIENCE SURVEY (CSS)</value>
+				<value_meaning>2015-06-04T12:00 to 2015-07-01T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES TRANSFER TO HAMO (CTH)</value>
+				<value_meaning>2015-07-01T00:00 to 2015-08-16T23:59</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES SCIENCE HAMO (CSH)</value>
+				<value_meaning>2015-08-16T23:59 to 2015-10-23T20:30</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES TRANSFER TO LAMO (CTL)</value>
+				<value_meaning>2015-10-23:20:30 to 2015-12-16T01:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES SCIENCE LAMO (CSL)</value>
+				<value_meaning>2015-12-16T01:00 to 2016-06-19T12:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>END OF PRIME MISSION</value>
+				<value_meaning>2016-06-19T12:00</value_meaning>
+			</DD_Permissible_Value>                      
+			<DD_Permissible_Value>
+				<value>CERES EXTENDED MISSION</value>
+				<value_meaning>2016-06-19T12:00 to 2017-07-01T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES EXTENDED LAMO (CXL)</value>
+				<value_meaning>2016-06-19T12:00 to 2016-09-02T12:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES TRANSFER TO JULING (CTJ)</value>
+				<value_meaning>2016-09-02T12:00 to 2016-10-10T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES EXTENDED JULING (CXJ)</value>
+				<value_meaning>2016-10-10T00:00 to 2016-11-03T12:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES TRANSFER TO GRAND (CTG)</value>
+				<value_meaning>2016-11-03T12:00 to 2016-12-14T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES EXTENDED GRAND (CXG)</value>
+				<value_meaning>2016-12-14T00:00 to 2017-02-23T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES TRANSFER TO OPPOSITION (CTO)</value>
+				<value_meaning>2017-02-23T00:00 to 2017-04-28T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>CERES EXTENDED OPPOSITION (CXO)</value>
+				<value_meaning>2017-04-28T00:00 to 2017-07-01T00:00</value_meaning>
+			</DD_Permissible_Value>     
+			<DD_Permissible_Value>
+				<value>END OF CERES EXTENDED MISSION</value>
+				<value_meaning>2018-10-31T23:59</value_meaning>
+			</DD_Permissible_Value>                      
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>spacecraft_clock_start_count</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.spacecraft_clock_start_count</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The spacecraft_clock_start_count attribute provides the value 
+					   of the spacecraft clock at the beginning of a time period of 
+					   interest.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<pattern>[1-9]/[0-9]{9}(.[0-9]{3})?</pattern>
+			<!-- Some data sets don't have the partition and some have only 8 digits -->
+		</DD_Value_Domain>
+	</DD_Attribute>    
+	<DD_Attribute>
+		<name>spacecraft_clock_stop_count</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.spacecraft_clock_stop_count</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The spacecraft_clock_stop_count attribute provides the value of the spacecraft 
+					   clock at the beginning of a time period of interest.
+		</definition>    
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<pattern>[1-9]/[0-9]{9}(.[0-9]{3})?</pattern>
+			<!-- See comment above -->
+		</DD_Value_Domain>
+	</DD_Attribute>       
+	<DD_Attribute>
+		<name>standard_data_product_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.standard_data_product_id</local_identifier>
+		<nillable_flag>true</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The standard_data_product_id keyword is used to identify
+					   data products of the same processing level that
+					   are not otherwise indentified by being in different
+					   collections within the bundle.</definition>    
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>     
+
+	<!-- Framing Camera (FC) attributes -->
+	<DD_Attribute>
+		<name>callamp_delay_time</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.callamp_delay_time</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Callamp switch on delay measured in
+                                    microseconds after START_TIME.
+
+                                    Callamp can be switched on before 
+                                    (less than 193000 µs), at (= 193000 µs), or after
+                                    (greater than 193000 µs) begin of exposure.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+			<minimum_value>0</minimum_value>
+			<maximum_value>10000000</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>callamp_duty</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.callamp_duty</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The callamp can be run at various
+                                    duty cycles between 0.0 % and 100.0 % by
+                                    using only every other pulse of the callamp
+                                    frequency to trigger the callamp. 
+
+                                    DAWN_CALLAMP_DUTY = CALLAMP_FREQUENCY
+                                                        / Value * 100 %
+
+                                    Example:
+                                    Value = 1.0 : DAWN_CALLAMP_DUTY = 100 %
+                                    Value = 2.5 : DAWN_CALLAMP_DUTY = 40 %
+
+                                    This calculation is done internally in the
+                                    camera, the user  commands the requensted
+                                    duty cycle in percentage.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>0.0</minimum_value>
+			<maximum_value>100.0</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>callamp_enable_flag</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.callamp_enable_flag</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>OFF = callamp set to disabled
+
+                                    ON = callamp set to enabled</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>OFF</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>ON</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>callamp_frequency</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.callamp_frequency</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The callamp frequency is determined by the 
+                                    internal 24 MHz clock and an integer
+                                    divisor.                                     
+
+                                    CALLAMP_FREQUENCY = 24 MHz / Value
+
+                                    The standard callamp frequency is 100 kHz
+                                    (24MHz / 240).</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>0.0</minimum_value>
+			<maximum_value>250.0</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>callamp_strobe_time</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.callamp_strobe_time</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Callamp strobe time is measured in 
+                                    microseconds after callamp switch on.
+
+                                    callamp switch off time =
+                                    START_TIME +
+                                    DAWN_CALLAMP_DELAY_TIME +
+                                    DAWN_CALLAMP_STROBE_TIME</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+			<minimum_value>0</minimum_value>
+			<maximum_value>10000000</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>chamber</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.chamber</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword was used during ground tests to 
+                                    describe the test environment.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>data_routing_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.data_routing_id</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword describes the priority of the
+                                    acquired image and thus how it was handled
+                                    on board.
+
+                                    Op-Nav = The image is processed with highest
+                                    priority and streamed into VR10 of the s/c.
+
+                                    Science 1 = The image is processed with high
+                                    priority and streamed into VR8 of the s/c.
+
+                                    Science 2 = The image is processed with mid
+                                    priority and streamed into VR8 of the s/c.
+
+                                    Science 3 = The image is processed with low
+                                    priority and streamed into VR8 of the s/c.
+
+                                    Science 4 = The image is processed with
+                                    least priority and streamed into VR8 of the
+                                    s/c.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>Op-Nav</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>Science 1</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>Science 1</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>Science 1</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>Science 1</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>dpu_hardware_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.dpu_hardware_id</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Both DPUs for FC1 and FC2 have the same
+                                    DPU ID because they are identical.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>dpu_software_version</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.dpu_software_version</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Current version of the FC onboard software</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>fee_flag</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.fee_flag</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>OFF = FEE is disabled, images cannot be
+                                    acquired
+
+                                    ON = FEE is enabled, images can be acquired</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>OFF</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>ON</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>fee_hardware_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.fee_hardware_id</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>017.10.10 = FEE ID of FC1 (FS1) 
+
+                                   017.09.09 = FEE ID of FC2 (FM2)
+
+                                   063.15.15 indicates that the FEE is off or
+                                   busy and cannot transmit its ID.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>017.09.09</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>017.10.10</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>filter_encoder</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.filter_encoder</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>FILTER_NUMBER =
+                                    (((64 + 4 + encoderOnClearFilter
+                                    - FILTER_ENCODER) / 8) MOD 8) + 1
+
+                                    encoderOnClearFilter is a hardware-dependent
+                                    constant filterEncoder is the current
+                                    readout of the encoder filterNumber
+                                    return a value in the range [1..8].
+
+                                    All the operation are integer operations,
+                                    MOD represents modulo and / is the integer
+                                    division. The subtraction is negative
+                                    (F1 - Fx) because the encoder value
+                                    decreases with increasing filter number.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+			<minimum_value>0</minimum_value>
+			<maximum_value>63</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>front_dood_status_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.front_dood_status_id</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>CLOSED = Front Door, covering the aperture,
+                                    is closed.
+
+                                    DOOR = Front Door is open.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>CLOSED</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>OPEN</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>front_door_encoder</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.front_door_encoder</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The Front Door is closed if
+                                    FRONT_DOOR_ENCODER shows the nominal value
+                                    +/- 1 and otherwise is open.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+			<minimum_value>0</minimum_value>
+			<maximum_value>63</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>fsa_shoot_enable_flag</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.fsa_shoot_enable_flag</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Fail Safe Actuator:
+                                    OFF = The Fail Safe Actuator for the
+                                    Front Door is disabled.
+
+                                    ON = The Fail Safe Actuator for the
+                                    Front Door is enabled. FSA_SHOOT_FLAG can be
+                                    switched ON now.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>OFF</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>ON</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>fsa_shoot_flag</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.fsa_shoot_flag</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Fail Safe Actuator:
+                                    OFF = The Fail Safe Actuator for the
+                                    Front Door is switched off.
+
+                                    ON = The Fail Safe Actuator for the
+                                    Front Door is switched on.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>OFF</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>ON</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>heater0_flag</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.heater0_flag</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Camera Head Heater:
+                                    OFF = The CH heater (HEATER0) is
+                                    switched on. 
+
+                                    ON = The CH heater (HEATER0) is
+                                    switched off.
+
+                                    The heater produces 4.4 W (5.6 Ohm at +5 V)</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>OFF</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>ON</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>heater1_flag</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.heater1_flag</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Baffle Heater:
+                                    OFF = The Baffle heater (HEATER1) is
+                                    switched on. 
+
+                                    ON = The Baffle heater (HEATER1) is
+                                    switched off.
+
+                                    The heater produces 1.0 W (26 Ohm at +5 V)</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>OFF</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>ON</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>image_acquire_mode</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.image_acquire_mode</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword describes the mode of image
+                                    acquisition.
+
+                                    NORMAL = The image was acquired with Front
+                                    Door open.
+
+                                    DARK = The image was acquired with
+                                    Front Door closed and the Callamp off.
+
+                                    FLATFIELD = The image was acquired with
+                                    Front Door closed and the Callamp on.
+
+                                    STORAGE = The image shows the readout of the
+                                    storage area of the CCD.
+
+                                    SERIAL = The artificial image shows the
+                                    readout of the serial register. 
+
+                                    TEST_CH = The artificial iamge shows a test
+                                    pattern with DNs from 0 to 16382.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>NORMAL</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>DARK</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>FLATFIELD</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>STORAGE</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>SERIAL</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>TEST_CH</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>i_12</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.i_12</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: C12FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.02
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_12 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+
+                                   Lower limit red: 50 mA
+                                   Lower limit yellow: 60 mA
+                                   Upper limit yellow: 100 mA
+                                   Upper limit red: 200 mA</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>i_16</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.i_16</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: C16V15
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.009
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_16 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+
+                                   Lower limit red: 20 mA
+                                   Lower limit yellow: 30 mA
+                                   Upper limit yellow: 60 mA
+                                   Upper limit red: 100 mA</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>i_28</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.i_28</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: C28M
+                                   Location: PCU
+                                   H/K Sensor: MAIN +28V Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.0016
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_28 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+
+                                   Lower limit red: 200 mA
+                                   Lower limit yellow: 250 mA
+                                   Upper limit yellow: 1200 mA
+                                   Upper limit red: 1400 mA</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>i_2_5</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.i_2_5</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: C2.5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.15
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_2_5 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+
+                                   Lower limit red: 250 mA
+                                   Lower limit yellow: 300 mA
+                                   Upper limit yellow: 900 mA
+                                   Upper limit red: 1000 mA</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>i_3_3</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.i_3_3</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: C3.3AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.15
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_3_3 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+
+                                   Lower limit red: 100 mA
+                                   Lower limit yellow: 170 mA
+                                   Upper limit yellow: 850 mA
+                                   Upper limit red: 1400 mA</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>i_5</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.i_5</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: C5FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.05
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_2_5 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+
+                                   Lower limit red: 100 mA
+                                   Lower limit yellow: 250 mA
+                                   Upper limit yellow: 350 mA
+                                   Upper limit red: 400 mA</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>i_5_analog</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.i_5_analog</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: C5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: 0.2
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_5_ANALOG = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+
+                                   Lower limit red: 75 mA
+                                   Lower limit yellow: 100 mA
+                                   Upper limit yellow: 1150 mA
+                                   Upper limit red: 1300 mA</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>i_m5</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.i_m5</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: C-5FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: -0.015
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_M5 = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+
+                                   Lower limit red: -200 mA
+                                   Lower limit yellow: -120 mA
+                                   Upper limit yellow: -60 mA
+                                   Upper limit red: -30 mA</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>i_m5_analog</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.i_m5_analog</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: C-5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Current Monitor
+                                   Sensor Type: Current Sensor
+                                   Gain: -0.015
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   I_M5_ANALOG = DN * Gain + Offset + Sensor Offset
+                                              [mA]
+
+                                   Lower limit red: -100 mA
+                                   Lower limit yellow: -60 mA
+                                   Upper limit yellow: -20 mA
+                                   Upper limit red: -10 mA</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>mcu_flag</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.mcu_flag</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>OFF = MCU is disabled, mechanisms cannot
+                                    be moved
+
+                                    ON = MCU is enabled, mechanisms (filterwheel  
+                                    and front door) can be moved</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>OFF</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>ON</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>mcu_hardware_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.mcu_hardware_id</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>10 = MCU ID of FC1 (FS1) 
+
+                                   12 = MCU ID of FC2 (FM2)</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>10</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>12</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>mcu_motor_flag</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.mcu_motor_flag</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>OFF = Both motors (Front Door and
+                                          Filterwheel) are unpowered.
+
+                                    ON = Both motors are powered. Either to hold
+                                         their position or to move to another
+                                         position.  
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>OFF</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>ON</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>operator</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.operator</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword was used during ground tests to 
+                                    indicate the responsible operator of the
+                                    test.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>pcu_hardware_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.pcu_hardware_id</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>3.05 = PCU ID of FC1 (FS1) 
+
+                                   2.04 = PCU ID of FC2 (FM2)</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>2.04</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>3.05</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>purpose</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.purpose</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword was used during ground tests to 
+                                    describe the purpose of the test.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>subject</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.subject</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword was used during ground tests to 
+                                    describe the subject used during the test.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>target</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.target</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword was used during ground tests to 
+                                    describe the target the FC was pointing at
+                                    during the test</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>test_lamp</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.test_lamp</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword was used during ground tests to 
+                                    define the lamp that was used during the
+                                    test.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_baffle</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_baffle</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: TBF
+                                   Location: Baffle
+                                   H/K Sensor: Baffle Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -2.1 
+                                   Sensor Offset FC2: -3.1
+
+                                   T_BAFFLE = DN * Gain + Offset + Sensor Offset
+                                              + 273.150 [deg C]
+                                   T_BAFFLE = DN * Gain + Offset + Sensor Offset
+                                              [Kelvin]
+
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +40.0 deg C
+                                   Upper limit red: +45.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_ccd</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_ccd</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: HK-Tccd
+                                   Location: DPU
+                                   H/K Sensor: FEE CCD Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -5.240
+                                   Sensor Offset FC2: -3.960
+
+                                   T_CCD = DN * Gain + Offset + Sensor Offset
+                                              [deg C]
+                                   T_CCD = DN * Gain + Offset + Sensor Offset
+                                              + 273.150 [Kelvin]
+
+                                   The CCD is passively cooled, the CCD-heaters
+                                   are for non-operation mode only.
+
+                                   Lower limit red: -95.0 deg C
+                                   Lower limit yellow: -75.0 deg C
+                                   Upper limit yellow: +35.0 deg C
+                                   Upper limit red: +40.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_cover_motor</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_cover_motor</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: TCM
+                                   Location: Front Door
+                                   H/K Sensor: FD Motor Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -2.1 
+                                   Sensor Offset FC2: -1.1
+
+                                   T_COVER_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_COVER_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset + 273.150 [Kelvin]
+
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +50.0 deg C
+                                   Upper limit red: +60.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_csc</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_csc</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: HK-Tpcu3
+                                   Location: PCU
+                                   H/K Sensor: PCU Board Thermistor 1
+                                   (PCU Center Screw Thermistor)
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -3.210
+                                   Sensor Offset FC2: -3.210
+
+                                   T_CSC = DN * Gain + Offset + Sensor Offset
+                                              [deg C]
+                                   T_CSC = DN * Gain + Offset + Sensor Offset
+                                              + 273.150 [Kelvin]
+
+                                   The CCD is passively cooled, the CCD-heaters
+                                   are for non-operation mode only.
+
+                                   Lower limit red: -40.0 deg C
+                                   Lower limit yellow: -35.0 deg C
+                                   Upper limit yellow: +70.0 deg C
+                                   Upper limit red: +80.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_dcdc</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_dcdc</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: HK-Tpcu1
+                                   Location: PCU
+                                   H/K Sensor: PCU Converter Board Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -1.980
+                                   Sensor Offset FC2: -1.980
+
+                                   T_DCDC = DN * Gain + Offset + Sensor Offset
+                                            [deg C]
+                                   T_DCDC = DN * Gain + Offset + Sensor Offset
+                                            + 273.150 [Kelvin]
+
+                                   Lower limit red: -40.0 deg C
+                                   Lower limit yellow: -35.0 deg C
+                                   Upper limit yellow: +70.0 deg C
+                                   Upper limit red: +80.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_dpu</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_dpu</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: HK-Tdpu
+                                   Location: DPU
+                                   H/K Sensor: DPU Board Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -7.960
+                                   Sensor Offset FC2: -3.960
+
+                                   T_DPU = DN * Gain + Offset + Sensor Offset
+                                           [deg C]
+                                   T_DPU = DN * Gain + Offset + Sensor Offset
+                                           + 273.150 [Kelvin]
+
+                                   Lower limit red: -40.0 deg C
+                                   Lower limit yellow: -35.0 deg C
+                                   Upper limit yellow: +80.0 deg C
+                                   Upper limit red: +90.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_f12</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_f12</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: HK-Tpcu2
+                                   Location: PCU
+                                   H/K Sensor: PCU Board Thermistor 1
+                                   (PCU FEE 12 V I/F Thermistor)
+                                   Sensor Type: AD590
+                                   Gain: 0.0373
+                                   Offset: -273
+                                   Sensor Offset FC1: -2.580
+                                   Sensor Offset FC2: -2.580
+
+                                   T_F12 = DN * Gain + Offset + Sensor Offset
+                                           [deg C]
+                                   T_F12 = DN * Gain + Offset + Sensor Offset
+                                           + 273.150 [Kelvin]
+
+                                   Lower limit red: -40.0 deg C
+                                   Lower limit yellow: -35.0 deg C
+                                   Upper limit yellow: +70.0 deg C
+                                   Upper limit red: +80.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_filter_motor</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_filter_motor</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: TFM
+                                   Location: Filter Wheel
+                                   H/K Sensor: Filter Motor Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -3.1 
+                                   Sensor Offset FC2: -2.1
+
+                                   T_FILTER_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_FILTER_MOTOR = DN * Gain + Offset\
+                                   + Sensor Offset + 273.150 [Kelvin]
+
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +50.0 deg C
+                                   Upper limit red: +60.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_lens_barrel</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_lens_barrel</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: TLB
+                                   Location: Lens Barrel
+                                   H/K Sensor: Lens Barrel Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -1.1 
+                                   Sensor Offset FC2: -1.1
+
+                                   T_LENS_BARREL = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_LENS_BARREL = DN * Gain + Offset
+                                   + Sensor Offset + 273.150 [Kelvin]
+
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +40.0 deg C
+                                   Upper limit red: +45.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_rad_motor</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_rad_motor</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: TRD
+                                   Location: Radiator
+                                   H/K Sensor: Radiator Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -1.1 
+                                   Sensor Offset FC2: -1.1
+
+                                   T_RAD_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_RAD_MOTOR = DN * Gain + Offset
+                                   + Sensor Offset + 273.150 [Kelvin]
+
+                                   Lower limit red: -115.0 deg C
+                                   Lower limit yellow: -95.0 deg C
+                                   Upper limit yellow: +35.0 deg C
+                                   Upper limit red: +40.0 deg C
+
+                                   Note: This is not a motor temperature!</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>t_structure</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.t_structure</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: TCS
+                                   Location: Camera Head
+                                   H/K Sensor: CH Structure Thermistor
+                                   Sensor Type: AD590
+                                   Gain: 0.9975
+                                   Offset: -129.5
+                                   Sensor Offset FC1: -3.1 
+                                   Sensor Offset FC2: -4.1
+
+                                   T_STRUCTURE = DN * Gain + Offset
+                                   + Sensor Offset [deg C]
+                                   T_STRUCTURE = DN * Gain + Offset
+                                   + Sensor Offset + 273.150 [Kelvin]
+
+                                   Lower limit red: -55.0 deg C
+                                   Lower limit yellow: -50.0 deg C
+                                   Upper limit yellow: +40.0 deg C
+                                   Upper limit red: +45.0 deg C</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-999.999</minimum_value>
+			<maximum_value>999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>udplib_software_version</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.udplib_software_version</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Current version of the FC UDP library</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>use_pre_clear</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.use_pre_clear</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>OFF = No pre-clear of the CCD prior to an
+                                    image acquisition.
+
+                                    ON = A pre-clear of the CCD, 193 ms prior to
+                                    an image acquisition, removes all charge
+                                    that is on the CCD at this moment</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+			<DD_Permissible_Value>
+				<value>OFF</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>ON</value>
+				<value_meaning/>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>v_12</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.v_12</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: V12FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.0012
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_12 = DN * Gain + Offset + Sensor Offset
+                                          [V]
+
+                                   Lower limit red: 11.0 V
+                                   Lower limit yellow: 11.7 V
+                                   Upper limit yellow: 12.5 V
+                                   Upper limit red: 13.0 V</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>v_16</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.v_16</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: V16V15
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.000165
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_16 = DN * Gain + Offset + Sensor Offset
+                                          [V]
+
+                                   Lower limit red: 14.7 V
+                                   Lower limit yellow: 15.2 V
+                                   Upper limit yellow: 16.5 V
+                                   Upper limit red: 17.0 V</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>v_28</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.v_28</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: V28M
+                                   Location: PCU
+                                   H/K Sensor: Main +28V Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.04
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_28 = DN * Gain + Offset + Sensor Offset
+                                          [V]
+
+                                   Lower limit red: 20.0 V
+                                   Lower limit yellow: 21.5 V
+                                   Upper limit yellow: 35.5 V
+                                   Upper limit red: 37.0 V</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>v_2_5</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.v_2_5</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: V2.5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.00025
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_2_5 = DN * Gain + Offset + Sensor Offset
+                                           [V]
+
+                                   Lower limit red: 2.1 V
+                                   Lower limit yellow: 2.3 V
+                                   Upper limit yellow: 2.8 V
+                                   Upper limit red: 3.0 V</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>v_3_3</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.v_3_3</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: V3.3AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.00033
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_3_3 = DN * Gain + Offset + Sensor Offset
+                                           [V]
+
+                                   Lower limit red: 3.0 V
+                                   Lower limit yellow: 3.2 V
+                                   Upper limit yellow: 3.7 V
+                                   Upper limit red: 3.9 V</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>v_5</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.v_5</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: V5FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.00052
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_5 = DN * Gain + Offset + Sensor Offset [V]
+
+                                   Lower limit red: 4.5 V
+                                   Lower limit yellow: 4.7 V
+                                   Upper limit yellow: 5.5 V
+                                   Upper limit red: 5.8 V</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>v_5_analog</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.v_5_analog</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: V5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: 0.00052
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_5_ANALOG = DN * Gain + Offset
+                                   + Sensor Offset [V]
+
+                                   Lower limit red: 4.5 V
+                                   Lower limit yellow: 4.7 V
+                                   Upper limit yellow: 5.5 V
+                                   Upper limit red: 5.8 V</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>v_m5</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.v_m5</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: V-5FEE
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: -0.0005
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_M5 = DN * Gain + Offset + Sensor Offset
+                                          [V]
+
+                                   Lower limit red: -5.8 V
+                                   Lower limit yellow: -5.5 V
+                                   Upper limit yellow: -4.7 V
+                                   Upper limit red: -4.5 V</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>v_m5_analog</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.v_m5_analog</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Name: V-5AN
+                                   Location: PCU
+                                   H/K Sensor: PCU Voltage Monitor
+                                   Sensor Type: Voltage Sensor
+                                   Gain: -0.0005
+                                   Offset: 0
+                                   Sensor Offset FC1: 0 
+                                   Sensor Offset FC2: 0
+
+                                   V_M5_ANALOG = DN * Gain + Offset
+                                   + Sensor Offset [V]
+
+                                   Lower limit red: -5.8 V
+                                   Lower limit yellow: -5.5 V
+                                   Upper limit yellow: -4.7 V
+                                   Upper limit red: -4.5 V</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>-9999.999</minimum_value>
+			<maximum_value>9999.999</maximum_value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>alt_start_time</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.alt_start_time</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+Same as global keyword START_TIME; allows one label to specify
+both YYYY-MM-DD and YYYY-DDD without using a list.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>alt_stop_time</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.alt_stop_time</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+Same as global keyword STOP_TIME; allows one label to specify
+both YYYY-MM-DD and YYYY-DDD without using a list.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<!-- Visual and Infrared Spectrometer (VIR) Attributes -->
+	<DD_Attribute>
+		<name>frame_parameter_unit</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.frame_parameter_unit</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword defines the units of FRAME_PARAMETER that define the individual
+frame parameters of an instrument that transfers single frames to the mass
+memory of the spacecraft or the instrument. The FRAME_PARAMETER element is
+also accompanied by the element FRAME_PARAMETER_DESC, e.g.
+FRAME_PARAMETER_DESC = ('EXPOSURE_DURATION', 'FRAME_SUMMING',
+'EXTERNAL_REPETITION_TIME', 'EXTERNAL DARK_ACQUISITION_RATE')</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>instrument_temperature_unit</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.instrument_temperature_unit</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+The units of instrument or some part of an instrument; for example:
+FOCAL PLANE, TELESCOPE, SPECTROMETER, CRYOCOOLER</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>vir_ir_start_x_position</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_ir_start_x_position</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword gives the X coordinate of the first CCD pixel used on
+the IR FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>vir_ir_start_y_position</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_ir_start_y_position</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword gives the Y coordinate of the first CCD pixel used on
+the IR FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>scan_parameter</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.scan_parameter</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Same as global keyword SCAN_PARAMETER
+                                      but allows negative values</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>scan_parameter_unit</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.scan_parameter_unit</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword defines the units of
+                                      DAWN:SCAN_PARAMETER</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>vir_vis_start_x_position</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_vis_start_x_position</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword gives the X coordinate of the first CCD pixel used on
+the VIS FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>vir_vis_start_y_position</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_vis_start_y_position</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword gives the Y coordinate of the first CCD pixel used on
+the VIS FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+
+	<DD_Attribute>
+		<name>grand_start_sclk</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand_start_sclk</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>The first SCLK for which this readout is applicable</definition>
+		<DD_Value_Domain>
+		  <enumeration_flag>false</enumeration_flag>
+		  <value_data_type>ASCII_Integer</value_data_type>
+		  <minimum_value>1</minimum_value>
+		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>grand_stop_sclk</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand_stop_sclk</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>The last SCLK for which this readout is applicable</definition>
+		<DD_Value_Domain>
+		  <enumeration_flag>false</enumeration_flag>
+		  <value_data_type>ASCII_Integer</value_data_type>
+		  <minimum_value>1</minimum_value>
+		  <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	
+	<DD_Attribute>
+		<name>grand_interval</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand_interval</local_identifier>
+		<nillable_flag>true</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>The duration of the interval.</definition>
+		<DD_Value_Domain>
+		  <enumeration_flag>false</enumeration_flag>
+		  <value_data_type>ASCII_Integer</value_data_type>
+		  <minimum_value>1</minimum_value>
+		  <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>comment</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.comment</local_identifier>
+		<nillable_flag>true</nillable_flag>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>Remarks about the containing object.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_String</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+
+	<DD_Class>
+		<name>TELREADOUT</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.TELREADOUT</local_identifier>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>A single scaler accumulation interval, and the first and last records and SCLKs for which the interval was in effect.</definition>
+		<DD_Association>
+			<identifier_reference>dawn.grand_start_sclk</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
+		  <DD_Association>
+			<identifier_reference>dawn.grand_stop_sclk</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
+		<DD_Association>
+		  <identifier_reference>dawn.grand_interval</identifier_reference>
+		  <reference_type>attribute_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.comment</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
+	  </DD_Class>
+
+	<DD_Class>
+	<name>TELREADOUT_List</name>
+	<version_id>1.0</version_id>
+	<local_identifier>dawn.TELREADOUT_List</local_identifier>
+	<submitter_name>GRaND Instrument</submitter_name>
+	<definition>A list of scaler accumulation intervals, along with the records for which they were in effect.</definition>
+	<DD_Association>
+		<identifier_reference>dawn.TELREADOUT</identifier_reference>
+		<reference_type>component_of</reference_type>
+		<minimum_occurrences>1</minimum_occurrences>
+		<maximum_occurrences>*</maximum_occurrences>
+	</DD_Association>
+	</DD_Class>
+
+	<DD_Class>
+		<name>TELSOH</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.TELSOH</local_identifier>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>A single state-of-health accumulation interval, and the first and last records and SCLKs for which the interval was in effect.</definition>
+		<DD_Association>
+			<identifier_reference>dawn.grand_start_sclk</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
+		  <DD_Association>
+			<identifier_reference>dawn.grand_stop_sclk</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		  </DD_Association>
+		  <DD_Association>
+		  <identifier_reference>dawn.grand_interval</identifier_reference>
+		  <reference_type>attribute_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.comment</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+	    </DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>TELSOH_List</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.TELSOH_List</local_identifier>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>A list of state-of-health accumulation intervals, along with the records for which they were in effect.</definition>
+		<DD_Association>
+		  <identifier_reference>dawn.TELSOH</identifier_reference>
+		  <reference_type>component_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>*</maximum_occurrences>
+		</DD_Association>
+	  </DD_Class>
+		
+	
+	<!-- Framing Camera (FC) Class -->
+	<DD_Class>
+		<name>fc</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.fc</local_identifier>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The Dawn "fc" class is the container for Dawn Framing Camera (FC) specific metadata elements.
+		</definition>
+		
+		<element_flag>false</element_flag>
+		
+		<DD_Association>
+			<local_identifier>dawn.callamp_delay_time</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.callamp_duty</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.callamp_enable_flag</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.callamp_frequency</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.callamp_strobe_time</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.chamber</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.data_routing_id</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.dpu_hardware_id</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.dpu_software_version</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.fee_flag</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.fee_hardware_id</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.filter_encoder</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.front_dood_status_id</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.front_door_encoder</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.fsa_shoot_enable_flag</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.fsa_shoot_flag</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.heater0_flag</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.heater1_flag</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.image_acquire_mode</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.i_12</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.i_16</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.i_28</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.i_2_5</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.i_3_3</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.i_5</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.i_5_analog</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.i_m5</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.i_m5_analog</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.mcu_flag</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.mcu_hardware_id</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.mcu_motor_flag</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.operator</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.pcu_hardware_id</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.purpose</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.subject</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.target</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.test_lamp</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_baffle</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_ccd</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_cover_motor</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_csc</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_dcdc</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_dpu</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_f12</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_filter_motor</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_lens_barrel</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_rad_motor</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.t_structure</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.udplib_software_version</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.use_pre_clear</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.v_12</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.v_16</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.v_28</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.v_2_5</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.v_3_3</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.v_5</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.v_5_analog</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.v_m5</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.v_m5_analog</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.alt_start_time</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.alt_stop_time</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+
+	<!-- Visual and Infrared Spectrometer (VIR) Class -->
+	<DD_Class>
+		<name>vir</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir</local_identifier>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The Dawn "vir" class is the container for Dawn Visual and Infrared Spectrometer (VIR) specific metadata elements.
+		</definition>
+		
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<local_identifier>dawn.frame_parameter_unit</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.instrument_temperature_unit</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.vir_ir_start_x_position</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.vir_ir_start_y_position</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.scan_parameter</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.scan_parameter_unit</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.vir_vis_start_x_position</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<local_identifier>dawn.vir_vis_start_y_position</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+
+	<DD_Class>
+		<name>grand</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand</local_identifier>
+		<submitter_name>GRaND Instrument</submitter_name>
+		<definition>GRaND parameters</definition>
+		<element_flag>true</element_flag>
+		<DD_Association>
+		  <identifier_reference>pds.Local_Internal_Reference</identifier_reference>
+		  <reference_type>component_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+		  <identifier_reference>dawn.TELREADOUT_List</identifier_reference>
+		  <reference_type>component_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+		  <identifier_reference>dawn.TELSOH_List</identifier_reference>
+		  <reference_type>component_of</reference_type>
+		  <minimum_occurrences>1</minimum_occurrences>
+		  <maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	  </DD_Class>
+
+
+	<DD_Class>
+		<name>Dawn</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn</local_identifier>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The Dawn class is the container for Dawn mission-specific metadata elements.
+		</definition>
+		<abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag> 
+
+		<!-- so that this class has element definition in the schema -->
+		<element_flag>true</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.mission_phase_name</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>*</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.spacecraft_clock_start_count</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.spacecraft_clock_stop_count</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.standard_data_product_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>dawn.fc</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>dawn.vir</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>dawn.grand</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+	</DD_Class>
+
+	<DD_Rule>
+		<local_identifier>grand_parameters_ref</local_identifier>
+		<rule_context>dawn:grand/pds:Local_Internal_Reference</rule_context>
+		<DD_Rule_Statement>
+		  <rule_type>Assert</rule_type>
+		  <rule_test>pds:local_reference_type = ('grand_parameters_to_table')</rule_test>
+		  <rule_message>In the grand:GRaND_Parameters class, the attribute pds:reference_type must be equal to 'grand_parameters_to_table'.</rule_message>
+		</DD_Rule_Statement>
+	  </DD_Rule>
+	
+</Ingest_LDD>
