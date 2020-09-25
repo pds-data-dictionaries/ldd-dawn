@@ -8,8 +8,8 @@
   <!-- 1.11.0.0 - dawn: - Dawn - ldd-dawn-s.xml                                  -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://pds.nasa.gov/pds4/dawn/v1"
-    xmlns:dawn="http://pds.nasa.gov/pds4/dawn/v1"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/dawn/v1"
+    xmlns:dawn="http://pds.nasa.gov/pds4/mission/dawn/v1"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"

@@ -7,7 +7,7 @@
   <sch:title>Schematron using XPath 2.0</sch:title>
 
   <sch:ns uri="http://pds.nasa.gov/pds4/pds/v1" prefix="pds"/>
-  <sch:ns uri="http://pds.nasa.gov/pds4/dawn/v1" prefix="dawn"/>
+  <sch:ns uri="http://pds.nasa.gov/pds4/mission/dawn/v1" prefix="dawn"/>
 
 		   <!-- ================================================ -->
 		   <!-- NOTE:  There are two types of schematron rules.  -->
