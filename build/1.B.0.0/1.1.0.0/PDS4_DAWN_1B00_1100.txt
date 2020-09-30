@@ -2,7 +2,7 @@ PDS4 Local Data Dictionary Processing Report
 
 Configuration:
    LDDTool Version        0.2.1.5b
-   Time                   Tue Sep 01 16:24:06 MST 2020
+   Time                   Fri Sep 25 08:41:09 MST 2020
    Core Schemas           [PDS4_PDS_1B00.xsd]
    Core Schematrons       [PDS4_PDS_1B00.sch]
    Common Model Version   1.11.0.0
@@ -16,8 +16,8 @@ Parameters:
    Input File             [ldd-dawn-s.xml]
    PDS Processing         true
    LDD Processing         true
-   Discipline LDD         true
-   Mission LDD            false
+   Discipline LDD         false
+   Mission LDD            true
    Write Attr Elements    false
    Merge with Master      false
 
