@@ -2136,11 +2136,11 @@ wavelength and spectral channels.</definition>
 	
 	<!-- Framing Camera (FC) Class -->
 	<DD_Class>
-		<name>fc</name>
+		<name>FC</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.fc</local_identifier>
+		<local_identifier>dawn.FC</local_identifier>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The Dawn "fc" class is the container for Dawn Framing Camera (FC) specific metadata elements.
+		<definition>The Dawn "FC" class is the container for Dawn Framing Camera (FC) specific metadata elements.
 		</definition>
 		
 		<element_flag>false</element_flag>
@@ -2739,14 +2739,14 @@ wavelength and spectral channels.</definition>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>dawn.fc</identifier_reference>
+			<identifier_reference>dawn.FC</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>dawn.vir</identifier_reference>
+			<identifier_reference>dawn.VIR</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
