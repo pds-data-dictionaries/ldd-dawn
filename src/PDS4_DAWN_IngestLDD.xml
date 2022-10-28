@@ -1808,7 +1808,7 @@
 	<DD_Attribute>
 		<name>software_version_id</name>
 		<version_id>1.0</version_id>
-		<local_identifier>software_version_id</local_identifier>
+		<local_identifier>dawn.software_version_id</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
 		<definition>The software_version_id attribute identifies the software used to write the labels and format the data.</definition>
