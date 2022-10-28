@@ -3,26 +3,15 @@
 >>  INFO IM Version Id: 1.18.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.24
->>  INFO Date: Wed Oct 26 21:52:52 UTC 2022
+>>  INFO Date: Fri Oct 28 17:32:30 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
 
->>> ERROR Init:  - LDD Dictionary_Type not Found:TBD_dictionary_type  Defaulting to Discipline
->>> ERROR Class:0001_NASA_PDS_1.dawn.FC  Association:dawn.front_dood_status_id  Attribute: dawn.front_dood_status_id - Missing Attribute
->>> ERROR Association: dawn.front_dood_status_id - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.dawn.Frame_Parameters  Association:dawn.exposure_durations  Attribute: dawn.exposure_durations - Missing Attribute
->>> ERROR Association: dawn.exposure_durations - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.dawn.Frame_Parameters  Association:dawn.dark_acquisition_rate  Attribute: dawn.dark_acquisition_rate - Missing Attribute
->>> ERROR Association: dawn.dark_acquisition_rate - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.dawn.VIR  Association:dawn.instrument_temperature_unit  Attribute: dawn.instrument_temperature_unit - Missing Attribute
->>> ERROR Association: dawn.instrument_temperature_unit - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.dawn.VIR  Association:dawn.scan_parameter  Attribute: dawn.scan_parameter - Missing Attribute
->>> ERROR Association: dawn.scan_parameter - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.dawn.VIR  Association:dawn.scan_parameter_unit  Attribute: dawn.scan_parameter_unit - Missing Attribute
->>> ERROR Association: dawn.scan_parameter_unit - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:  - The class grand must begin with an upper case letter.
+>>> ERROR Class:0001_NASA_PDS_1.dawn.VIR_Operational_Parameters  Association:dawn.software_version_id  Attribute: dawn.software_version_id - Missing Attribute
+>>> ERROR Association: dawn.software_version_id - Could not find referenced attribute - Reference Type: attribute_of
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
+>>> INFO Init:  - LDD Dictionary_Type is Mission
 >>> INFO Attribute: <standard_data_product_id> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <comment> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <mission_phase_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
@@ -97,6 +86,9 @@
 >>> INFO Attribute: <v_m5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
 >>> INFO Attribute: <v_m5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
 >>> INFO Attribute: <v_m5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <software_version_id> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <scan_mode_id> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <scan_mode_id> - The default maximum value provided by the attribute's data type is being overridden with 10
 >>> INFO Attribute: <grand_start_sclk> - The default minimum value provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <grand_stop_sclk> - The default minimum value provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <grand_interval> - The default minimum value provided by the attribute's data type is being overridden with 1
@@ -108,21 +100,15 @@
 >>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> WARNING Init:  - Config.Properties Namespace Id Not Found:dawn
->>> WARNING Attribute: <dark_acquisition_rate> - This local attribute was not used in an Association.
->>> WARNING Attribute: <exposure_duration> - This local attribute was not used in an Association.
->>> WARNING Attribute: <front_door_status_id> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <software_version_id> - This local attribute was not used in an Association.
 >>> WARNING Attribute: <dpu_hardware_id> - An attribute with the enumeration_flag = true must have at least one permissible value.
->>> WARNING Attribute: <alt_start_time> - An attribute with the enumeration_flag = true must have at least one permissible value.
->>> WARNING Attribute: <alt_stop_time> - An attribute with the enumeration_flag = true must have at least one permissible value.
->>> WARNING Attribute: <vir_ir_start_x_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
->>> WARNING Attribute: <vir_ir_start_y_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
 >>> WARNING Attribute: <vir_vis_start_x_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
 >>> WARNING Attribute: <vir_vis_start_y_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
->>> WARNING Class: <grand> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+>>> WARNING Class: <GRaND> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
 
  -- LDDTool Execution Summary --
-     12 warning(s)
-     14 error(s)
+     6 warning(s)
+     2 error(s)
      0 fatal error(s)
 
 Input:
