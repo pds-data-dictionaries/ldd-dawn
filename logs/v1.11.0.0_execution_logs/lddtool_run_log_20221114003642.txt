@@ -1,0 +1,226 @@
+
+>>  INFO LDDTOOL Version: 14.1.2
+>>  INFO IM Version Id: 1.11.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.17
+>>  INFO Date: Mon Nov 14 00:36:42 UTC 2022
+>>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
+>>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Rule
+>>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Assert
+
+>>> ERROR Init:  - LDD Dictionary_Type not Found:TBD_dictionary_type  Defaulting to Discipline
+>>> ERROR Class:  - The class fc must begin with an upper case letter.
+>>> ERROR Class:  - The class vir must begin with an upper case letter.
+>>> ERROR Class:  - The class grand must begin with an upper case letter.
+>>> INFO Init:  - Config.Properties Namespace Id Using:pds
+>>> INFO Init:  - Config.Properties Namespace Id Using:pds
+>>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Attribute: <standard_data_product_id> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <comment> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <mission_phase_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <callamp_delay_time> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <callamp_delay_time> - The default maximum value provided by the attribute's data type is being overridden with 10000000
+>>> INFO Attribute: <callamp_duty> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <callamp_duty> - The default maximum value provided by the attribute's data type is being overridden with 100.0
+>>> INFO Attribute: <callamp_frequency> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <callamp_frequency> - The default maximum value provided by the attribute's data type is being overridden with 250.0
+>>> INFO Attribute: <callamp_strobe_time> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <callamp_strobe_time> - The default maximum value provided by the attribute's data type is being overridden with 10000000
+>>> INFO Attribute: <filter_encoder> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <filter_encoder> - The default maximum value provided by the attribute's data type is being overridden with 63
+>>> INFO Attribute: <front_door_encoder> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <front_door_encoder> - The default maximum value provided by the attribute's data type is being overridden with 63
+>>> INFO Attribute: <i_12> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_12> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_16> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_16> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_28> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_28> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_2_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_2_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_3_3> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_3_3> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_m5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_m5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_m5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_m5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <purpose> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <t_baffle> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_baffle> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_ccd> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_ccd> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_cover_motor> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_cover_motor> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_csc> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_csc> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_dcdc> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_dcdc> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_dpu> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_dpu> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_f12> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_f12> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_filter_motor> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_filter_motor> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_lens_barrel> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_lens_barrel> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_rad_motor> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_rad_motor> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_structure> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_structure> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <v_12> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_12> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_16> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_16> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_28> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_28> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_2_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_2_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_3_3> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_3_3> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_m5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_m5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_m5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_m5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <grand_start_sclk> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <grand_stop_sclk> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <grand_interval> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <mission_phase_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <callamp_delay_time> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <callamp_delay_time> - The default maximum value provided by the attribute's data type is being overridden with 10000000
+>>> INFO Attribute: <callamp_duty> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <callamp_duty> - The default maximum value provided by the attribute's data type is being overridden with 100.0
+>>> INFO Attribute: <callamp_frequency> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <callamp_frequency> - The default maximum value provided by the attribute's data type is being overridden with 250.0
+>>> INFO Attribute: <callamp_strobe_time> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <callamp_strobe_time> - The default maximum value provided by the attribute's data type is being overridden with 10000000
+>>> INFO Attribute: <filter_encoder> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <filter_encoder> - The default maximum value provided by the attribute's data type is being overridden with 63
+>>> INFO Attribute: <front_door_encoder> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <front_door_encoder> - The default maximum value provided by the attribute's data type is being overridden with 63
+>>> INFO Attribute: <i_12> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_12> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_16> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_16> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_28> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_28> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_2_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_2_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_3_3> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_3_3> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_m5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_m5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <i_m5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <i_m5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <purpose> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <t_baffle> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_baffle> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_ccd> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_ccd> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_cover_motor> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_cover_motor> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_csc> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_csc> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_dcdc> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_dcdc> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_dpu> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_dpu> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_f12> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_f12> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_filter_motor> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_filter_motor> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_lens_barrel> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_lens_barrel> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_rad_motor> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_rad_motor> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <t_structure> - The default minimum value provided by the attribute's data type is being overridden with -999.999
+>>> INFO Attribute: <t_structure> - The default maximum value provided by the attribute's data type is being overridden with 999.999
+>>> INFO Attribute: <v_12> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_12> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_16> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_16> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_28> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_28> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_2_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_2_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_3_3> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_3_3> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_m5> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_m5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <v_m5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
+>>> INFO Attribute: <v_m5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
+>>> INFO Attribute: <grand_start_sclk> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <grand_stop_sclk> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <grand_interval> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> WARNING Init:  - Config.Properties Namespace Id Not Found:dawn
+>>> WARNING Init:  - Config.Properties Namespace Id Not Found:example
+>>> WARNING Attribute: <frame_parameter_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
+>>> WARNING Attribute: <instrument_temperature_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
+>>> WARNING Attribute: <scan_parameter_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
+>>> WARNING Attribute: <dpu_hardware_id> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <alt_start_time> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <alt_stop_time> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <frame_parameter_unit> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <instrument_temperature_unit> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <vir_ir_start_x_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <vir_ir_start_y_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <scan_parameter> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <scan_parameter_unit> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <vir_vis_start_x_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Attribute: <vir_vis_start_y_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
+>>> WARNING Class: <grand> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+
+ -- LDDTool Execution Summary --
+     19 warning(s)
+     4 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1B00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-dawn/ldd-dawn/src/PDS4_DAWN_IngestLDD.xml, /home/runner/work/ldd-dawn/ldd-dawn/src/PDS4_EXAMPLE_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_EXAMPLE_1B00_1000.xsd
+     - ./PDS4_EXAMPLE_1B00_1000.sch
+     - ./PDS4_EXAMPLE_1B00_1000.xml
+     - ./PDS4_EXAMPLE_1B00_1000.JSON
+
+>>  INFO Exit(1)
