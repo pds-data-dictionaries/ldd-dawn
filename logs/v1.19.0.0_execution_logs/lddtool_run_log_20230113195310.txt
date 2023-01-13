@@ -1,9 +1,9 @@
 
 >>  INFO LDDTOOL Version: 14.1.2
->>  INFO IM Version Id: 1.18.0.0
+>>  INFO IM Version Id: 1.19.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.24
->>  INFO Date: Wed Nov 16 20:02:05 UTC 2022
+>>  INFO IM Label Version Id: 1.25
+>>  INFO Date: Fri Jan 13 19:53:11 UTC 2023
 >>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
@@ -110,19 +110,18 @@
 
 Input:
 
-     - IM Version: 1I00
+     - IM Version: 1J00
      - PDS4 Flag: true
      - LDD Flag: true
-     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-dawn/ldd-dawn/src/PDS4_DAWN_IngestLDD.xml
 
 Output:
 
-     - ./PDS4_DAWN_1I00_1200.xsd
-     - ./PDS4_DAWN_1I00_1200.sch
-     - ./PDS4_DAWN_1I00_1200.xml
-     - ./PDS4_DAWN_1I00_1200.JSON
+     - ./PDS4_DAWN_1J00_1200.xsd
+     - ./PDS4_DAWN_1J00_1200.sch
+     - ./PDS4_DAWN_1J00_1200.xml
+     - ./PDS4_DAWN_1J00_1200.JSON
 
 >>  INFO Exit(0)

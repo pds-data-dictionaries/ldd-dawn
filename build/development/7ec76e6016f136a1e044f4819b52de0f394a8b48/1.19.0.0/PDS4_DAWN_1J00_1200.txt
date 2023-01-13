@@ -3,16 +3,16 @@ PDS4 Local Data Dictionary Processing Report
 Configuration:
    LDDTool Version        14.1.2
    LDD Version Id:        1.2.0.0
-   LDD Label Version Id:  1.24
+   LDD Label Version Id:  1.25
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Wed Nov 16 20:02:05 UTC 2022
-   Common Schema          [PDS4_PDS_1I00.xsd]
-   Common Schematron      [PDS4_PDS_1I00.sch]
-   IM Version Id:         1.18.0.0
+   Time                   Fri Jan 13 19:53:11 UTC 2023
+   Common Schema          [PDS4_PDS_1J00.xsd]
+   Common Schematron      [PDS4_PDS_1J00.sch]
+   IM Version Id:         1.19.0.0
    IM Namespace Id:       pds
-   IM Label Version Id:   1.24
+   IM Label Version Id:   1.25
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
    IM Configuration File  [MDPTNConfigClassDisp.xml]
@@ -61,136 +61,136 @@ Parsed Input - Header:
 Parsed Input - Attributes:
 
    name                   mission_phase_name
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The mission_phase_name attribute provides the mission-defined name of a mission phase.
    maximum characters     255
 
    name                   spacecraft_clock_start_count
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The spacecraft_clock_start_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
 
    name                   spacecraft_clock_stop_count
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The spacecraft_clock_stop_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
 
    name                   standard_data_product_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The standard_data_product_id keyword is used to identify data products of the same processing level that are not otherwise indentified by being in different collections within the bundle.
    nillable               true
 
    name                   callamp_delay_time
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            Callamp switch on delay measured in microseconds after START_TIME. Callamp can be switched on before (less than 193000 µs), at (= 193000 µs), or after (greater than 193000 µs) begin of exposure. 
    minimum value          0
    maximum value          10000000
 
    name                   callamp_duty
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The callamp can be run at various duty cycles between 0.0 % and 100.0 % by using only every other pulse of the callamp frequency to trigger the callamp. DAWN_CALLAMP_DUTY = CALLAMP_FREQUENCY / Value * 100 % Example: Value = 1.0 : DAWN_CALLAMP_DUTY = 100 % Value = 2.5 : DAWN_CALLAMP_DUTY = 40 % This calculation is done internally in the camera, the user commands the requensted duty cycle in percentage.
    minimum value          0.0
    maximum value          100.0
 
    name                   callamp_enable_flag
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            Indicates if callamp is enabled or disabled during image acquisition.
 
    name                   callamp_frequency
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The callamp frequency is determined by the internal 24 MHz clock and an integer divisor. CALLAMP_FREQUENCY = 24 MHz / Value The standard callamp frequency is 100 kHz (24MHz / 240).
    minimum value          0.0
    maximum value          250.0
 
    name                   callamp_strobe_time
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            Callamp strobe time is measured in microseconds after callamp switch on. callamp switch off time = START_TIME + DAWN_CALLAMP_DELAY_TIME + DAWN_CALLAMP_STROBE_TIME
    minimum value          0
    maximum value          10000000
 
    name                   chamber
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            This keyword was used during ground tests to describe the test environment.
 
    name                   data_routing_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            This keyword describes the priority of the acquired image and thus how it was handled on board.
 
    name                   dpu_hardware_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            Both DPUs for FC1 and FC2 have the same DPU ID because they are identical.
 
    name                   dpu_software_version
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            Current version of the FC onboard software
 
    name                   fee_flag
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            OFF = FEE is disabled, images cannot be acquired ON = FEE is enabled, images can be acquired
 
    name                   fee_hardware_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The fee_hardware_id attribute indicates the identifer associated with each Framing Camera.
 
    name                   filter_encoder
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            FILTER_NUMBER = (((64 + 4 + encoderOnClearFilter - FILTER_ENCODER) / 8) MOD 8) + 1 encoderOnClearFilter is a hardware-dependent constant filterEncoder is the current readout of the encoder filterNumber return a value in the range [1..8]. All the operation are integer operations, MOD represents modulo and / is the integer division. The subtraction is negative (F1 - Fx) because the encoder value decreases with increasing filter number.
    minimum value          0
    maximum value          63
 
    name                   front_door_status_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The front_door_status_id attribute indicates the status of the Front Door, covering the camera aperture, when the image was acquired. In the case of windowed images, this value is the same for all the subframes.
 
    name                   front_door_encoder
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The Front Door is closed if FRONT_DOOR_ENCODER shows the nominal value +/- 1 and otherwise is open.
    minimum value          0
    maximum value          63
 
    name                   fsa_shoot_enable_flag
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The fsa_shoot_enable_flag attribute determines if the Fail Safe Actuator is enabled. For saftey safety reasons, the FSA requires two switches to be active at the same time in order to be active. One of them alone will have no effect.
 
    name                   fsa_shoot_flag
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The fsa_shoot_flag attribute determines if the Fail-Safe Actuator is active.
 
    name                   heater0_flag
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The heater0_flag attribute indicates status of the Camera Head Heater. The heater produces 4.4 W (5.6 Ohm at +5 V).
 
    name                   heater1_flag
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The heater1_flag attribute indicates the status of the Baffle Heater. The heater produces 1.0 W (26 Ohm at +5 V)
 
    name                   image_acquire_mode
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The image_acquire_mode attribute indicates the FC mode setting of image acquisition.
 
    name                   i_12
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: C12FEE Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.02 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_12 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 50 mA Lower limit yellow: 60 mA Upper limit yellow: 100 mA Upper limit red: 200 mA
    minimum value          -9999.999
@@ -198,7 +198,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Current
 
    name                   i_16
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: C16V15 Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.009 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_16 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 20 mA Lower limit yellow: 30 mA Upper limit yellow: 60 mA Upper limit red: 100 mA
    minimum value          -9999.999
@@ -206,7 +206,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Current
 
    name                   i_28
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: C28M Location: PCU H/K Sensor: MAIN +28V Current Monitor Sensor Type: Current Sensor Gain: 0.0016 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_28 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 200 mA Lower limit yellow: 250 mA Upper limit yellow: 1200 mA Upper limit red: 1400 mA
    minimum value          -9999.999
@@ -214,7 +214,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Current
 
    name                   i_2_5
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: C2.5AN Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.15 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_2_5 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 250 mA Lower limit yellow: 300 mA Upper limit yellow: 900 mA Upper limit red: 1000 mA
    minimum value          -9999.999
@@ -222,7 +222,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Current
 
    name                   i_3_3
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: C3.3AN Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.15 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_3_3 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 100 mA Lower limit yellow: 170 mA Upper limit yellow: 850 mA Upper limit red: 1400 mA
    minimum value          -9999.999
@@ -230,7 +230,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Current
 
    name                   i_5
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: C5FEE Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.05 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_2_5 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 100 mA Lower limit yellow: 250 mA Upper limit yellow: 350 mA Upper limit red: 400 mA
    minimum value          -9999.999
@@ -238,7 +238,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Current
 
    name                   i_5_analog
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: C5AN Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: 0.2 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_5_ANALOG = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: 75 mA Lower limit yellow: 100 mA Upper limit yellow: 1150 mA Upper limit red: 1300 mA
    minimum value          -9999.999
@@ -246,7 +246,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Current
 
    name                   i_m5
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: C-5FEE Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: -0.015 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_M5 = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: -200 mA Lower limit yellow: -120 mA Upper limit yellow: -60 mA Upper limit red: -30 mA
    minimum value          -9999.999
@@ -254,7 +254,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Current
 
    name                   i_m5_analog
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: C-5AN Location: PCU H/K Sensor: PCU Current Monitor Sensor Type: Current Sensor Gain: -0.015 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 I_M5_ANALOG = DN * Gain + Offset + Sensor Offset [mA] Lower limit red: -100 mA Lower limit yellow: -60 mA Upper limit yellow: -20 mA Upper limit red: -10 mA
    minimum value          -9999.999
@@ -262,52 +262,52 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Current
 
    name                   mcu_flag
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The mcu_flag attribute indicates whether the Mechanism Controller Unit (MCU) is powered. It is independent of the MCU motor power flag.
 
    name                   mcu_hardware_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The mcu_hardware_id attribute is an identifier indicating which FC unit is in use.
 
    name                   mcu_motor_flag
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The mcu_motor_flag indicates if the motors for the mechanisms are powered. This switch and flag are independent of the MCU power flag.
 
    name                   operator
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            This keyword was used during ground tests to indicate the responsible operator of the test.
 
    name                   pcu_hardware_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The pcu_hardware_id is an analog value showing the hardware ID of the Power Converter Unit (PCU). The actual value can jitter around the nominal.
 
    name                   purpose
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            This keyword was used during ground tests to describe the purpose of the test.
 
    name                   subject
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            This keyword was used during ground tests to describe the subject used during the test.
 
    name                   target
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            This keyword was used during ground tests to describe the target the FC was pointing at during the test
 
    name                   test_lamp
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            This keyword was used during ground tests to define the lamp that was used during the test.
 
    name                   t_baffle
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: TBF Location: Baffle H/K Sensor: Baffle Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -2.1 Sensor Offset FC2: -3.1 T_BAFFLE = DN * Gain + Offset + Sensor Offset + 273.150 [deg C] T_BAFFLE = DN * Gain + Offset + Sensor Offset [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +40.0 deg C Upper limit red: +45.0 deg C
    minimum value          -999.999
@@ -315,7 +315,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_ccd
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: HK-Tccd Location: DPU H/K Sensor: FEE CCD Thermistor Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -5.240 Sensor Offset FC2: -3.960 T_CCD = DN * Gain + Offset + Sensor Offset [deg C] T_CCD = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] The CCD is passively cooled, the CCD-heaters are for non-operation mode only. Lower limit red: -95.0 deg C Lower limit yellow: -75.0 deg C Upper limit yellow: +35.0 deg C Upper limit red: +40.0 deg C
    minimum value          -999.999
@@ -323,7 +323,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_cover_motor
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: TCM Location: Front Door H/K Sensor: FD Motor Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -2.1 Sensor Offset FC2: -1.1 T_COVER_MOTOR = DN * Gain + Offset + Sensor Offset [deg C] T_COVER_MOTOR = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +50.0 deg C Upper limit red: +60.0 deg C
    minimum value          -999.999
@@ -331,7 +331,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_csc
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: HK-Tpcu3 Location: PCU H/K Sensor: PCU Board Thermistor 1 (PCU Center Screw Thermistor) Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -3.210 Sensor Offset FC2: -3.210 T_CSC = DN * Gain + Offset + Sensor Offset [deg C] T_CSC = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] The CCD is passively cooled, the CCD-heaters are for non-operation mode only. Lower limit red: -40.0 deg C Lower limit yellow: -35.0 deg C Upper limit yellow: +70.0 deg C Upper limit red: +80.0 deg C
    minimum value          -999.999
@@ -339,7 +339,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_dcdc
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: HK-Tpcu1 Location: PCU H/K Sensor: PCU Converter Board Thermistor Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -1.980 Sensor Offset FC2: -1.980 T_DCDC = DN * Gain + Offset + Sensor Offset [deg C] T_DCDC = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -40.0 deg C Lower limit yellow: -35.0 deg C Upper limit yellow: +70.0 deg C Upper limit red: +80.0 deg C
    minimum value          -999.999
@@ -347,7 +347,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_dpu
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: HK-Tdpu Location: DPU H/K Sensor: DPU Board Thermistor Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -7.960 Sensor Offset FC2: -3.960 T_DPU = DN * Gain + Offset + Sensor Offset [deg C] T_DPU = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -40.0 deg C Lower limit yellow: -35.0 deg C Upper limit yellow: +80.0 deg C Upper limit red: +90.0 deg C
    minimum value          -999.999
@@ -355,7 +355,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_f12
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: HK-Tpcu2 Location: PCU H/K Sensor: PCU Board Thermistor 1 (PCU FEE 12 V I/F Thermistor) Sensor Type: AD590 Gain: 0.0373 Offset: -273 Sensor Offset FC1: -2.580 Sensor Offset FC2: -2.580 T_F12 = DN * Gain + Offset + Sensor Offset [deg C] T_F12 = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -40.0 deg C Lower limit yellow: -35.0 deg C Upper limit yellow: +70.0 deg C Upper limit red: +80.0 deg C
    minimum value          -999.999
@@ -363,7 +363,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_filter_motor
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: TFM Location: Filter Wheel H/K Sensor: Filter Motor Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -3.1 Sensor Offset FC2: -2.1 T_FILTER_MOTOR = DN * Gain + Offset + Sensor Offset [deg C] T_FILTER_MOTOR = DN * Gain + Offset\ + Sensor Offset + 273.150 [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +50.0 deg C Upper limit red: +60.0 deg C
    minimum value          -999.999
@@ -371,7 +371,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_lens_barrel
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: TLB Location: Lens Barrel H/K Sensor: Lens Barrel Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -1.1 Sensor Offset FC2: -1.1 T_LENS_BARREL = DN * Gain + Offset + Sensor Offset [deg C] T_LENS_BARREL = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +40.0 deg C Upper limit red: +45.0 deg C
    minimum value          -999.999
@@ -379,7 +379,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_rad_motor
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: TRD Location: Radiator H/K Sensor: Radiator Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -1.1 Sensor Offset FC2: -1.1 T_RAD_MOTOR = DN * Gain + Offset + Sensor Offset [deg C] T_RAD_MOTOR = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -115.0 deg C Lower limit yellow: -95.0 deg C Upper limit yellow: +35.0 deg C Upper limit red: +40.0 deg C Note: This is not a motor temperature!
    minimum value          -999.999
@@ -387,7 +387,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   t_structure
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: TCS Location: Camera Head H/K Sensor: CH Structure Thermistor Sensor Type: AD590 Gain: 0.9975 Offset: -129.5 Sensor Offset FC1: -3.1 Sensor Offset FC2: -4.1 T_STRUCTURE = DN * Gain + Offset + Sensor Offset [deg C] T_STRUCTURE = DN * Gain + Offset + Sensor Offset + 273.150 [Kelvin] Lower limit red: -55.0 deg C Lower limit yellow: -50.0 deg C Upper limit yellow: +40.0 deg C Upper limit red: +45.0 deg C
    minimum value          -999.999
@@ -395,17 +395,17 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Temperature
 
    name                   udplib_software_version
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            Current version of the FC UDP library
 
    name                   use_pre_clear
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The use_pre_clear attribute indicates whether a pre-clear of the CCD was performed prior to image acquisition. A pre-clear is performed 193 ms prior to image acquisition and removes all charge that is on the CCD at the time of execution.
 
    name                   v_12
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: V12FEE Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.0012 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_12 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 11.0 V Lower limit yellow: 11.7 V Upper limit yellow: 12.5 V Upper limit red: 13.0 V
    minimum value          -9999.999
@@ -413,7 +413,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Voltage
 
    name                   v_16
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: V16V15 Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.000165 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_16 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 14.7 V Lower limit yellow: 15.2 V Upper limit yellow: 16.5 V Upper limit red: 17.0 V
    minimum value          -9999.999
@@ -421,7 +421,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Voltage
 
    name                   v_28
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: V28M Location: PCU H/K Sensor: Main +28V Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.04 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_28 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 20.0 V Lower limit yellow: 21.5 V Upper limit yellow: 35.5 V Upper limit red: 37.0 V
    minimum value          -9999.999
@@ -429,7 +429,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Voltage
 
    name                   v_2_5
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: V2.5AN Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00025 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_2_5 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 2.1 V Lower limit yellow: 2.3 V Upper limit yellow: 2.8 V Upper limit red: 3.0 V
    minimum value          -9999.999
@@ -437,7 +437,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Voltage
 
    name                   v_3_3
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: V3.3AN Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00033 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_3_3 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 3.0 V Lower limit yellow: 3.2 V Upper limit yellow: 3.7 V Upper limit red: 3.9 V
    minimum value          -9999.999
@@ -445,7 +445,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Voltage
 
    name                   v_5
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: V5FEE Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00052 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_5 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 4.5 V Lower limit yellow: 4.7 V Upper limit yellow: 5.5 V Upper limit red: 5.8 V
    minimum value          -9999.999
@@ -453,7 +453,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Voltage
 
    name                   v_5_analog
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: V5AN Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: 0.00052 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_5_ANALOG = DN * Gain + Offset + Sensor Offset [V] Lower limit red: 4.5 V Lower limit yellow: 4.7 V Upper limit yellow: 5.5 V Upper limit red: 5.8 V
    minimum value          -9999.999
@@ -461,7 +461,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Voltage
 
    name                   v_m5
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: V-5FEE Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: -0.0005 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_M5 = DN * Gain + Offset + Sensor Offset [V] Lower limit red: -5.8 V Lower limit yellow: -5.5 V Upper limit yellow: -4.7 V Upper limit red: -4.5 V
    minimum value          -9999.999
@@ -469,7 +469,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Voltage
 
    name                   v_m5_analog
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            Name: V-5AN Location: PCU H/K Sensor: PCU Voltage Monitor Sensor Type: Voltage Sensor Gain: -0.0005 Offset: 0 Sensor Offset FC1: 0 Sensor Offset FC2: 0 V_M5_ANALOG = DN * Gain + Offset + Sensor Offset [V] Lower limit red: -5.8 V Lower limit yellow: -5.5 V Upper limit yellow: -4.7 V Upper limit red: -4.5 V
    minimum value          -9999.999
@@ -477,150 +477,150 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Voltage
 
    name                   alt_start_time
-   version                1.18
+   version                1.19
    value data type        ASCII_Date_Time_DOY_UTC
    description            The same time as the start_date_time attribute expressed year/day-of-year rather than year/month/day.
 
    name                   alt_stop_time
-   version                1.18
+   version                1.19
    value data type        ASCII_Date_Time_DOY_UTC
    description            The same time as the stop_date_time attribute expressed year/day-of-year rather than year/month/day.
 
    name                   data_quality_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The data_quality_id is an indicator of whether data files is complete or if there are missing lines.
 
    name                   telemetry_source_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The telemetry_source_id attribute identifies the Electrical Ground Supporting Equipment (EGSE) used to produce the data file. This attribute is always set to "EGSE".
 
    name                   channel_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The channel_id identifies the instrument channel producing the data.
 
    name                   software_version_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The software_version_id attribute identifies the software used to write the labels and format the data.
 
    name                   instrument_mode_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Collapsed
    description            The instrument_mode_id attribute identifies the mode that the instrument was in when the data were taken.
 
    name                   scan_mode_id
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The scan_mode_id is an integer in the range 0 to 10 that identifies the VIR Scan Mirror mode. "0" means that the mirror was not used. The VIR scan mirror performs, when commanded, and angular movement around an axis parallel to the slit direction (y direction). There can be 10 different modes, each one identifying a given angular movement.
    minimum value          0
    maximum value          10
 
    name                   scan_start_angle
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The scan_start_angle attribute indicates the start position of the VIR scan mirror.
    unit of measure type   Units_of_Angle
 
    name                   scan_stop_angle
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The scan_stop_angle attribute indicates the stop position of the VIR scan mirror.
    unit of measure type   Units_of_Angle
 
    name                   scan_step_angle
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The scan_step_angle attribute indicates the size of each step of the VIR scan mirror.
    unit of measure type   Units_of_Angle
 
    name                   scan_step_number
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The scan_step_number attribute indicates the number of acquisitions performed within a single VIR scan mirror unit position.
 
    name                   exposure_duration
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The exposure_duration attribute is the integration time expressed in milliseconds. It is the exposure time of elementary exposures when summing is performed.
    unit of measure type   Units_of_Time
 
    name                   frame_summing
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The frame_summing attribute is the number of elementary exposures when summing is performed.
 
    name                   external_repetition_time
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The external_repetition_time attribute is the time required for a frame acqusition cycle (> exposure_duration * frame_summing).
    unit of measure type   Units_of_Time
 
    name                   dark_acquisition_rate
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The dar_acquisition_rate attribute is the number of frames acquired between two background measurements.
 
    name                   vir_focal_plane_maximum_temperature
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The vir_focal_plane_maximum_temperature indicates the maxiumum temperature on the VIR focal plane during the VIR image acquisition. 
    unit of measure type   Units_of_Temperature
 
    name                   vir_telescope_maximum_temperature
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The vir_telescope_maximum_temperature indicates the maxiumum temperature on the VIR optical telescope during the VIR image acquisition. 
    unit of measure type   Units_of_Temperature
 
    name                   vir_spectrometer_maximum_temperature
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The vir_spectrometer_maximum_temperature indicates the maxiumum temperature on the VIR grating spectrometer during the VIR image acquisition. 
    unit of measure type   Units_of_Temperature
 
    name                   vir_cryocooler_maximum_temperature
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description            The vir_cyrocooler_maximum_temperature indicates the maxiumum temperature on the VIR cryocooler during the VIR image acquisition. 
    unit of measure type   Units_of_Temperature
 
    name                   vir_ir_start_x_position
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description             This keyword gives the X coordinate of the first CCD pixel used on the IR FPA. This quantity determines the correspondence between wavelength and spectral channels.
 
    name                   vir_ir_start_y_position
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description             This keyword gives the Y coordinate of the first CCD pixel used on the IR FPA. This quantity determines the correspondence between wavelength and spectral channels.
 
    name                   vir_vis_start_x_position
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description             This keyword gives the X coordinate of the first CCD pixel used on the VIS FPA. This quantity determines the correspondence between wavelength and spectral channels.
 
    name                   vir_vis_start_y_position
-   version                1.18
+   version                1.19
    value data type        ASCII_Real
    description             This keyword gives the Y coordinate of the first CCD pixel used on the VIS FPA. This quantity determines the correspondence between wavelength and spectral channels.
 
    name                   grand_start_sclk
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The first SCLK for which this readout is applicable
    minimum value          1
 
    name                   grand_stop_sclk
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The last SCLK for which this readout is applicable
    minimum value          1
 
    name                   grand_interval
-   version                1.18
+   version                1.19
    value data type        ASCII_Integer
    description            The duration of the interval.
    nillable               true
@@ -628,7 +628,7 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Time
 
    name                   comment
-   version                1.18
+   version                1.19
    value data type        ASCII_Short_String_Preserved
    description            Remarks about the containing object.
    nillable               true
