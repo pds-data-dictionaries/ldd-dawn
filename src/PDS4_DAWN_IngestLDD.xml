@@ -173,11 +173,43 @@
 			<DD_Permissible_Value>
 				<value>CERES EXTENDED OPPOSITION (CXO)</value>
 				<value_meaning>2017-04-28T00:00 to 2017-07-01T00:00</value_meaning>
-			</DD_Permissible_Value>     
+			</DD_Permissible_Value>
 			<DD_Permissible_Value>
-				<value>END OF CERES EXTENDED MISSION</value>
-				<value_meaning>2018-10-31T23:59</value_meaning>
-			</DD_Permissible_Value>                      
+				<value>CERES TRANSFER TO HOLDING (CXH)</value>
+				<value_meaning>2017-06-03T16:50 to 2017-06-28T02:30</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>END OF CERES EXTENDED MISSION 1</value>
+				<value_meaning>2017-07-01T00:00</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>CERES EXTENDED MISSION 2</value>
+				<value_meaning>2017-07-01T00:00 to 2018-10-31</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>CERES X2 HOLDING (CX2)</value>
+				<value_meaning>2017-06-28T02:30 to 2018-04-16T21:00</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>CERES X2 TRANSFER TO INTERMEDIATE (CTI)</value>
+				<value_meaning>2018-04-16T21:00 to 2018-05-15T11:00</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>CERES X2 INTERMEDIATE (C2I)</value>
+				<value_meaning>2018-05-15T11:00 to 2018-05-31T19:30</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>CERES X2 TRANSFER TO ELLIPTICAL (CTE)</value>
+				<value_meaning>2018-05-31T19:30 to 2018-06-09T07:30</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>CERES X2 ELLIPTICAL (C2E)</value>
+				<value_meaning>2018-06-09T07:30 to 2018-10-31</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>END OF CERES EXTENDED MISSION 2</value>
+				<value_meaning>2018-10-31</value_meaning>
+			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
