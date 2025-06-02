@@ -1,12 +1,10 @@
 
->>  INFO LDDTOOL Version: 14.1.2
->>  INFO IM Version Id: 1.19.0.0
+>>  INFO LDDTOOL Version: 15.3.0
+>>  INFO IM Version Id: 1.18.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.25
->>  INFO Date: Fri Jan 13 19:53:11 UTC 2023
->>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
->>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
->>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
+>>  INFO IM Label Version Id: 1.24
+>>  INFO Date: Mon Jun 02 17:42:54 UTC 2025
+>>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Mission
@@ -110,18 +108,19 @@
 
 Input:
 
-     - IM Version: 1J00
+     - IM Version: 1I00
      - PDS4 Flag: true
      - LDD Flag: true
+     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-dawn/ldd-dawn/src/PDS4_DAWN_IngestLDD.xml
 
 Output:
 
-     - ./PDS4_DAWN_1J00_1200.xsd
-     - ./PDS4_DAWN_1J00_1200.sch
-     - ./PDS4_DAWN_1J00_1200.xml
-     - ./PDS4_DAWN_1J00_1200.JSON
+     - ./PDS4_DAWN_1I00_1200.xsd
+     - ./PDS4_DAWN_1I00_1200.sch
+     - ./PDS4_DAWN_1I00_1200.xml
+     - ./export/PDS4_PDS_1I00.JSON
 
 >>  INFO Exit(0)
