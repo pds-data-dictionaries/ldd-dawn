@@ -1,9 +1,9 @@
 
 >>  INFO LDDTOOL Version: 15.3.0
->>  INFO IM Version Id: 1.18.0.0
+>>  INFO IM Version Id: 1.23.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.24
->>  INFO Date: Mon Jun 02 17:42:54 UTC 2025
+>>  INFO IM Label Version Id: 1.0
+>>  INFO Date: Mon Jun 02 17:45:21 UTC 2025
 >>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
@@ -11,6 +11,9 @@
 >>> INFO Attribute: <standard_data_product_id> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <comment> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <mission_phase_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <mission_phase_name> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <spacecraft_clock_start_count> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <spacecraft_clock_stop_count> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <callamp_delay_time> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <callamp_delay_time> - The default maximum value provided by the attribute's data type is being overridden with 10000000
 >>> INFO Attribute: <callamp_duty> - The default minimum value provided by the attribute's data type is being overridden with 0.0
@@ -108,7 +111,7 @@
 
 Input:
 
-     - IM Version: 1I00
+     - IM Version: 1N00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -118,9 +121,9 @@ Input:
 
 Output:
 
-     - ./PDS4_DAWN_1I00_1200.xsd
-     - ./PDS4_DAWN_1I00_1200.sch
-     - ./PDS4_DAWN_1I00_1200.xml
-     - ./export/PDS4_PDS_1I00.JSON
+     - ./PDS4_DAWN_1N00_1200.xsd
+     - ./PDS4_DAWN_1N00_1200.sch
+     - ./PDS4_DAWN_1N00_1200.xml
+     - ./export/PDS4_PDS_1N00.JSON
 
 >>  INFO Exit(0)
