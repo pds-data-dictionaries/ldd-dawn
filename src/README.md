@@ -1,9 +1,5 @@
-# Dawn Mission Local Data Dictionary (LDD)
+# LDD Source Directory
 
-The Dawn mission dictionary contains classes that describe aspects of the Dawn mission and related instruments.
+This directory should contain one IngestLDD for the LDD being built.
 
-Steward: PPI
-
-## Versions
-
-- [1.0.0.0](1.0.0.0)
+**The auto-generation script does not currently support multiple versions of an LDD being maintained.**
