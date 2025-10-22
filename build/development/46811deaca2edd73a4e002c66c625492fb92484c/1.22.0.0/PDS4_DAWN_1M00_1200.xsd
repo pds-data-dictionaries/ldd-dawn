@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.2.0.0 - Wed Oct 22 19:56:14 UTC 2025 -->
-  <!-- Generated from the PDS4 Information Model Version 1.23.0.0 - System Build 15.0 -->
+  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.2.0.0 - Wed Oct 22 22:25:30 UTC 2025 -->
+  <!-- Generated from the PDS4 Information Model Version 1.22.0.0 - System Build 14.1 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.23.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.22.0.0 - pds: - Common Dictionary                                       -->
   <!-- 1.2.0.0 - dawn: - Dawn                                                    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -15,7 +15,7 @@
     attributeFormDefault="unqualified"
     version="1.2.0.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1N00.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
@@ -27,6 +27,8 @@
       v1.2.0.0  2022-10-26
         -  Fixed errors reported by LDDTool
         -  Organized VIR attributes into sub-classes where appropriate
+	  v1.3.0.0  2025-10-22
+		-  Reorganized VIR attributes into alphabetical order
 		
 		
 	
@@ -1727,10 +1729,10 @@
 
   <xs:simpleType name="vir_ir_start_x_position">
     <xs:annotation>
-      <xs:documentation> This keyword gives the X coordinate of the
-        first CCD pixel used on the IR FPA. This quantity determines the
-        correspondence between wavelength and spectral
-        channels.</xs:documentation>
+      <xs:documentation>This keyword gives the X coordinate of the first
+        CCD pixel used on the IR FPA. This quantity determines the
+        correspondence between wavelength and spectral channels.
+        </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
@@ -1740,8 +1742,8 @@
 
   <xs:simpleType name="vir_ir_start_y_position">
     <xs:annotation>
-      <xs:documentation> This keyword gives the Y coordinate of the
-        first CCD pixel used on the IR FPA. This quantity determines the
+      <xs:documentation>This keyword gives the Y coordinate of the first
+        CCD pixel used on the IR FPA. This quantity determines the
         correspondence between wavelength and spectral
         channels.</xs:documentation>
     </xs:annotation>
@@ -1794,9 +1796,9 @@
 
   <xs:simpleType name="vir_vis_start_x_position">
     <xs:annotation>
-      <xs:documentation> This keyword gives the X coordinate of the
-        first CCD pixel used on the VIS FPA. This quantity determines
-        the correspondence between wavelength and spectral
+      <xs:documentation>This keyword gives the X coordinate of the first
+        CCD pixel used on the VIS FPA. This quantity determines the
+        correspondence between wavelength and spectral
         channels.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
@@ -1807,9 +1809,9 @@
 
   <xs:simpleType name="vir_vis_start_y_position">
     <xs:annotation>
-      <xs:documentation> This keyword gives the Y coordinate of the
-        first CCD pixel used on the VIS FPA. This quantity determines
-        the correspondence between wavelength and spectral
+      <xs:documentation>This keyword gives the Y coordinate of the first
+        CCD pixel used on the VIS FPA. This quantity determines the
+        correspondence between wavelength and spectral
         channels.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">

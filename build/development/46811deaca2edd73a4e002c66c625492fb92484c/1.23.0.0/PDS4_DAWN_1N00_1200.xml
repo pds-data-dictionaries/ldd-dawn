@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML product label for PDS4 V1.23.0.0  Wed Oct 22 19:56:14 UTC 2025 -->
+  <!-- PDS4 XML product label for PDS4 V1.23.0.0  Wed Oct 22 22:25:28 UTC 2025 -->
   <!-- Generated from the PDS4 Information Model V1.23.0.0 - System Build 15.0 -->
   <!-- *** This PDS4 XML product label is an operational deliverable. *** -->
 <?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1N00.sch"
@@ -26,9 +26,9 @@
     <File_Area_XML_Schema>
         <File>
             <file_name>PDS4_DAWN_1N00_1200.xsd</file_name>
-            <creation_date_time>2025-10-22T12:56:14</creation_date_time>
-            <file_size unit="byte">79298</file_size>
-            <records>1820</records>
+            <creation_date_time>2025-10-22T15:25:28</creation_date_time>
+            <file_size unit="byte">79375</file_size>
+            <records>1822</records>
         </File>
         <XML_Schema>
             <name>PDS4_DAWN_1N00_1200.xsd</name>
@@ -40,7 +40,7 @@
     <File_Area_XML_Schema>
         <File>
             <file_name>PDS4_DAWN_1N00_1200.sch</file_name>
-            <creation_date_time>2025-10-22T12:56:14</creation_date_time>
+            <creation_date_time>2025-10-22T15:25:28</creation_date_time>
             <file_size unit="byte">25829</file_size>
             <records>453</records>
         </File>
