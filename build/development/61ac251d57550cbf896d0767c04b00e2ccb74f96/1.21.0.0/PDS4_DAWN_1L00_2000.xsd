@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.2.0.0 - Sat Oct 25 01:17:31 UTC 2025 -->
+  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:2.0.0.0 - Sat Oct 25 02:06:16 UTC 2025 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.2.0.0 - dawn: - Dawn                                                    -->
+  <!-- 2.0.0.0 - dawn: - Dawn                                                    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://pds.nasa.gov/pds4/mission/dawn/v1"
-    xmlns:dawn="http://pds.nasa.gov/pds4/mission/dawn/v1"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/dawn/v2"
+    xmlns:dawn="http://pds.nasa.gov/pds4/mission/dawn/v2"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.2.0.0">
+    version="2.0.0.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd"/>
  
@@ -21,14 +21,17 @@
     <xs:documentation>
  
       v1.0.0.0  2018-11-14
-		-  Created PDS4 LDD based on PDS3 Catalog file content.
+		-   Created PDS4 LDD based on PDS3 Catalog file content.
       v1.1.0.0  2020-07-23
-		-  Added support for GRaND instrument
-      v1.2.0.0  2022-10-26
-        -  Fixed errors reported by LDDTool
-        -  Organized VIR attributes into sub-classes where appropriate
-	  v1.3.0.0  2025-10-22
-		-  Reorganized VIR attributes into alphabetical order
+		-   Added support for GRaND instrument
+      v1.2.0.0  2022-10-26 (never released)
+        -   Fixed errors reported by LDDTool
+        -   Organized VIR attributes into sub-classes where appropriate
+	  v2.0.0.0  2025-10-24
+		-   Reorganized VIR attributes into alphabetical order
+		-   Major (non-backward compatible) reorganization of VIR-specific 
+			classes and attributes
+		-	Added new VIR attributes required for PDS3 to PDS4 migration
 		
 		
 	

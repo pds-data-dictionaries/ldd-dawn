@@ -1,9 +1,9 @@
 
 >>  INFO LDDTOOL Version: 15.3.0
->>  INFO IM Version Id: 1.22.0.0
+>>  INFO IM Version Id: 1.21.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.0
->>  INFO Date: Sat Oct 25 01:17:33 UTC 2025
+>>  INFO IM Label Version Id: 1.27
+>>  INFO Date: Sat Oct 25 02:06:16 UTC 2025
 >>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
@@ -108,7 +108,7 @@
 
 Input:
 
-     - IM Version: 1M00
+     - IM Version: 1L00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -118,9 +118,9 @@ Input:
 
 Output:
 
-     - ./PDS4_DAWN_1M00_1200.xsd
-     - ./PDS4_DAWN_1M00_1200.sch
-     - ./PDS4_DAWN_1M00_1200.xml
-     - ./export/PDS4_PDS_1M00.JSON
+     - ./PDS4_DAWN_1L00_2000.xsd
+     - ./PDS4_DAWN_1L00_2000.sch
+     - ./PDS4_DAWN_1L00_2000.xml
+     - ./export/PDS4_PDS_1L00.JSON
 
 >>  INFO Exit(0)

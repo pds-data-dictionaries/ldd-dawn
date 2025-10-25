@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:dawn  Version:1.2.0.0 - Sat Oct 25 01:17:38 UTC 2025 -->
-  <!-- Generated from the PDS4 Information Model Version 1.23.0.0 - System Build 15.0 -->
+  <!-- PDS4 Schematron for Name Space Id:dawn  Version:2.0.0.0 - Sat Oct 25 02:06:22 UTC 2025 -->
+  <!-- Generated from the PDS4 Information Model Version 1.22.0.0 - System Build 14.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -8,7 +8,7 @@
 
   <sch:ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
   <sch:ns uri="http://pds.nasa.gov/pds4/pds/v1" prefix="pds"/>
-  <sch:ns uri="http://pds.nasa.gov/pds4/mission/dawn/v1" prefix="dawn"/>
+  <sch:ns uri="http://pds.nasa.gov/pds4/mission/dawn/v2" prefix="dawn"/>
 
 		   <!-- ================================================ -->
 		   <!-- NOTE:  There are two types of schematron rules.  -->
@@ -94,65 +94,65 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:FC/dawn:i_12">
-      <sch:assert test="@unit = ('A', 'mA', 'microA', 'nA')">
+      <sch:assert test="@unit = ('A', 'mA')">
         <title>dawn:FC/dawn:i_12/dawn:i_12</title>
-        The attribute @unit must be equal to one of the following values 'A', 'mA', 'microA', 'nA'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'A', 'mA'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:FC/dawn:i_16">
-      <sch:assert test="@unit = ('A', 'mA', 'microA', 'nA')">
+      <sch:assert test="@unit = ('A', 'mA')">
         <title>dawn:FC/dawn:i_16/dawn:i_16</title>
-        The attribute @unit must be equal to one of the following values 'A', 'mA', 'microA', 'nA'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'A', 'mA'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:FC/dawn:i_28">
-      <sch:assert test="@unit = ('A', 'mA', 'microA', 'nA')">
+      <sch:assert test="@unit = ('A', 'mA')">
         <title>dawn:FC/dawn:i_28/dawn:i_28</title>
-        The attribute @unit must be equal to one of the following values 'A', 'mA', 'microA', 'nA'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'A', 'mA'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:FC/dawn:i_2_5">
-      <sch:assert test="@unit = ('A', 'mA', 'microA', 'nA')">
+      <sch:assert test="@unit = ('A', 'mA')">
         <title>dawn:FC/dawn:i_2_5/dawn:i_2_5</title>
-        The attribute @unit must be equal to one of the following values 'A', 'mA', 'microA', 'nA'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'A', 'mA'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:FC/dawn:i_3_3">
-      <sch:assert test="@unit = ('A', 'mA', 'microA', 'nA')">
+      <sch:assert test="@unit = ('A', 'mA')">
         <title>dawn:FC/dawn:i_3_3/dawn:i_3_3</title>
-        The attribute @unit must be equal to one of the following values 'A', 'mA', 'microA', 'nA'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'A', 'mA'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:FC/dawn:i_5">
-      <sch:assert test="@unit = ('A', 'mA', 'microA', 'nA')">
+      <sch:assert test="@unit = ('A', 'mA')">
         <title>dawn:FC/dawn:i_5/dawn:i_5</title>
-        The attribute @unit must be equal to one of the following values 'A', 'mA', 'microA', 'nA'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'A', 'mA'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:FC/dawn:i_5_analog">
-      <sch:assert test="@unit = ('A', 'mA', 'microA', 'nA')">
+      <sch:assert test="@unit = ('A', 'mA')">
         <title>dawn:FC/dawn:i_5_analog/dawn:i_5_analog</title>
-        The attribute @unit must be equal to one of the following values 'A', 'mA', 'microA', 'nA'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'A', 'mA'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:FC/dawn:i_m5">
-      <sch:assert test="@unit = ('A', 'mA', 'microA', 'nA')">
+      <sch:assert test="@unit = ('A', 'mA')">
         <title>dawn:FC/dawn:i_m5/dawn:i_m5</title>
-        The attribute @unit must be equal to one of the following values 'A', 'mA', 'microA', 'nA'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'A', 'mA'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:FC/dawn:i_m5_analog">
-      <sch:assert test="@unit = ('A', 'mA', 'microA', 'nA')">
+      <sch:assert test="@unit = ('A', 'mA')">
         <title>dawn:FC/dawn:i_m5_analog/dawn:i_m5_analog</title>
-        The attribute @unit must be equal to one of the following values 'A', 'mA', 'microA', 'nA'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'A', 'mA'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
