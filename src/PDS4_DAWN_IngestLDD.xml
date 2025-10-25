@@ -7,25 +7,28 @@
    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.xsd">
 
 	<name>Dawn</name>
-	<ldd_version_id>1.2.0.0</ldd_version_id>
+	<ldd_version_id>2.0.0.0</ldd_version_id>
 	<dictionary_type>Mission</dictionary_type>
 	<full_name>Steven P. Joy</full_name>
 	<steward_id>ppi</steward_id>
 	<namespace_id>dawn</namespace_id>
     <comment> 
       v1.0.0.0  2018-11-14
-		-  Created PDS4 LDD based on PDS3 Catalog file content.
+		-   Created PDS4 LDD based on PDS3 Catalog file content.
       v1.1.0.0  2020-07-23
-		-  Added support for GRaND instrument
-      v1.2.0.0  2022-10-26
-        -  Fixed errors reported by LDDTool
-        -  Organized VIR attributes into sub-classes where appropriate
-	  v1.3.0.0  2025-10-22
-		-  Reorganized VIR attributes into alphabetical order
+		-   Added support for GRaND instrument
+      v1.2.0.0  2022-10-26 (never released)
+        -   Fixed errors reported by LDDTool
+        -   Organized VIR attributes into sub-classes where appropriate
+	  v2.0.0.0  2025-10-24
+		-   Reorganized VIR attributes into alphabetical order
+		-   Major (non-backward compatible) reorganization of VIR-specific 
+			classes and attributes
+		-	Added new VIR attributes required for PDS3 to PDS4 migration
 		
 		
 	</comment>
-	<last_modification_date_time>2022-10-26T16:00:00.000Z</last_modification_date_time>
+	<last_modification_date_time>2025-10-25T03:00:00.000Z</last_modification_date_time>
 
 
 	<DD_Attribute>
