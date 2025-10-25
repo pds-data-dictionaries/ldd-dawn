@@ -1943,7 +1943,7 @@
 		<definition>The vir_component_name identifies a component of the VIR instrument.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<unit_of_measure_type>Units_of_None</unit_of_measure_type>
 			<DD_Permissible_Value>
 				<value>Cryocooler</value>
@@ -2765,7 +2765,7 @@
 			<identifier_reference>dawn.VIR_Component_Temperature</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
+			<maximum_occurrences>*</maximum_occurrences>
 		</DD_Association>
 	</DD_Class>
 	<DD_Class>
