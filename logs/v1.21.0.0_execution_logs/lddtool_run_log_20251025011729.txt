@@ -1,23 +1,16 @@
 
 >>  INFO LDDTOOL Version: 15.3.0
->>  INFO IM Version Id: 1.23.0.0
+>>  INFO IM Version Id: 1.21.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.0
->>  INFO Date: Sat Oct 25 01:06:11 UTC 2025
+>>  INFO IM Label Version Id: 1.27
+>>  INFO Date: Sat Oct 25 01:17:31 UTC 2025
 >>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
->>> ERROR Class:0001_NASA_PDS_1.dawn.VIR_Data_Information  Association:dawn.local_time_angle  Attribute: dawn.local_time_angle - Missing Attribute
->>> ERROR Association: dawn.local_time_angle - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.dawn.VIR  Association:dawn.VIR_Operational_Parameters  Class:dawn.VIR_Operational_Parameters - Missing Component Class
->>> ERROR Association: dawn.VIR_Operational_Parameters - Missing Component - Reference Type: component_of
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Mission
 >>> INFO Attribute: <standard_data_product_id> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <comment> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <mission_phase_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
->>> INFO Attribute: <mission_phase_name> - This local attribute has a duplicate in the PDS4 data dictionary.
->>> INFO Attribute: <spacecraft_clock_start_count> - This local attribute has a duplicate in the PDS4 data dictionary.
->>> INFO Attribute: <spacecraft_clock_stop_count> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <callamp_delay_time> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <callamp_delay_time> - The default maximum value provided by the attribute's data type is being overridden with 10000000
 >>> INFO Attribute: <callamp_duty> - The default minimum value provided by the attribute's data type is being overridden with 0.0
@@ -102,7 +95,6 @@
 >>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> WARNING Init:  - Config.Properties Namespace Id Not Found:dawn
->>> WARNING Attribute: <local_hour_angle> - This local attribute was not used in an Association.
 >>> WARNING Attribute: <vir_photometric_correction_type> - The 'type' attribute must have at least one permissible value.
 >>> WARNING Attribute: <dpu_hardware_id> - An attribute with the enumeration_flag = true must have at least one permissible value.
 >>> WARNING Attribute: <vir_vis_start_x_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
@@ -110,13 +102,13 @@
 >>> WARNING Class: <GRaND> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
 
  -- LDDTool Execution Summary --
-     7 warning(s)
-     4 error(s)
+     6 warning(s)
+     0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1N00
+     - IM Version: 1L00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -126,9 +118,9 @@ Input:
 
 Output:
 
-     - ./PDS4_DAWN_1N00_1200.xsd
-     - ./PDS4_DAWN_1N00_1200.sch
-     - ./PDS4_DAWN_1N00_1200.xml
-     - ./export/PDS4_PDS_1N00.JSON
+     - ./PDS4_DAWN_1L00_1200.xsd
+     - ./PDS4_DAWN_1L00_1200.sch
+     - ./PDS4_DAWN_1L00_1200.xml
+     - ./export/PDS4_PDS_1L00.JSON
 
->>  INFO Exit(1)
+>>  INFO Exit(0)

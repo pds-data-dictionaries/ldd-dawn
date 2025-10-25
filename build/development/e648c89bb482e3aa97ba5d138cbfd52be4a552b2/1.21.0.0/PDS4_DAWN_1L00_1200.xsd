@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.2.0.0 - Wed Oct 22 22:25:30 UTC 2025 -->
-  <!-- Generated from the PDS4 Information Model Version 1.22.0.0 - System Build 14.1 -->
+  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:1.2.0.0 - Sat Oct 25 01:17:31 UTC 2025 -->
+  <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.22.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
   <!-- 1.2.0.0 - dawn: - Dawn                                                    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -15,7 +15,7 @@
     attributeFormDefault="unqualified"
     version="1.2.0.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
@@ -146,19 +146,6 @@
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
-  <xs:complexType name="Frame_Parameters">
-    <xs:annotation>
-      <xs:documentation>The Frame_Parameters class contains attributes
-        describing the acquisition of the VIR frames.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="exposure_duration" type="dawn:exposure_duration" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="frame_summing" type="dawn:frame_summing" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="external_repetition_time" type="dawn:external_repetition_time" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="dark_acquisition_rate" type="dawn:dark_acquisition_rate" minOccurs="1" maxOccurs="1"> </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
   <xs:complexType name="GRaND">
     <xs:annotation>
 <xs:documentation>GRaND parameters</xs:documentation>
@@ -241,53 +228,80 @@
         elements. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="vir_ir_start_x_position" type="dawn:vir_ir_start_x_position" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="vir_ir_start_y_position" type="dawn:vir_ir_start_y_position" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="vir_vis_start_x_position" type="dawn:vir_vis_start_x_position" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="vir_vis_start_y_position" type="dawn:vir_vis_start_y_position" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="VIR_Operational_Parameters" type="dawn:VIR_Operational_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="Scan_Parameters" type="dawn:Scan_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="Frame_Parameters" type="dawn:Frame_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="VIR_Data_Information" type="dawn:VIR_Data_Information" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="VIR_Instrument_Status" type="dawn:VIR_Instrument_Status" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
-    <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test=")"/> -->
-    <!-- <xs:assert test=")"/> -->
-    <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
-  <xs:complexType name="VIR_Instrument_Temperatures">
+  <xs:complexType name="VIR_Component_Temperature">
     <xs:annotation>
-      <xs:documentation>The VIR_Instrument_Temperatures class contains
+      <xs:documentation>The VIR_Component_Temperature class contains
         attributes which identify the temperature in different sections
         of the VIR instrument.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="vir_focal_plane_maximum_temperature" type="dawn:vir_focal_plane_maximum_temperature" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="vir_telescope_maximum_temperature" type="dawn:vir_telescope_maximum_temperature" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="vir_spectrometer_maximum_temperature" type="dawn:vir_spectrometer_maximum_temperature" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="vir_cryocooler_maximum_temperature" type="dawn:vir_cryocooler_maximum_temperature" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_component_name" type="dawn:vir_component_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_component_maximum_temperature" type="dawn:vir_component_maximum_temperature" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:vir_component_name = ('Cryocooler', 'Focal Plane', 'Spectrometer', 'Telescope')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="VIR_Data_Information">
+    <xs:annotation>
+      <xs:documentation>The VIR_Data_Information class contains
+        attributes describing aspects of the VIR data
+        file.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="image_mid_time" nillable="true" type="dawn:image_mid_time" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="local_hour_angle" type="dawn:local_hour_angle" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="north_azimuth" nillable="true" type="dawn:north_azimuth" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_data_quality_id" type="dawn:vir_data_quality_id" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_channel_id" type="dawn:vir_channel_id" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:vir_data_quality_id = ('0', '1')"/> -->
+    <!-- <xs:assert test="dawn:vir_channel_id = ('IR', 'VIS')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="VIR_Frame_Parameters">
+    <xs:annotation>
+      <xs:documentation>The VIR_Frame_Parameters class contains
+        attributes describing the acquisition of the VIR
+        frames.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="vir_exposure_duration" type="dawn:vir_exposure_duration" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_frame_summing" type="dawn:vir_frame_summing" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_external_repetition_time" type="dawn:vir_external_repetition_time" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_dark_acquisition_rate" type="dawn:vir_dark_acquisition_rate" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="VIR_Operational_Parameters">
+  <xs:complexType name="VIR_Instrument_Status">
     <xs:annotation>
-      <xs:documentation>The VIR_Operational_Parameters contains
-        attributes related to VIR operating mode information, data
-        quality and other similar metadata.</xs:documentation>
+      <xs:documentation>The VIR_Instrument_Status class contains
+        attributes related to the VIR instrument operational
+        settings.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="data_quality_id" type="dawn:data_quality_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="telemetry_source_id" type="dawn:telemetry_source_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="channel_id" type="dawn:channel_id" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="software_version_id" type="dawn:software_version_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="instrument_mode_id" type="dawn:instrument_mode_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="scan_mode_id" type="dawn:scan_mode_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="scan_mode_id" type="dawn:scan_mode_id" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_ir_start_x_position" type="dawn:vir_ir_start_x_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_ir_start_y_position" type="dawn:vir_ir_start_y_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_vis_start_x_position" type="dawn:vir_vis_start_x_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_vis_start_y_position" type="dawn:vir_vis_start_y_position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="vir_photometric_correction_type" nillable="true" type="dawn:vir_photometric_correction_type" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="comment" type="pds:comment" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Scan_Parameters" type="dawn:Scan_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="VIR_Frame_Parameters" type="dawn:VIR_Frame_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="VIR_Component_Temperature" type="dawn:VIR_Component_Temperature" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="dawn:data_quality_id = ('0', '1')"/> -->
-    <!-- <xs:assert test="dawn:channel_id = ('IR', 'VIS')"/> -->
-    <!-- <xs:assert test="dawn:instrument_mode_id = ('C_H_SPE_H_SPA_F', 'C_H_SPE_H_SPA_Q', 'C_H_SPE_L_SPA_F', 'C_L_SPE_H_SPA_F', 'C_L_SPE_H_SPA_Q', 'C_L_SPE_L_SPA_F', 'SPARE', 'S_H_SPE_H_SPA_F', 'S_H_SPE_H_SPA_Q', 'S_H_SPE_L_SPA_F', 'S_H_SPE_L_SPA_F_MEA', 'S_H_SPE_L_SPA_F_SUM', 'S_L_SPE_H_SPA_F', 'S_L_SPE_H_SPA_Q', 'S_L_SPE_L_SPA_F', 'S_L_SPE_L_SPA_F_MEA', 'S_L_SPE_L_SPA_F_SUM')"/> -->
+    <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test=")"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
@@ -399,17 +413,6 @@
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="channel_id">
-    <xs:annotation>
-      <xs:documentation>The channel_id identifies the instrument channel
-        producing the data.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
   <xs:complexType name="comment">
     <xs:annotation>
       <xs:documentation>Remarks about the containing
@@ -421,30 +424,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-
-  <xs:simpleType name="dark_acquisition_rate">
-    <xs:annotation>
-      <xs:documentation>The dar_acquisition_rate attribute is the number
-        of frames acquired between two background
-        measurements.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Integer">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="data_quality_id">
-    <xs:annotation>
-      <xs:documentation>The data_quality_id is an indicator of whether
-        data files is complete or if there are missing
-        lines.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Integer">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
-	   </xs:restriction>
-  </xs:simpleType>
 
   <xs:simpleType name="data_routing_id">
     <xs:annotation>
@@ -479,47 +458,6 @@
      <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
-
-  <xs:simpleType name="exposure_duration_WO_Units">
-    <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-1.7976931348623157e308"/>
-     <xs:maxInclusive value="1.7976931348623157e308"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="exposure_duration">
-    <xs:annotation>
-      <xs:documentation>The exposure_duration attribute is the
-        integration time expressed in milliseconds. It is the exposure
-        time of elementary exposures when summing is
-        performed.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="dawn:exposure_duration_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
-  <xs:simpleType name="external_repetition_time_WO_Units">
-    <xs:restriction base="pds:ASCII_Integer">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="external_repetition_time">
-    <xs:annotation>
-      <xs:documentation>The external_repetition_time attribute is the
-        time required for a frame acqusition cycle (> exposure_duration
-        * frame_summing).</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="dawn:external_repetition_time_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
 
   <xs:simpleType name="fee_flag">
     <xs:annotation>
@@ -557,18 +495,6 @@
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="0"/>
      <xs:maxInclusive value="63"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="frame_summing">
-    <xs:annotation>
-      <xs:documentation>The frame_summing attribute is the number of
-        elementary exposures when summing is
-        performed.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Integer">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -905,17 +831,37 @@
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="instrument_mode_id">
+  <xs:complexType name="image_mid_time">
     <xs:annotation>
-      <xs:documentation>The instrument_mode_id attribute identifies the
-        mode that the instrument was in when the data were
-        taken.</xs:documentation>
+      <xs:documentation>The image_mid_time is the center time of the
+        image or cube.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
+    <xs:simpleContent>
+      <xs:extension base="pds:ASCII_Date_Time_YMD">
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="local_hour_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
+
+  <xs:complexType name="local_hour_angle">
+    <xs:annotation>
+      <xs:documentation>The local_hour_angle attribute indicates the
+        local hour at the center of the image or
+        spectra.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:local_hour_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="mcu_flag">
     <xs:annotation>
@@ -962,6 +908,27 @@
      <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="north_azimuth_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="north_azimuth">
+    <xs:annotation>
+      <xs:documentation>The north_azimuth attribute indicates the north
+        azimuth angle evaluated at the center of the image or
+        spectra.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:north_azimuth_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="operator">
     <xs:annotation>
@@ -1080,18 +1047,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-
-  <xs:simpleType name="software_version_id">
-    <xs:annotation>
-      <xs:documentation>The software_version_id attribute identifies the
-        software used to write the labels and format the
-        data.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
 
   <xs:simpleType name="spacecraft_clock_start_count">
     <xs:annotation>
@@ -1431,19 +1386,6 @@
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="telemetry_source_id">
-    <xs:annotation>
-      <xs:documentation>The telemetry_source_id attribute identifies the
-        Electrical Ground Supporting Equipment (EGSE) used to produce
-        the data file. This attribute is always set to
-        "EGSE".</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="test_lamp">
     <xs:annotation>
       <xs:documentation>This keyword was used during ground tests to
@@ -1687,45 +1629,125 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:simpleType name="vir_cryocooler_maximum_temperature_WO_Units">
+  <xs:simpleType name="vir_channel_id">
+    <xs:annotation>
+      <xs:documentation>The vir_channel_id identifies the instrument
+        channel producing the data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_component_maximum_temperature_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="vir_cryocooler_maximum_temperature">
+  <xs:complexType name="vir_component_maximum_temperature">
     <xs:annotation>
-      <xs:documentation>The vir_cyrocooler_maximum_temperature indicates
-        the maxiumum temperature on the VIR cryocooler during the VIR
-        image acquisition. </xs:documentation>
+      <xs:documentation>The vir_component_maximum_temperature indicates
+        the maxiumum temperature on the VIR component identified by the
+        vir_component_name attribute during the VIR image acquisition.
+        </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="dawn:vir_cryocooler_maximum_temperature_WO_Units">
+      <xs:extension base="dawn:vir_component_maximum_temperature_WO_Units">
         <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:simpleType name="vir_focal_plane_maximum_temperature_WO_Units">
+  <xs:simpleType name="vir_component_name">
+    <xs:annotation>
+      <xs:documentation>The vir_component_name identifies a component of
+        the VIR instrument.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_dark_acquisition_rate">
+    <xs:annotation>
+      <xs:documentation>The vir_dark_acquisition_rate attribute is the
+        number of frames acquired between two background
+        measurements.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_data_quality_id">
+    <xs:annotation>
+      <xs:documentation>The vir_data_quality_id is an indicator of
+        whether data files is complete or if there are missing
+        lines.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_exposure_duration_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="vir_focal_plane_maximum_temperature">
+  <xs:complexType name="vir_exposure_duration">
     <xs:annotation>
-      <xs:documentation>The vir_focal_plane_maximum_temperature
-        indicates the maxiumum temperature on the VIR focal plane during
-        the VIR image acquisition. </xs:documentation>
+      <xs:documentation>The vir_exposure_duration attribute is the
+        integration time expressed in milliseconds. It is the exposure
+        time of elementary exposures when summing is
+        performed.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="dawn:vir_focal_plane_maximum_temperature_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      <xs:extension base="dawn:vir_exposure_duration_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <xs:simpleType name="vir_external_repetition_time_WO_Units">
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="vir_external_repetition_time">
+    <xs:annotation>
+      <xs:documentation>The vir_external_repetition_time attribute is
+        the time required for a frame acqusition cycle (>
+        vir_exposure_duration * vir_frame_summing).</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:vir_external_repetition_time_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="vir_frame_summing">
+    <xs:annotation>
+      <xs:documentation>The vir_frame_summing attribute is the number of
+        elementary exposures when summing is
+        performed.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="vir_ir_start_x_position">
     <xs:annotation>
@@ -1753,43 +1775,16 @@
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="vir_spectrometer_maximum_temperature_WO_Units">
-    <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-1.7976931348623157e308"/>
-     <xs:maxInclusive value="1.7976931348623157e308"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="vir_spectrometer_maximum_temperature">
+  <xs:complexType name="vir_photometric_correction_type">
     <xs:annotation>
-      <xs:documentation>The vir_spectrometer_maximum_temperature
-        indicates the maxiumum temperature on the VIR grating
-        spectrometer during the VIR image acquisition.
-        </xs:documentation>
+      <xs:documentation>The vir_photometric_correction_type attribute
+        describes any photometric correction that has been applied to an
+        image or spectra (typically this value is
+        "None").</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="dawn:vir_spectrometer_maximum_temperature_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
-  <xs:simpleType name="vir_telescope_maximum_temperature_WO_Units">
-    <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-1.7976931348623157e308"/>
-     <xs:maxInclusive value="1.7976931348623157e308"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="vir_telescope_maximum_temperature">
-    <xs:annotation>
-      <xs:documentation>The vir_telescope_maximum_temperature indicates
-        the maxiumum temperature on the VIR optical telescope during the
-        VIR image acquisition. </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="dawn:vir_telescope_maximum_temperature_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      <xs:extension base="pds:ASCII_Short_String_Collapsed">
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
