@@ -3,7 +3,7 @@
 >>  INFO IM Version Id: 1.22.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.0
->>  INFO Date: Sat Oct 25 00:45:57 UTC 2025
+>>  INFO Date: Sat Oct 25 01:06:17 UTC 2025
 >>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
 >>> ERROR Class:0001_NASA_PDS_1.dawn.VIR_Data_Information  Association:dawn.local_time_angle  Attribute: dawn.local_time_angle - Missing Attribute
