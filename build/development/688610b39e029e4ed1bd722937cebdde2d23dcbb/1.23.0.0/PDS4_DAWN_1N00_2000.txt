@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Sat Oct 25 02:06:00 UTC 2025
+   Time                   Sat Oct 25 02:55:24 UTC 2025
    Common Schema          [PDS4_PDS_1N00.xsd]
    Common Schematron      [PDS4_PDS_1N00.sch]
    IM Version Id:         1.23.0.0
@@ -552,7 +552,7 @@ Parsed Input - Attributes:
 
    name                   vir_component_name
    version                1.23
-   value data type        ASCII_Integer
+   value data type        ASCII_Short_String_Collapsed
    description            The vir_component_name identifies a component of the VIR instrument.
 
    name                   vir_dark_acquisition_rate
@@ -1137,7 +1137,7 @@ Parsed Input - Classes:
 
       local identifier      dawn.VIR_Component_Temperature
       minimum occurrences   1
-      maximum occurrences   1
+      maximum occurrences   *
       reference type        component_of
 
    name                   Scan_Parameters
