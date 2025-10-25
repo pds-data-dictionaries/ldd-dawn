@@ -1787,17 +1787,14 @@
 	
 	<!-- Visual and Infrared Spectrometer (VIR) Attributes -->
 	<DD_Attribute>
-<<<<<<< Updated upstream
-		<name>channel_id</name>
-=======
 		<name>image_mid_time</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.image_mid_time</local_identifier>
-		<nillable_flag>false</nillable_flag>
+		<nillable_flag>true</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
 		<definition>The image_mid_time is the center time of the image or cube.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
+			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Date_Time_YMD</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -1810,7 +1807,7 @@
 		<definition>The local_hour_angle attribute indicates the local hour at the center of the 
 			image or spectra.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
+			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
 			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
 		</DD_Value_Domain>
@@ -1824,7 +1821,7 @@
 		<definition>The north_azimuth attribute indicates the north azimuth angle evaluated at 
 			the center of the image or spectra.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
+			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
 			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
 		</DD_Value_Domain>
@@ -1840,7 +1837,7 @@
 		   movement around an axis parallel to the slit direction (y direction). There can be 10 different modes, 
 		   each one identifying a given angular movement.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
+			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Integer</value_data_type>
 			<minimum_value>0</minimum_value>
 			<maximum_value>10</maximum_value>
@@ -1854,21 +1851,20 @@
 		<submitter_name>J. Mafi</submitter_name>
 		<definition>The scan_start_angle attribute indicates the start position of the VIR scan mirror.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
+			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
 			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>scan_step_angle</name>
->>>>>>> Stashed changes
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.scan_step_angle</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
 		<definition>The scan_step_angle attribute indicates the size of each step of the VIR scan mirror.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
+			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
 			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
 		</DD_Value_Domain>
@@ -1882,7 +1878,7 @@
 		<definition>The scan_step_number attribute indicates the number of acquisitions performed within a single VIR 
 		    scan mirror unit position.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
+			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Integer</value_data_type>
 			<unit_of_measure_type>Units_of_None</unit_of_measure_type>
 		</DD_Value_Domain>
@@ -1895,7 +1891,7 @@
 		<submitter_name>J. Mafi</submitter_name>
 		<definition>The scan_stop_angle attribute indicates the stop position of the VIR scan mirror.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
+			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
 			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
 		</DD_Value_Domain>
@@ -1904,7 +1900,7 @@
 		<name>vir_channel_id</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_channel_id</local_identifier>
-		<nillable_flag>true</nillable_flag>
+		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
 		<definition>The vir_channel_id identifies the instrument channel producing the data.</definition>
 		<DD_Value_Domain>
@@ -1921,19 +1917,10 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-<<<<<<< Updated upstream
-		<name>dark_acquisition_rate</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.dark_acquisition_rate</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The dar_acquisition_rate attribute is the number of frames acquired between two
-		    background measurements.</definition>
-=======
 		<name>vir_component_maximum_temperature</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_component_maximum_temperature</local_identifier>
-		<nillable_flag>true</nillable_flag>
+		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
 		<definition>The vir_component_maximum_temperature indicates the maxiumum temperature on the VIR component 
 		    identified by the vir_component_name attribute during the VIR image acquisition.
@@ -1948,96 +1935,49 @@
 		<name>vir_component_name</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_component_name</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_component_name identifies a component of the VIR instrument.</definition>
->>>>>>> Stashed changes
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-			<unit_of_measure_type>Units_of_None</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>data_quality_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.data_quality_id</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
-		<definition>The data_quality_id is an indicator of whether data files is complete or if there are missing lines.</definition>
+		<definition>The vir_component_name identifies a component of the VIR instrument.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Integer</value_data_type>
-			<DD_Permissible_Value>
-				<value>0</value>
-				<value_meaning>The data qube is incomplete (there are missing lines).</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>1</value>
-				<value_meaning>The data qube is complete.</value_meaning>
-			</DD_Permissible_Value>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>exposure_duration</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.exposure_duration</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The exposure_duration attribute is the integration time expressed in milliseconds. It is the 
-		exposure time of elementary exposures when summing is performed.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>external_repetition_time</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.external_repetition_time</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The external_repetition_time attribute is the time required for a frame acqusition cycle 
-		    (&gt; exposure_duration * frame_summing).</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>frame_summing</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.frame_summing</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The frame_summing attribute is the number of elementary exposures when summing is performed.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
 			<unit_of_measure_type>Units_of_None</unit_of_measure_type>
+			<DD_Permissible_Value>
+				<value>Cryocooler</value>
+				<value_meaning>The associated parameters are for the VIR cryocooler.</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>Focal Plane</value>
+				<value_meaning>The associated parameters are for the VIR focal plane.</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>Spectrometer</value>
+				<value_meaning>The associated parameters are for the VIR spectrometer.</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>Telescope</value>
+				<value_meaning>The associated parameters are for the VIR telescope.</value_meaning>
+			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>vir_dark_acquisition_rate</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_dark_acquisition_rate</local_identifier>
-		<nillable_flag>true</nillable_flag>
+		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
 		<definition>The vir_dark_acquisition_rate attribute is the number of frames acquired between two
 			background measurements.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Integer</value_data_type>
-			<unit_of_measure_type>Units_of_None</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>vir_data_quality_id</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_data_quality_id</local_identifier>
-		<nillable_flag>true</nillable_flag>
+		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
 		<definition>The vir_data_quality_id is an indicator of whether data files is complete or if there are missing lines.</definition>
 		<DD_Value_Domain>
@@ -2057,37 +1997,37 @@
 		<name>vir_exposure_duration</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_exposure_duration</local_identifier>
-		<nillable_flag>true</nillable_flag>
+		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
-<<<<<<< Updated upstream
-		<definition>The scan_start_angle attribute indicates the start position of the VIR scan mirror.</definition>
+		<definition>The vir_exposure_duration attribute is the integration time expressed in milliseconds. It is the 
+		exposure time of elementary exposures when summing is performed.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>scan_step_angle</name>
+		<name>vir_external_repetition_time</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.scan_step_angle</local_identifier>
+		<local_identifier>dawn.vir_external_repetition_time</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
-		<definition>The scan_step_angle attribute indicates the size of each step of the VIR scan mirror.</definition>
+		<definition>The vir_external_repetition_time attribute is the time required for a frame acqusition cycle 
+		    (&gt; vir_exposure_duration * vir_frame_summing).</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<value_data_type>ASCII_Integer</value_data_type>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>scan_step_number</name>
+		<name>vir_frame_summing</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.scan_step_number</local_identifier>
+		<local_identifier>dawn.vir_frame_summing</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>J. Mafi</submitter_name>
-		<definition>The scan_step_number attribute indicates the number of acquisitions performed within a single VIR 
-		    scan mirror unit position.</definition>
+		<definition>The vir_frame_summing attribute is the number of elementary exposures when summing is performed.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Integer</value_data_type>
@@ -2095,108 +2035,10 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>scan_stop_angle</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.scan_stop_angle</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The scan_stop_angle attribute indicates the stop position of the VIR scan mirror.</definition>
-=======
-		<definition>The vir_exposure_duration attribute is the integration time expressed in milliseconds. It is the 
-			exposure time of elementary exposures when summing is performed.</definition>
->>>>>>> Stashed changes
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-<<<<<<< Updated upstream
-		<name>software_version_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.software_version_id</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The software_version_id attribute identifies the software used to write the labels and format the data.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>telemetry_source_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.telemetry_source_id</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The telemetry_source_id attribute identifies the Electrical Ground Supporting Equipment 
-			(EGSE) used to produce the data file. This attribute is always set to "EGSE".</definition>
-=======
-		<name>vir_external_repetition_time</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_external_repetition_time</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_external_repetition_time attribute is the time required for a frame acqusition cycle 
-			(&gt; vir_exposure_duration * vir_frame_summing).</definition>
->>>>>>> Stashed changes
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-<<<<<<< Updated upstream
-		<name>vir_cryocooler_maximum_temperature</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_cryocooler_maximum_temperature</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_cyrocooler_maximum_temperature indicates the maxiumum temperature on the VIR cryocooler 
-			during the VIR image acquisition.
-		</definition>
-=======
-		<name>vir_frame_summing</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_frame_summing</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_frame_summing attribute is the number of elementary exposures when summing is performed.</definition>
->>>>>>> Stashed changes
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-<<<<<<< Updated upstream
-		<name>vir_focal_plane_maximum_temperature</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_focal_plane_maximum_temperature</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_focal_plane_maximum_temperature indicates the maxiumum temperature on the VIR focal plane 
-		    during the VIR image acquisition.
-		</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
 		<name>vir_ir_start_x_position</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_ir_start_x_position</local_identifier>
 		<nillable_flag>false</nillable_flag>
-=======
-		<name>vir_ir_start_x_position</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_ir_start_x_position</local_identifier>
-		<nillable_flag>true</nillable_flag>
->>>>>>> Stashed changes
 		<submitter_name>S. Joy</submitter_name>
 		<definition>This keyword gives the X coordinate of the first CCD pixel used on
 			the IR FPA.  This quantity determines the correspondence between
@@ -2211,11 +2053,7 @@
 		<name>vir_ir_start_y_position</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_ir_start_y_position</local_identifier>
-<<<<<<< Updated upstream
 		<nillable_flag>false</nillable_flag>
-=======
-		<nillable_flag>true</nillable_flag>
->>>>>>> Stashed changes
 		<submitter_name>S. Joy</submitter_name>
 		<definition>This keyword gives the Y coordinate of the first CCD pixel used on
 			the IR FPA.  This quantity determines the correspondence between
@@ -2226,53 +2064,23 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-<<<<<<< Updated upstream
-		<name>vir_spectrometer_maximum_temperature</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_spectrometer_maximum_temperature</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_spectrometer_maximum_temperature indicates the maxiumum temperature on the VIR grating spectrometer 
-			during the VIR image acquisition.
-		</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>vir_telescope_maximum_temperature</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_telescope_maximum_temperature</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_telescope_maximum_temperature indicates the maxiumum temperature on the VIR optical telescope 
-			during the VIR image acquisition.
-		</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
-=======
-		<name>vir_photometric_correction_type</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_photometric_correction_type</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_photometric_correction_type attribute describes any photometric correction 
-			that has been applied to an image or spectra (typically this value is "None").</definition>
+	    <name>vir_photometric_correction_type</name>
+	    <version_id>1.0</version_id>
+	    <local_identifier>dawn.vir_photometric_correction_type</local_identifier>
+	    <nillable_flag>true</nillable_flag>
+	    <submitter_name>J. Mafi</submitter_name>
+	    <definition>The vir_photometric_correction_type attribute describes any photometric correction 
+		    that has been applied to an image or spectra (typically this value is "None").</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
->>>>>>> Stashed changes
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>vir_vis_start_x_position</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_vis_start_x_position</local_identifier>
-		<nillable_flag>true</nillable_flag>
+		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
 		<definition>This keyword gives the X coordinate of the first CCD pixel used on
 			the VIS FPA.  This quantity determines the correspondence between
@@ -2286,7 +2094,7 @@
 		<name>vir_vis_start_y_position</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.vir_vis_start_y_position</local_identifier>
-		<nillable_flag>true</nillable_flag>
+		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
 		<definition>This keyword gives the Y coordinate of the first CCD pixel used on
 			the VIS FPA.  This quantity determines the correspondence between
@@ -2905,25 +2713,25 @@
 		<DD_Association>
 			<identifier_reference>dawn.vir_ir_start_x_position</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
+			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.vir_ir_start_y_position</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
+			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.vir_vis_start_x_position</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
+			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.vir_vis_start_y_position</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
+			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
@@ -3030,6 +2838,12 @@
 		
 		<element_flag>false</element_flag>
 
+		<DD_Association>
+			<identifier_reference>dawn.VIR_Data_Information</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.VIR_Operational_Parameters</identifier_reference>
 			<reference_type>component_of</reference_type>
