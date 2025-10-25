@@ -2673,7 +2673,7 @@
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.local_time_angle</identifier_reference>
+			<identifier_reference>dawn.local_hour_angle</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2840,12 +2840,6 @@
 
 		<DD_Association>
 			<identifier_reference>dawn.VIR_Data_Information</identifier_reference>
-			<reference_type>component_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.VIR_Operational_Parameters</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
