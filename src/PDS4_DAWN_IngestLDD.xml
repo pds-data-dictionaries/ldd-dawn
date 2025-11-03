@@ -25,8 +25,6 @@
 		-   Major (non-backward compatible) reorganization of VIR-specific 
 			classes and attributes
 		-	Added new VIR attributes required for PDS3 to PDS4 migration
-		
-		
 	</comment>
 	<last_modification_date_time>2025-10-25T03:00:00.000Z</last_modification_date_time>
 
@@ -2841,7 +2839,8 @@
 		<comment>
 			2.0 - 	Class name changed from "vir" to VIR in accordance with PDS4 class naming rules
 				  	Major reorganization of VIR attributes into subdirectories
-					Added new attributes required for VIR PDS4 migration		
+					Added new attributes required for VIR PDS4 migration
+		</comment>
 		<element_flag>false</element_flag>
 
 		<DD_Association>
