@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Sat Oct 25 02:55:24 UTC 2025
+   Time                   Mon Nov 03 22:45:32 UTC 2025
    Common Schema          [PDS4_PDS_1N00.xsd]
    Common Schematron      [PDS4_PDS_1N00.sch]
    IM Version Id:         1.23.0.0
@@ -56,8 +56,6 @@ Parsed Input - Header:
 		-   Major (non-backward compatible) reorganization of VIR-specific 
 			classes and attributes
 		-	Added new VIR attributes required for PDS3 to PDS4 migration
-		
-		
 	
    Last Modification Time 2025-10-25T03:00:00.000Z
    PDS4 Merge Flag        false
