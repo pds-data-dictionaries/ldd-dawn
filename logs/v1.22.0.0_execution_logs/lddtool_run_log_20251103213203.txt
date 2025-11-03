@@ -1,11 +1,15 @@
 
 >>  INFO LDDTOOL Version: 15.3.0
->>  INFO IM Version Id: 1.21.0.0
+>>  INFO IM Version Id: 1.22.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.27
->>  INFO Date: Sat Oct 25 02:55:31 UTC 2025
+>>  INFO IM Label Version Id: 1.0
+>>  INFO Date: Mon Nov 03 21:32:05 UTC 2025
 >>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
+>>> ERROR Class:0001_NASA_PDS_1.dawn.Dawn  Association:dawn.grand  Class:dawn.grand - Missing Component Class
+>>> ERROR Association: dawn.grand - Missing Component - Reference Type: component_of
+>>> ERROR Class:  - The class grand must begin with an upper case letter.
+>>> ERROR Class:  - At least one value for pds:local_reference_type or pds:reference_type must be defined for dawn:grand/pds:Local_Internal_Reference.
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Mission
 >>> INFO Attribute: <standard_data_product_id> - A 'nillable' attribute was found that is not a required attribute in at least one class.
@@ -99,16 +103,15 @@
 >>> WARNING Attribute: <dpu_hardware_id> - An attribute with the enumeration_flag = true must have at least one permissible value.
 >>> WARNING Attribute: <vir_vis_start_x_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
 >>> WARNING Attribute: <vir_vis_start_y_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
->>> WARNING Class: <GRaND> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
 
  -- LDDTool Execution Summary --
-     6 warning(s)
-     0 error(s)
+     5 warning(s)
+     4 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1L00
+     - IM Version: 1M00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -118,9 +121,9 @@ Input:
 
 Output:
 
-     - ./PDS4_DAWN_1L00_2000.xsd
-     - ./PDS4_DAWN_1L00_2000.sch
-     - ./PDS4_DAWN_1L00_2000.xml
-     - ./export/PDS4_PDS_1L00.JSON
+     - ./PDS4_DAWN_1M00_2000.xsd
+     - ./PDS4_DAWN_1M00_2000.sch
+     - ./PDS4_DAWN_1M00_2000.xml
+     - ./export/PDS4_PDS_1M00.JSON
 
->>  INFO Exit(0)
+>>  INFO Exit(1)
