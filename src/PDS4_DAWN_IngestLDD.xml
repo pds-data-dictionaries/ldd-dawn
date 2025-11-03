@@ -2858,7 +2858,7 @@
 	<DD_Class>
 		<name>grand</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.GRaND</local_identifier>
+		<local_identifier>dawn.grand</local_identifier>
 		<submitter_name>GRaND Instrument</submitter_name>
 		<definition>GRaND parameters</definition>
 		<element_flag>true</element_flag>
