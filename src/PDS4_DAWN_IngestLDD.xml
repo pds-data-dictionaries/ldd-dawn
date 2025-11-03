@@ -2833,12 +2833,15 @@
 	
 	<DD_Class>
 		<name>VIR</name>
-		<version_id>1.0</version_id>
+		<version_id>2.0</version_id>
 		<local_identifier>dawn.VIR</local_identifier>
-		<submitter_name>S. Joy</submitter_name>
+		<submitter_name>J. Mafi</submitter_name>
 		<definition>The Dawn "VIR" class is the container for Dawn Visual and Infrared Spectrometer (VIR) specific metadata elements.
 		</definition>
-		
+		<comment>
+			2.0 - 	Class name changed from "vir" to VIR in accordance with PDS4 class naming rules
+				  	Major reorganization of VIR attributes into subdirectories
+					Added new attributes required for VIR PDS4 migration		
 		<element_flag>false</element_flag>
 
 		<DD_Association>
@@ -2856,11 +2859,15 @@
 	</DD_Class>
 
 	<DD_Class>
-		<name>grand</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.grand</local_identifier>
+		<name>GRaND</name>
+		<version_id>2.0</version_id>
+		<local_identifier>dawn.GRaND</local_identifier>
 		<submitter_name>GRaND Instrument</submitter_name>
 		<definition>GRaND parameters</definition>
+		<comment>
+			2.0 - Changed class name from "grand" to "GRaND", as required by
+			      LDDTool class naming rules.
+		</comment>
 		<element_flag>true</element_flag>
 		<DD_Association>
 		  <identifier_reference>pds.Local_Internal_Reference</identifier_reference>
@@ -2934,7 +2941,7 @@
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>dawn.grand</identifier_reference>
+			<identifier_reference>dawn.GRaND</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
