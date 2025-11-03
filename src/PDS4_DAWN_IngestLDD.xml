@@ -2856,7 +2856,7 @@
 	</DD_Class>
 
 	<DD_Class>
-		<name>GRaND</name>
+		<name>grand</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.GRaND</local_identifier>
 		<submitter_name>GRaND Instrument</submitter_name>
@@ -2934,7 +2934,7 @@
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>dawn.GRaND</identifier_reference>
+			<identifier_reference>dawn.grand</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
