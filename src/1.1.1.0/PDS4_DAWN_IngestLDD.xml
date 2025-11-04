@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.sch"
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.sch"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-   xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.xsd">
+   xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.xsd">
 
 	<name>Dawn</name>
-	<ldd_version_id>2.0.0.0</ldd_version_id>
-	<dictionary_type>Mission</dictionary_type>
+	<ldd_version_id>1.1.1.0</ldd_version_id>
 	<full_name>Steven P. Joy</full_name>
 	<steward_id>ppi</steward_id>
 	<namespace_id>dawn</namespace_id>
     <comment> 
       v1.0.0.0  2018-11-14
-		-   Created PDS4 LDD based on PDS3 Catalog file content.
+		-  Created PDS4 LDD based on PDS3 Catalog file content.
       v1.1.0.0  2020-07-23
-		-   Added support for GRaND instrument
-      v1.2.0.0  2022-10-26 (never released)
-        -   Fixed errors reported by LDDTool
-        -   Organized VIR attributes into sub-classes where appropriate
-	  v2.0.0.0  2025-10-24
-		-   Reorganized VIR attributes into alphabetical order
-		-   Major (non-backward compatible) reorganization of VIR-specific 
-			classes and attributes
-		-	Added new VIR attributes required for PDS3 to PDS4 migration
+		-  Added support for GRaND instrument
+      v1.1.1.0  2025-05-30
+      	-  Added missing mission phases name values
+      	-  Completed null value_meaning values
+		-  Changed permissible value data types from "ASCII_String" to "ASCII_Short_String_Collapsed"
 	</comment>
-	<last_modification_date_time>2025-10-25T03:00:00.000Z</last_modification_date_time>
+	<last_modification_date_time>2020-07-23T22:00:00.000Z</last_modification_date_time>
 
 
 	<DD_Attribute>
@@ -175,14 +170,14 @@
 			</DD_Permissible_Value>     
 			<DD_Permissible_Value>
 				<value>CERES EXTENDED OPPOSITION (CXO)</value>
-				<value_meaning>2017-04-28T00:00 to 2017-07-01T00:00</value_meaning>
-			</DD_Permissible_Value>
+				<value_meaning>2017-04-28T00:00 to 2017-06-03T16:50</value_meaning>
+			</DD_Permissible_Value>     
 			<DD_Permissible_Value>
 				<value>CERES TRANSFER TO HOLDING (CXH)</value>
 				<value_meaning>2017-06-03T16:50 to 2017-06-28T02:30</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
-				<value>END OF CERES EXTENDED MISSION 1</value>
+				<value>END OF CERES EXTENDED MISSION</value>
 				<value_meaning>2017-07-01T00:00</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
@@ -315,21 +310,23 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>callamp_enable_flag</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.callamp_enable_flag</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>Indicates if callamp is enabled or disabled during image acquisition.</definition>
+		<definition>OFF = callamp set to disabled
+
+                                    ON = callamp set to enabled</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
 				<value>OFF</value>
-				<value_meaning>callamp set to disabled</value_meaning>
+				<value_meaning>The callamp is set to disabled.</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>ON</value>
-				<value_meaning>callamp set to enabled</value_meaning>
+				<value_meaning>The callamp is set to enabled.</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -389,33 +386,52 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>data_routing_id</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.data_routing_id</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>This keyword describes the priority of the acquired image and thus how it was handled on board.</definition>
+		<definition>This keyword describes the priority of the
+                                    acquired image and thus how it was handled
+                                    on board.
+
+                                    Op-Nav = The image is processed with highest
+                                    priority and streamed into VR10 of the s/c.
+
+                                    Science 1 = The image is processed with high
+                                    priority and streamed into VR8 of the s/c.
+
+                                    Science 2 = The image is processed with mid
+                                    priority and streamed into VR8 of the s/c.
+
+                                    Science 3 = The image is processed with low
+                                    priority and streamed into VR8 of the s/c.
+
+                                    Science 4 = The image is processed with
+                                    least priority and streamed into VR8 of the
+                                    s/c.
+		</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
 				<value>Op-Nav</value>
-				<value_meaning>The image is processed with highest priority and streamed into VR10 of the s/c.</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>Science 1</value>
-				<value_meaning>The image is processed with high priority and streamed into VR8 of the s/c.</value_meaning>
+				<value_meaning>The image is processed with highest
+					priority and streamed into VR10 of the s/c</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>Science 2</value>
-				<value_meaning>The image is processed with mid priority and streamed into VR8 of the s/c.</value_meaning>
+				<value_meaning>The image is processed with high
+					priority and streamed into VR8 of the s/c.</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>Science 3</value>
-				<value_meaning>The image is processed with low priority and streamed into VR8 of the s/c.</value_meaning>
+				<value_meaning>The image is processed with low
+					priority and streamed into VR8 of the s/c.</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>Science 4</value>
-				<value_meaning>The image is processed with least priority and streamed into VR8 of the s/c.</value_meaning>
+				<value_meaning>The image is processed with
+                   least priority and streamed into VR8 of the s/c.</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -469,11 +485,16 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>fee_hardware_id</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.fee_hardware_id</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The fee_hardware_id attribute indicates the identifer associated with each Framing Camera.</definition>
+		<definition>017.10.10 = FEE ID of FC1 (FS1) 
+
+                                   017.09.09 = FEE ID of FC2 (FM2)
+
+                                   063.15.15 indicates that the FEE is off or
+                                   busy and cannot transmit its ID.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -487,7 +508,8 @@
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>063.15.15</value>
-				<value_meaning>indicates that the FEE is off or busy and cannot transmit its ID.</value_meaning>
+				<value_meaning>indicates that the FEE is off or
+                    busy and cannot transmit its ID.</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -519,19 +541,21 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>front_door_status_id</name>
+		<name>front_dood_status_id</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.front_door_status_id</local_identifier>
+		<local_identifier>dawn.front_dood_status_id</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The front_door_status_id attribute indicates the status of the Front Door, covering the camera aperture, 
-			when the image was acquired. In the case of windowed images, this value is the same for all the subframes.</definition>
+		<definition>CLOSED = Front Door, covering the aperture,
+                                    is closed.
+
+                                    OPEN = Front Door is open.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
 				<value>CLOSED</value>
-				<value_meaning>Front Door is closed.</value_meaning>
+				<value_meaning>Front Door, covering the aperture, is closed.</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>OPEN</value>
@@ -557,64 +581,86 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>fsa_shoot_enable_flag</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.fsa_shoot_enable_flag</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The fsa_shoot_enable_flag attribute determines if the Fail Safe Actuator is enabled. For saftey
-			safety reasons, the FSA requires two switches to be active at the same time in order to be active. One of
-			them alone will have no effect.</definition>
+		<definition>Fail Safe Actuator:
+                                    OFF = The Fail Safe Actuator for the
+                                    Front Door is disabled.
+
+                                    ON = The Fail Safe Actuator for the
+                                    Front Door is enabled. FSA_SHOOT_FLAG can be
+                                    switched ON now.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
 				<value>OFF</value>
-				<value_meaning>The Fail Safe Actuator for the Front Door is disabled.</value_meaning>
+				<value_meaning>The Fail Safe Actuator for the
+                    Front Door is disabled.</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>ON</value>
-				<value_meaning>The Fail Safe Actuator for the Front Door is enabled. FSA_SHOOT_FLAG can be switched ON now.</value_meaning>
+				<value_meaning>The Fail Safe Actuator for the
+					Front Door is enabled. FSA_SHOOT_FLAG can be
+					switched ON now.</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>fsa_shoot_flag</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.fsa_shoot_flag</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The fsa_shoot_flag attribute determines if the Fail-Safe Actuator is active.</definition>
+		<definition>Fail Safe Actuator:
+                                    OFF = The Fail Safe Actuator for the
+                                    Front Door is switched on.
+
+                                    ON = The Fail Safe Actuator for the
+                                    Front Door is switched off.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
 				<value>OFF</value>
-				<value_meaning>The Fail Safe Actuator for the Front Door is switched off.</value_meaning>
+				<value_meaning>The Fail Safe Actuator for the
+					Front Door is switched on.</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>ON</value>
-				<value_meaning>The Fail Safe Actuator for the Front Door is switched on.</value_meaning>
+				<value_meaning>The Fail Safe Actuator for the
+					Front Door is switched off.</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>heater0_flag</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.heater0_flag</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The heater0_flag attribute indicates status of the Camera Head Heater. The heater produces 4.4 W 
-			(5.6 Ohm at +5 V).</definition>
+		<definition>Camera Head Heater:
+                                    OFF = The CH heater (HEATER0) is
+                                    switched on. 
+
+                                    ON = The CH heater (HEATER0) is
+                                    switched off.
+
+                                    The heater produces 4.4 W (5.6 Ohm at +5 V)</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
 				<value>OFF</value>
-				<value_meaning>The CH heater (HEATER0) is switched on.</value_meaning>
+				<value_meaning>The CH heater (HEATER0) is switched off.</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>ON</value>
-				<value_meaning>The CH heater (HEATER0) is switched off.</value_meaning>
+				<value_meaning>The CH heater (HEATER0) is switched on. 
+					The heater produces 4.4 W (5.6 Ohm at +5 V)
+				</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -624,8 +670,14 @@
 		<local_identifier>dawn.heater1_flag</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The heater1_flag attribute indicates the status of the Baffle Heater. The heater produces 
-			1.0 W (26 Ohm at +5 V)</definition>
+		<definition>Baffle Heater:
+                                    OFF = The Baffle heater (HEATER1) is
+                                    switched on. 
+
+                                    ON = The Baffle heater (HEATER1) is
+                                    switched off.
+
+                                    The heater produces 1.0 W (26 Ohm at +5 V)</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -635,17 +687,37 @@
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>ON</value>
-				<value_meaning>The Baffle heater (HEATER1) is switched off.</value_meaning>
+				<value_meaning>The Baffle heater (HEATER1) is switched on. 
+					The heater produces 1.0 W (26 Ohm at +5 V)</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>image_acquire_mode</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.image_acquire_mode</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The image_acquire_mode attribute indicates the FC mode setting of image acquisition.</definition>
+		<definition>This keyword describes the mode of image
+                                    acquisition.
+
+                                    NORMAL = The image was acquired with Front
+                                    Door open.
+
+                                    DARK = The image was acquired with
+                                    Front Door closed and the Callamp off.
+
+                                    FLATFIELD = The image was acquired with
+                                    Front Door closed and the Callamp on.
+
+                                    STORAGE = The image shows the readout of the
+                                    storage area of the CCD.
+
+                                    SERIAL = The artificial image shows the
+                                    readout of the serial register. 
+
+                                    TEST_CH = The artificial iamge shows a test
+                                    pattern with DNs from 0 to 16382.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -659,7 +731,7 @@
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>FLATFIELD</value>
-				<value_meaning>The image was acquired with Front Door closed and the Callamp on.</value_meaning>
+				<value_meaning>The image was acquired with Front Door closed and the Callamp on</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>STORAGE</value>
@@ -677,7 +749,7 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>i_12</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.i_12</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -702,12 +774,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>i_16</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.i_16</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -732,12 +803,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>i_28</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.i_28</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -762,12 +832,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>i_2_5</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.i_2_5</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -792,12 +861,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>i_3_3</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.i_3_3</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -822,12 +890,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>i_5</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.i_5</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -852,12 +919,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>i_5_analog</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.i_5_analog</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -882,12 +948,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>i_m5</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.i_m5</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -912,12 +977,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>i_m5_analog</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.i_m5_analog</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -942,40 +1006,44 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>mcu_flag</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.mcu_flag</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The mcu_flag attribute indicates whether the Mechanism Controller Unit (MCU) is powered. It is
-			independent of the MCU motor power flag.</definition>
+		<definition>OFF = MCU is disabled, mechanisms cannot
+                                    be moved
+
+                                    ON = MCU is enabled, mechanisms (filterwheel  
+                                    and front door) can be moved</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
 				<value>OFF</value>
-				<value_meaning>MCU is disabled, mechanisms cannot be moved.</value_meaning>
+				<value_meaning>MCU is disabled, mechanisms cannot be moved</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>ON</value>
-				<value_meaning>MCU is enabled, mechanisms (filter wheel and front door) can be moved</value_meaning>
+				<value_meaning>MCU is enabled, mechanisms (filterwheel and front door) can be moved</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>mcu_hardware_id</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.mcu_hardware_id</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The mcu_hardware_id attribute is an identifier indicating which FC unit is in use.</definition>
+		<definition>10 = MCU ID of FC1 (FS1) 
+
+                                   12 = MCU ID of FC2 (FM2)</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
-			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<value_data_type>ASCII_Integer</value_data_type>
 			<DD_Permissible_Value>
 				<value>10</value>
 				<value_meaning>MCU ID of FC1 (FS1)</value_meaning>
@@ -988,22 +1056,28 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>mcu_motor_flag</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.mcu_motor_flag</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The mcu_motor_flag indicates if the motors for the mechanisms are powered. This switch and flag are
-			independent of the MCU power flag.</definition>
+		<definition>OFF = Both motors (Front Door and
+                                          Filterwheel) are unpowered.
+
+                                    ON = Both motors are powered. Either to hold
+                                         their position or to move to another
+                                         position.  
+		</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
 				<value>OFF</value>
-				<value_meaning>Both motors (Front Door and Filter wheel) are unpowered.</value_meaning>
+				<value_meaning>Both motors (Front Door and Filterwheel) are unpowered.</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>ON</value>
-				<value_meaning>Both motors are powered. Either to hold their position or to move to another position.</value_meaning>
+				<value_meaning>Both motors are powered. Either to hold their position 
+					or to move to another position.</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -1023,12 +1097,13 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>pcu_hardware_id</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.pcu_hardware_id</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The pcu_hardware_id is an analog value showing the hardware ID of the Power Converter 
-			Unit (PCU). The actual value can jitter around the nominal.</definition>
+		<definition>3.05 = PCU ID of FC1 (FS1) 
+
+                                   2.04 = PCU ID of FC2 (FM2)</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -1038,13 +1113,13 @@
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>3.05</value>
-				<value_meaning>PCU ID of FC1 (FS1)</value_meaning>
+				<value_meaning>CU ID of FC1 (FS1)</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>purpose</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.purpose</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1098,7 +1173,7 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_baffle</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_baffle</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1125,12 +1200,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_ccd</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_ccd</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1160,12 +1234,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_cover_motor</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_cover_motor</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1192,12 +1265,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_csc</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_csc</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1228,12 +1300,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_dcdc</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_dcdc</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1260,12 +1331,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_dpu</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_dpu</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1292,12 +1362,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_f12</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_f12</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1325,12 +1394,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_filter_motor</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_filter_motor</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1357,12 +1425,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_lens_barrel</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_lens_barrel</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1389,12 +1456,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_rad_motor</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_rad_motor</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1423,12 +1489,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>t_structure</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.t_structure</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1455,7 +1520,6 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-999.999</minimum_value>
 			<maximum_value>999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -1472,13 +1536,16 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>use_pre_clear</name>
-		<version_id>1.1</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.use_pre_clear</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The use_pre_clear attribute indicates whether a pre-clear of the CCD was performed prior to 
-			image acquisition. A pre-clear is performed 193 ms prior to image acquisition and removes all charge 
-		    that is on the CCD at the time of execution.</definition>
+		<definition>OFF = No pre-clear of the CCD prior to an
+                                    image acquisition.
+
+                                    ON = A pre-clear of the CCD, 193 ms prior to
+                                    an image acquisition, removes all charge
+                                    that is on the CCD at this moment</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -1488,13 +1555,15 @@
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
 				<value>ON</value>
-				<value_meaning>A pre-clear of the CCD was performed prior to image acquisition.</value_meaning>
+				<value_meaning>A pre-clear of the CCD, 193 ms prior to
+					an image acquisition, removes all charge
+					that is on the CCD at this moment.</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>v_12</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.v_12</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1519,12 +1588,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>v_16</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.v_16</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1549,12 +1617,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>v_28</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.v_28</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1579,12 +1646,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>v_2_5</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.v_2_5</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1609,12 +1675,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>v_3_3</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.v_3_3</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1639,12 +1704,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>v_5</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.v_5</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1668,12 +1732,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>v_5_analog</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.v_5_analog</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1698,12 +1761,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>v_m5</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.v_m5</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1728,12 +1790,11 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>v_m5_analog</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.v_m5_analog</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1758,281 +1819,68 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>-9999.999</minimum_value>
 			<maximum_value>9999.999</maximum_value>
-			<unit_of_measure_type>Units_of_Voltage</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>alt_start_time</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.alt_start_time</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The same time as the start_date_time attribute expressed year/day-of-year rather than year/month/day.</definition>
+		<definition>
+Same as global keyword START_TIME; allows one label to specify
+both YYYY-MM-DD and YYYY-DDD without using a list.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Date_Time_DOY_UTC</value_data_type>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>alt_stop_time</name>
-		<version_id>2.0</version_id>
+		<version_id>1.0</version_id>
 		<local_identifier>dawn.alt_stop_time</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The same time as the stop_date_time attribute expressed year/day-of-year rather than year/month/day.</definition>
+		<definition>
+Same as global keyword STOP_TIME; allows one label to specify
+both YYYY-MM-DD and YYYY-DDD without using a list.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Date_Time_DOY_UTC</value_data_type>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	
 	<!-- Visual and Infrared Spectrometer (VIR) Attributes -->
 	<DD_Attribute>
-		<name>image_mid_time</name>
+		<name>frame_parameter_unit</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.image_mid_time</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The image_mid_time is the center time of the image or cube.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Date_Time_YMD</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>local_hour_angle</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.local_hour_angle</local_identifier>
+		<local_identifier>dawn.frame_parameter_unit</local_identifier>
 		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The local_hour_angle attribute indicates the local hour at the center of the 
-			image or spectra.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>north_azimuth</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.north_azimuth</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The north_azimuth attribute indicates the north azimuth angle evaluated at 
-			the center of the image or spectra.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>scan_mode_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.scan_mode_id</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The scan_mode_id is an integer in the range 0 to 10 that identifies the VIR Scan Mirror mode.
-		   "0" means that the mirror was not used. The VIR scan mirror performs, when commanded, and angular 
-		   movement around an axis parallel to the slit direction (y direction). There can be 10 different modes, 
-		   each one identifying a given angular movement.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-			<minimum_value>0</minimum_value>
-			<maximum_value>10</maximum_value>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>scan_start_angle</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.scan_start_angle</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The scan_start_angle attribute indicates the start position of the VIR scan mirror.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>scan_step_angle</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.scan_step_angle</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The scan_step_angle attribute indicates the size of each step of the VIR scan mirror.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>scan_step_number</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.scan_step_number</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The scan_step_number attribute indicates the number of acquisitions performed within a single VIR 
-		    scan mirror unit position.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-			<unit_of_measure_type>Units_of_None</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>scan_stop_angle</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.scan_stop_angle</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The scan_stop_angle attribute indicates the stop position of the VIR scan mirror.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>vir_channel_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_channel_id</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_channel_id identifies the instrument channel producing the data.</definition>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+This keyword defines the units of FRAME_PARAMETER that define the individual
+frame parameters of an instrument that transfers single frames to the mass
+memory of the spacecraft or the instrument. The FRAME_PARAMETER element is
+also accompanied by the element FRAME_PARAMETER_DESC, e.g.
+FRAME_PARAMETER_DESC = ('EXPOSURE_DURATION', 'FRAME_SUMMING',
+'EXTERNAL_REPETITION_TIME', 'EXTERNAL DARK_ACQUISITION_RATE')</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-			<DD_Permissible_Value>
-				<value>IR</value>
-				<value_meaning>The data were produced by the Infrared (IR) channel.</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>VIS</value>
-				<value_meaning>The data were produced by the Visibile (VIS) channel.</value_meaning>
-			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>vir_component_maximum_temperature</name>
+		<name>instrument_temperature_unit</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_component_maximum_temperature</local_identifier>
+		<local_identifier>dawn.instrument_temperature_unit</local_identifier>
 		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_component_maximum_temperature indicates the maxiumum temperature on the VIR component 
-		    identified by the vir_component_name attribute during the VIR image acquisition.
-		</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>vir_component_name</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_component_name</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_component_name identifies a component of the VIR instrument.</definition>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>
+The units of instrument or some part of an instrument; for example:
+FOCAL PLANE, TELESCOPE, SPECTROMETER, CRYOCOOLER</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-			<unit_of_measure_type>Units_of_None</unit_of_measure_type>
-			<DD_Permissible_Value>
-				<value>Cryocooler</value>
-				<value_meaning>The associated parameters are for the VIR cryocooler.</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>Focal Plane</value>
-				<value_meaning>The associated parameters are for the VIR focal plane.</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>Spectrometer</value>
-				<value_meaning>The associated parameters are for the VIR spectrometer.</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>Telescope</value>
-				<value_meaning>The associated parameters are for the VIR telescope.</value_meaning>
-			</DD_Permissible_Value>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>vir_dark_acquisition_rate</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_dark_acquisition_rate</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_dark_acquisition_rate attribute is the number of frames acquired between two
-			background measurements.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>vir_data_quality_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_data_quality_id</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_data_quality_id is an indicator of whether data files is complete or if there are missing lines.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-			<DD_Permissible_Value>
-				<value>0</value>
-				<value_meaning>The data qube is incomplete (there are missing lines).</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>1</value>
-				<value_meaning>The data qube is complete.</value_meaning>
-			</DD_Permissible_Value>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>vir_exposure_duration</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_exposure_duration</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_exposure_duration attribute is the integration time expressed in milliseconds. It is the 
-		exposure time of elementary exposures when summing is performed.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>vir_external_repetition_time</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_external_repetition_time</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_external_repetition_time attribute is the time required for a frame acqusition cycle 
-		    (&gt; vir_exposure_duration * vir_frame_summing).</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>vir_frame_summing</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.vir_frame_summing</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The vir_frame_summing attribute is the number of elementary exposures when summing is performed.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-			<unit_of_measure_type>Units_of_None</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -2041,12 +1889,12 @@
 		<local_identifier>dawn.vir_ir_start_x_position</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>This keyword gives the X coordinate of the first CCD pixel used on
-			the IR FPA.  This quantity determines the correspondence between
-			wavelength and spectral channels.
-		</definition>
+		<definition>
+This keyword gives the X coordinate of the first CCD pixel used on
+the IR FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
+			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -2056,24 +1904,38 @@
 		<local_identifier>dawn.vir_ir_start_y_position</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>This keyword gives the Y coordinate of the first CCD pixel used on
-			the IR FPA.  This quantity determines the correspondence between
-			wavelength and spectral channels.</definition>
+		<definition>
+This keyword gives the Y coordinate of the first CCD pixel used on
+the IR FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
+			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-	    <name>vir_photometric_correction_type</name>
-	    <version_id>1.0</version_id>
-	    <local_identifier>dawn.vir_photometric_correction_type</local_identifier>
-	    <nillable_flag>true</nillable_flag>
-	    <submitter_name>J. Mafi</submitter_name>
-	    <definition>The vir_photometric_correction_type attribute describes any photometric correction 
-		    that has been applied to an image or spectra (typically this value is "None").</definition>
+		<name>scan_parameter</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.scan_parameter</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>Same as global keyword SCAN_PARAMETER
+                                      but allows negative values</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>scan_parameter_unit</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.scan_parameter_unit</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>This keyword defines the units of
+                                      DAWN:SCAN_PARAMETER</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -2083,9 +1945,10 @@
 		<local_identifier>dawn.vir_vis_start_x_position</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>This keyword gives the X coordinate of the first CCD pixel used on
-			the VIS FPA.  This quantity determines the correspondence between
-			wavelength and spectral channels.</definition>
+		<definition>
+This keyword gives the X coordinate of the first CCD pixel used on
+the VIS FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
@@ -2097,16 +1960,17 @@
 		<local_identifier>dawn.vir_vis_start_y_position</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>This keyword gives the Y coordinate of the first CCD pixel used on
-			the VIS FPA.  This quantity determines the correspondence between
-			wavelength and spectral channels.</definition>
+		<definition>
+This keyword gives the Y coordinate of the first CCD pixel used on
+the VIS FPA.  This quantity determines the correspondence between
+wavelength and spectral channels.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 
-	<!-- Gamma Ray and Neutron Detector (GRaND) Attributes -->
+
 	<DD_Attribute>
 		<name>grand_start_sclk</name>
 		<version_id>1.0</version_id>
@@ -2162,7 +2026,7 @@
 		<definition>Remarks about the containing object.</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Short_String_Preserved</value_data_type>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 
@@ -2262,11 +2126,11 @@
 	
 	<!-- Framing Camera (FC) Class -->
 	<DD_Class>
-		<name>FC</name>
+		<name>fc</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.FC</local_identifier>
+		<local_identifier>dawn.fc</local_identifier>
 		<submitter_name>S. Joy</submitter_name>
-		<definition>The Dawn "FC" class is the container for Dawn Framing Camera (FC) specific metadata elements.
+		<definition>The Dawn "fc" class is the container for Dawn Framing Camera (FC) specific metadata elements.
 		</definition>
 		
 		<element_flag>false</element_flag>
@@ -2344,7 +2208,7 @@
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.front_door_status_id</identifier_reference>
+			<identifier_reference>dawn.front_dood_status_id</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2639,76 +2503,26 @@
 		</DD_Association>
 	</DD_Class>
 
-	<!-- Visual and Infrared Spectrometer (VIR) Classes -->
+	<!-- Visual and Infrared Spectrometer (VIR) Class -->
 	<DD_Class>
-		<name>VIR_Component_Temperature</name>
+		<name>vir</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.VIR_Component_Temperature</local_identifier>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The VIR_Component_Temperature class contains attributes which identify the temperature 
-			in different sections of the VIR instrument.</definition>
+		<local_identifier>dawn.vir</local_identifier>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The Dawn "vir" class is the container for Dawn Visual and Infrared Spectrometer (VIR) specific metadata elements.
+		</definition>
+		
+		<element_flag>false</element_flag>
 		<DD_Association>
-			<identifier_reference>dawn.vir_component_name</identifier_reference>
+			<identifier_reference>dawn.frame_parameter_unit</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
+			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.vir_component_maximum_temperature</identifier_reference>
+			<identifier_reference>dawn.instrument_temperature_unit</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-	</DD_Class>
-	<DD_Class>
-		<name>VIR_Data_Information</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.VIR_Data_Information</local_identifier>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The VIR_Data_Information class contains attributes describing aspects of the 
-			VIR data file.</definition>
-		<DD_Association>
-			<identifier_reference>dawn.image_mid_time</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.local_hour_angle</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.north_azimuth</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.vir_data_quality_id</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.vir_channel_id</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-	</DD_Class>
-	<DD_Class>
-		<name>VIR_Instrument_Status</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.VIR_Instrument_Status</local_identifier>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The VIR_Instrument_Status class contains attributes related to the VIR instrument 
-			operational settings.</definition>
-		<DD_Association>
-			<identifier_reference>dawn.scan_mode_id</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
+			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
@@ -2719,6 +2533,18 @@
 		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.vir_ir_start_y_position</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.scan_parameter</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.scan_parameter_unit</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2735,138 +2561,14 @@
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.vir_photometric_correction_type</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>pds.comment</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.Scan_Parameters</identifier_reference>
-			<reference_type>component_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.VIR_Frame_Parameters</identifier_reference>
-			<reference_type>component_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.VIR_Component_Temperature</identifier_reference>
-			<reference_type>component_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>*</maximum_occurrences>
-		</DD_Association>
-	</DD_Class>
-	<DD_Class>
-		<name>Scan_Parameters</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.Scan_Parameters</local_identifier>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The Scan_Parameters class contains attributes describing the activity of the VIR scan mirror.</definition>
-		<DD_Association>
-			<identifier_reference>dawn.scan_start_angle</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.scan_stop_angle</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.scan_step_angle</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.scan_step_number</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-	</DD_Class>
-	<DD_Class>
-		<name>VIR_Frame_Parameters</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.VIR_Frame_Parameters</local_identifier>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The VIR_Frame_Parameters class contains attributes describing the acquisition of the VIR frames.</definition>
-		<DD_Association>
-			<identifier_reference>dawn.vir_exposure_duration</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.vir_frame_summing</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.vir_external_repetition_time</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.vir_dark_acquisition_rate</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-	</DD_Class>
-	
-	<DD_Class>
-		<name>VIR</name>
-		<version_id>2.0</version_id>
-		<local_identifier>dawn.VIR</local_identifier>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The Dawn "VIR" class is the container for Dawn Visual and Infrared Spectrometer (VIR) specific metadata elements.
-		</definition>
-		<comment>
-			2.0 - 	Class name changed from "vir" to VIR in accordance with PDS4 class naming rules
-				  	Major reorganization of VIR attributes into subdirectories
-					Added new attributes required for VIR PDS4 migration
-		</comment>
-		<element_flag>false</element_flag>
-
-		<DD_Association>
-			<identifier_reference>dawn.VIR_Data_Information</identifier_reference>
-			<reference_type>component_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.VIR_Instrument_Status</identifier_reference>
-			<reference_type>component_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
 	</DD_Class>
 
 	<DD_Class>
-		<name>GRaND</name>
-		<version_id>2.0</version_id>
-		<local_identifier>dawn.GRaND</local_identifier>
+		<name>grand</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.grand</local_identifier>
 		<submitter_name>GRaND Instrument</submitter_name>
 		<definition>GRaND parameters</definition>
-		<comment>
-			2.0 - Changed class name from "grand" to "GRaND", as required by
-			      LDDTool class naming rules.
-		</comment>
 		<element_flag>true</element_flag>
 		<DD_Association>
 		  <identifier_reference>pds.Local_Internal_Reference</identifier_reference>
@@ -2897,9 +2599,9 @@
 		<definition>The Dawn class is the container for Dawn mission-specific metadata elements.
 		</definition>
 		<abstract_flag>false</abstract_flag>
-        <element_flag>true</element_flag> 
-
 		<!-- so that this class has element definition in the schema -->
+		<element_flag>true</element_flag> 
+
 		<DD_Association>
 			<identifier_reference>dawn.mission_phase_name</identifier_reference>
 			<reference_type>attribute_of</reference_type>
@@ -2926,21 +2628,21 @@
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>dawn.FC</identifier_reference>
+			<identifier_reference>dawn.fc</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>dawn.VIR</identifier_reference>
+			<identifier_reference>dawn.vir</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>dawn.GRaND</identifier_reference>
+			<identifier_reference>dawn.grand</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2950,11 +2652,11 @@
 
 	<DD_Rule>
 		<local_identifier>grand_parameters_ref</local_identifier>
-		<rule_context>dawn:GRaND/pds:Local_Internal_Reference</rule_context>
+		<rule_context>dawn:grand/pds:Local_Internal_Reference</rule_context>
 		<DD_Rule_Statement>
 		  <rule_type>Assert</rule_type>
 		  <rule_test>pds:local_reference_type = ('grand_parameters_to_table')</rule_test>
-		  <rule_message>In the GRaND class, the attribute pds:reference_type must be equal to 'grand_parameters_to_table'.</rule_message>
+		  <rule_message>In the grand:GRaND_Parameters class, the attribute pds:reference_type must be equal to 'grand_parameters_to_table'.</rule_message>
 		</DD_Rule_Statement>
 	  </DD_Rule>
 	

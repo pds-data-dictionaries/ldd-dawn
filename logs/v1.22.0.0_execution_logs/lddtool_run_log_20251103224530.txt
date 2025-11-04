@@ -1,9 +1,9 @@
 
 >>  INFO LDDTOOL Version: 15.3.0
->>  INFO IM Version Id: 1.19.0.0
+>>  INFO IM Version Id: 1.22.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.25
->>  INFO Date: Mon Jun 02 17:42:58 UTC 2025
+>>  INFO IM Label Version Id: 1.0
+>>  INFO Date: Mon Nov 03 22:45:32 UTC 2025
 >>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
@@ -82,7 +82,6 @@
 >>> INFO Attribute: <v_m5> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
 >>> INFO Attribute: <v_m5_analog> - The default minimum value provided by the attribute's data type is being overridden with -9999.999
 >>> INFO Attribute: <v_m5_analog> - The default maximum value provided by the attribute's data type is being overridden with 9999.999
->>> INFO Attribute: <software_version_id> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <scan_mode_id> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <scan_mode_id> - The default maximum value provided by the attribute's data type is being overridden with 10
 >>> INFO Attribute: <grand_start_sclk> - The default minimum value provided by the attribute's data type is being overridden with 1
@@ -96,19 +95,20 @@
 >>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <comment> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> WARNING Init:  - Config.Properties Namespace Id Not Found:dawn
+>>> WARNING Attribute: <vir_photometric_correction_type> - The 'type' attribute must have at least one permissible value.
 >>> WARNING Attribute: <dpu_hardware_id> - An attribute with the enumeration_flag = true must have at least one permissible value.
 >>> WARNING Attribute: <vir_vis_start_x_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
 >>> WARNING Attribute: <vir_vis_start_y_position> - An attribute with the enumeration_flag = true must have at least one permissible value.
 >>> WARNING Class: <GRaND> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
 
  -- LDDTool Execution Summary --
-     5 warning(s)
+     6 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1J00
+     - IM Version: 1M00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -118,9 +118,9 @@ Input:
 
 Output:
 
-     - ./PDS4_DAWN_1J00_1200.xsd
-     - ./PDS4_DAWN_1J00_1200.sch
-     - ./PDS4_DAWN_1J00_1200.xml
-     - ./export/PDS4_PDS_1J00.JSON
+     - ./PDS4_DAWN_1M00_2000.xsd
+     - ./PDS4_DAWN_1M00_2000.sch
+     - ./PDS4_DAWN_1M00_2000.xml
+     - ./export/PDS4_PDS_1M00.JSON
 
 >>  INFO Exit(0)

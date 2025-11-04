@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:dawn  Version:1.2.0.0 - Mon Jun 02 17:42:54 UTC 2025 -->
-  <!-- Generated from the PDS4 Information Model Version 1.18.0.0 - System Build 12.1 -->
+  <!-- PDS4 Schematron for Name Space Id:dawn  Version:2.0.0.0 - Mon Nov 03 22:45:32 UTC 2025 -->
+  <!-- Generated from the PDS4 Information Model Version 1.22.0.0 - System Build 14.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -8,7 +8,7 @@
 
   <sch:ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
   <sch:ns uri="http://pds.nasa.gov/pds4/pds/v1" prefix="pds"/>
-  <sch:ns uri="http://pds.nasa.gov/pds4/mission/dawn/v1" prefix="dawn"/>
+  <sch:ns uri="http://pds.nasa.gov/pds4/mission/dawn/v2" prefix="dawn"/>
 
 		   <!-- ================================================ -->
 		   <!-- NOTE:  There are two types of schematron rules.  -->
@@ -20,9 +20,9 @@
 		   <!-- ================================================ -->
   <sch:pattern>
     <sch:rule context="dawn:Dawn/dawn:mission_phase_name">
-      <sch:assert test=". = ('CERES ENCOUNTER', 'CERES EXTENDED GRAND (CXG)', 'CERES EXTENDED JULING (CXJ)', 'CERES EXTENDED LAMO (CXL)', 'CERES EXTENDED MISSION', 'CERES EXTENDED OPPOSITION (CXO)', 'CERES SCIENCE APPROACH (CSA)', 'CERES SCIENCE HAMO (CSH)', 'CERES SCIENCE LAMO (CSL)', 'CERES SCIENCE RC3 (CSR)', 'CERES SCIENCE SURVEY (CSS)', 'CERES TRANSFER TO GRAND (CTG)', 'CERES TRANSFER TO HAMO (CTH)', 'CERES TRANSFER TO JULING (CTJ)', 'CERES TRANSFER TO LAMO (CTL)', 'CERES TRANSFER TO OPPOSITION (CTO)', 'CERES TRANSFER TO SURVEY (CTS)', 'EARTH-MARS CRUISE (EMC)', 'END OF CERES EXTENDED MISSION', 'END OF PRIME MISSION', 'INITIAL CHECKOUT (ICO)', 'Launch', 'MARS GRAVITY ASSIST (MGA)', 'MARS-VESTA CRUISE (MVC)', 'VESTA ENCOUNTER', 'VESTA SCIENCE APPROACH (VSA)', 'VESTA SCIENCE HAMO (VSH)', 'VESTA SCIENCE HAMO 2 (VH2)', 'VESTA SCIENCE LAMO (VSL)', 'VESTA SCIENCE SURVEY (VSS)', 'VESTA TRANSFER TO CERES (VTC)', 'VESTA TRANSFER TO HAMO (VTH)', 'VESTA TRANSFER TO HAMO 2 (VT2)', 'VESTA TRANSFER TO LAMO (VTL)', 'VESTA-CERES CRUISE (VCC)')">
+      <sch:assert test=". = ('CERES ENCOUNTER', 'CERES EXTENDED GRAND (CXG)', 'CERES EXTENDED JULING (CXJ)', 'CERES EXTENDED LAMO (CXL)', 'CERES EXTENDED MISSION', 'CERES EXTENDED MISSION 2', 'CERES EXTENDED OPPOSITION (CXO)', 'CERES SCIENCE APPROACH (CSA)', 'CERES SCIENCE HAMO (CSH)', 'CERES SCIENCE LAMO (CSL)', 'CERES SCIENCE RC3 (CSR)', 'CERES SCIENCE SURVEY (CSS)', 'CERES TRANSFER TO GRAND (CTG)', 'CERES TRANSFER TO HAMO (CTH)', 'CERES TRANSFER TO HOLDING (CXH)', 'CERES TRANSFER TO JULING (CTJ)', 'CERES TRANSFER TO LAMO (CTL)', 'CERES TRANSFER TO OPPOSITION (CTO)', 'CERES TRANSFER TO SURVEY (CTS)', 'CERES X2 ELLIPTICAL (C2E)', 'CERES X2 HOLDING (CX2)', 'CERES X2 INTERMEDIATE (C2I)', 'CERES X2 TRANSFER TO ELLIPTICAL (CTE)', 'CERES X2 TRANSFER TO INTERMEDIATE (CTI)', 'EARTH-MARS CRUISE (EMC)', 'END OF CERES EXTENDED MISSION 1', 'END OF CERES EXTENDED MISSION 2', 'END OF PRIME MISSION', 'INITIAL CHECKOUT (ICO)', 'Launch', 'MARS GRAVITY ASSIST (MGA)', 'MARS-VESTA CRUISE (MVC)', 'VESTA ENCOUNTER', 'VESTA SCIENCE APPROACH (VSA)', 'VESTA SCIENCE HAMO (VSH)', 'VESTA SCIENCE HAMO 2 (VH2)', 'VESTA SCIENCE LAMO (VSL)', 'VESTA SCIENCE SURVEY (VSS)', 'VESTA TRANSFER TO CERES (VTC)', 'VESTA TRANSFER TO HAMO (VTH)', 'VESTA TRANSFER TO HAMO 2 (VT2)', 'VESTA TRANSFER TO LAMO (VTL)', 'VESTA-CERES CRUISE (VCC)')">
         <title>dawn:Dawn/dawn:mission_phase_name/dawn:mission_phase_name</title>
-        The attribute dawn:Dawn/dawn:mission_phase_name must be equal to one of the following values 'CERES ENCOUNTER', 'CERES EXTENDED GRAND (CXG)', 'CERES EXTENDED JULING (CXJ)', 'CERES EXTENDED LAMO (CXL)', 'CERES EXTENDED MISSION', 'CERES EXTENDED OPPOSITION (CXO)', 'CERES SCIENCE APPROACH (CSA)', 'CERES SCIENCE HAMO (CSH)', 'CERES SCIENCE LAMO (CSL)', 'CERES SCIENCE RC3 (CSR)', 'CERES SCIENCE SURVEY (CSS)', 'CERES TRANSFER TO GRAND (CTG)', 'CERES TRANSFER TO HAMO (CTH)', 'CERES TRANSFER TO JULING (CTJ)', 'CERES TRANSFER TO LAMO (CTL)', 'CERES TRANSFER TO OPPOSITION (CTO)', 'CERES TRANSFER TO SURVEY (CTS)', 'EARTH-MARS CRUISE (EMC)', 'END OF CERES EXTENDED MISSION', 'END OF PRIME MISSION', 'INITIAL CHECKOUT (ICO)', 'Launch', 'MARS GRAVITY ASSIST (MGA)', 'MARS-VESTA CRUISE (MVC)', 'VESTA ENCOUNTER', 'VESTA SCIENCE APPROACH (VSA)', 'VESTA SCIENCE HAMO (VSH)', 'VESTA SCIENCE HAMO 2 (VH2)', 'VESTA SCIENCE LAMO (VSL)', 'VESTA SCIENCE SURVEY (VSS)', 'VESTA TRANSFER TO CERES (VTC)', 'VESTA TRANSFER TO HAMO (VTH)', 'VESTA TRANSFER TO HAMO 2 (VT2)', 'VESTA TRANSFER TO LAMO (VTL)', 'VESTA-CERES CRUISE (VCC)'.</sch:assert>
+        The attribute dawn:Dawn/dawn:mission_phase_name must be equal to one of the following values 'CERES ENCOUNTER', 'CERES EXTENDED GRAND (CXG)', 'CERES EXTENDED JULING (CXJ)', 'CERES EXTENDED LAMO (CXL)', 'CERES EXTENDED MISSION', 'CERES EXTENDED MISSION 2', 'CERES EXTENDED OPPOSITION (CXO)', 'CERES SCIENCE APPROACH (CSA)', 'CERES SCIENCE HAMO (CSH)', 'CERES SCIENCE LAMO (CSL)', 'CERES SCIENCE RC3 (CSR)', 'CERES SCIENCE SURVEY (CSS)', 'CERES TRANSFER TO GRAND (CTG)', 'CERES TRANSFER TO HAMO (CTH)', 'CERES TRANSFER TO HOLDING (CXH)', 'CERES TRANSFER TO JULING (CTJ)', 'CERES TRANSFER TO LAMO (CTL)', 'CERES TRANSFER TO OPPOSITION (CTO)', 'CERES TRANSFER TO SURVEY (CTS)', 'CERES X2 ELLIPTICAL (C2E)', 'CERES X2 HOLDING (CX2)', 'CERES X2 INTERMEDIATE (C2I)', 'CERES X2 TRANSFER TO ELLIPTICAL (CTE)', 'CERES X2 TRANSFER TO INTERMEDIATE (CTI)', 'EARTH-MARS CRUISE (EMC)', 'END OF CERES EXTENDED MISSION 1', 'END OF CERES EXTENDED MISSION 2', 'END OF PRIME MISSION', 'INITIAL CHECKOUT (ICO)', 'Launch', 'MARS GRAVITY ASSIST (MGA)', 'MARS-VESTA CRUISE (MVC)', 'VESTA ENCOUNTER', 'VESTA SCIENCE APPROACH (VSA)', 'VESTA SCIENCE HAMO (VSH)', 'VESTA SCIENCE HAMO 2 (VH2)', 'VESTA SCIENCE LAMO (VSL)', 'VESTA SCIENCE SURVEY (VSS)', 'VESTA TRANSFER TO CERES (VTC)', 'VESTA TRANSFER TO HAMO (VTH)', 'VESTA TRANSFER TO HAMO 2 (VT2)', 'VESTA TRANSFER TO LAMO (VTL)', 'VESTA-CERES CRUISE (VCC)'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -338,20 +338,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="dawn:Frame_Parameters/dawn:exposure_duration">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
-        <title>dawn:Frame_Parameters/dawn:exposure_duration/dawn:exposure_duration</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="dawn:Frame_Parameters/dawn:external_repetition_time">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
-        <title>dawn:Frame_Parameters/dawn:external_repetition_time/dawn:external_repetition_time</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="dawn:GRaND/pds:Local_Internal_Reference">
       <sch:assert test="pds:local_reference_type = ('grand_parameters_to_table')">
         <title>dawn:GRaND/pds:Local_Internal_Reference/Rule</title>
@@ -360,23 +346,23 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:Scan_Parameters/dawn:scan_start_angle">
-      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
         <title>dawn:Scan_Parameters/dawn:scan_start_angle/dawn:scan_start_angle</title>
-        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:Scan_Parameters/dawn:scan_step_angle">
-      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
         <title>dawn:Scan_Parameters/dawn:scan_step_angle/dawn:scan_step_angle</title>
-        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="dawn:Scan_Parameters/dawn:scan_stop_angle">
-      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
         <title>dawn:Scan_Parameters/dawn:scan_stop_angle/dawn:scan_stop_angle</title>
-        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -394,60 +380,67 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="dawn:VIR/dawn:vir_vis_start_x_position">
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="dawn:VIR/dawn:vir_vis_start_y_position">
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="dawn:VIR_Instrument_Temperatures/dawn:vir_cryocooler_maximum_temperature">
+    <sch:rule context="dawn:VIR_Component_Temperature/dawn:vir_component_maximum_temperature">
       <sch:assert test="@unit = ('K', 'degC')">
-        <title>dawn:VIR_Instrument_Temperatures/dawn:vir_cryocooler_maximum_temperature/dawn:vir_cryocooler_maximum_temperature</title>
+        <title>dawn:VIR_Component_Temperature/dawn:vir_component_maximum_temperature/dawn:vir_component_maximum_temperature</title>
         The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="dawn:VIR_Instrument_Temperatures/dawn:vir_focal_plane_maximum_temperature">
-      <sch:assert test="@unit = ('K', 'degC')">
-        <title>dawn:VIR_Instrument_Temperatures/dawn:vir_focal_plane_maximum_temperature/dawn:vir_focal_plane_maximum_temperature</title>
-        The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
+    <sch:rule context="dawn:VIR_Component_Temperature/dawn:vir_component_name">
+      <sch:assert test=". = ('Cryocooler', 'Focal Plane', 'Spectrometer', 'Telescope')">
+        <title>dawn:VIR_Component_Temperature/dawn:vir_component_name/dawn:vir_component_name</title>
+        The attribute dawn:VIR_Component_Temperature/dawn:vir_component_name must be equal to one of the following values 'Cryocooler', 'Focal Plane', 'Spectrometer', 'Telescope'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="dawn:VIR_Instrument_Temperatures/dawn:vir_spectrometer_maximum_temperature">
-      <sch:assert test="@unit = ('K', 'degC')">
-        <title>dawn:VIR_Instrument_Temperatures/dawn:vir_spectrometer_maximum_temperature/dawn:vir_spectrometer_maximum_temperature</title>
-        The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
+    <sch:rule context="dawn:VIR_Data_Information/dawn:local_hour_angle">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
+        <title>dawn:VIR_Data_Information/dawn:local_hour_angle/dawn:local_hour_angle</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="dawn:VIR_Instrument_Temperatures/dawn:vir_telescope_maximum_temperature">
-      <sch:assert test="@unit = ('K', 'degC')">
-        <title>dawn:VIR_Instrument_Temperatures/dawn:vir_telescope_maximum_temperature/dawn:vir_telescope_maximum_temperature</title>
-        The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
+    <sch:rule context="dawn:VIR_Data_Information/dawn:north_azimuth">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
+        <title>dawn:VIR_Data_Information/dawn:north_azimuth/dawn:north_azimuth</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="dawn:VIR_Operational_Parameters/dawn:channel_id">
+    <sch:rule context="dawn:VIR_Data_Information/dawn:vir_channel_id">
       <sch:assert test=". = ('IR', 'VIS')">
-        <title>dawn:VIR_Operational_Parameters/dawn:channel_id/dawn:channel_id</title>
-        The attribute dawn:VIR_Operational_Parameters/dawn:channel_id must be equal to one of the following values 'IR', 'VIS'.</sch:assert>
+        <title>dawn:VIR_Data_Information/dawn:vir_channel_id/dawn:vir_channel_id</title>
+        The attribute dawn:VIR_Data_Information/dawn:vir_channel_id must be equal to one of the following values 'IR', 'VIS'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="dawn:VIR_Operational_Parameters/dawn:data_quality_id">
+    <sch:rule context="dawn:VIR_Data_Information/dawn:vir_data_quality_id">
       <sch:assert test=". = ('0', '1')">
-        <title>dawn:VIR_Operational_Parameters/dawn:data_quality_id/dawn:data_quality_id</title>
-        The attribute dawn:VIR_Operational_Parameters/dawn:data_quality_id must be equal to one of the following values '0', '1'.</sch:assert>
+        <title>dawn:VIR_Data_Information/dawn:vir_data_quality_id/dawn:vir_data_quality_id</title>
+        The attribute dawn:VIR_Data_Information/dawn:vir_data_quality_id must be equal to one of the following values '0', '1'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="dawn:VIR_Operational_Parameters/dawn:instrument_mode_id">
-      <sch:assert test=". = ('C_H_SPE_H_SPA_F', 'C_H_SPE_H_SPA_Q', 'C_H_SPE_L_SPA_F', 'C_L_SPE_H_SPA_F', 'C_L_SPE_H_SPA_Q', 'C_L_SPE_L_SPA_F', 'SPARE', 'S_H_SPE_H_SPA_F', 'S_H_SPE_H_SPA_Q', 'S_H_SPE_L_SPA_F', 'S_H_SPE_L_SPA_F_MEA', 'S_H_SPE_L_SPA_F_SUM', 'S_L_SPE_H_SPA_F', 'S_L_SPE_H_SPA_Q', 'S_L_SPE_L_SPA_F', 'S_L_SPE_L_SPA_F_MEA', 'S_L_SPE_L_SPA_F_SUM')">
-        <title>dawn:VIR_Operational_Parameters/dawn:instrument_mode_id/dawn:instrument_mode_id</title>
-        The attribute dawn:VIR_Operational_Parameters/dawn:instrument_mode_id must be equal to one of the following values 'C_H_SPE_H_SPA_F', 'C_H_SPE_H_SPA_Q', 'C_H_SPE_L_SPA_F', 'C_L_SPE_H_SPA_F', 'C_L_SPE_H_SPA_Q', 'C_L_SPE_L_SPA_F', 'SPARE', 'S_H_SPE_H_SPA_F', 'S_H_SPE_H_SPA_Q', 'S_H_SPE_L_SPA_F', 'S_H_SPE_L_SPA_F_MEA', 'S_H_SPE_L_SPA_F_SUM', 'S_L_SPE_H_SPA_F', 'S_L_SPE_H_SPA_Q', 'S_L_SPE_L_SPA_F', 'S_L_SPE_L_SPA_F_MEA', 'S_L_SPE_L_SPA_F_SUM'.</sch:assert>
+    <sch:rule context="dawn:VIR_Frame_Parameters/dawn:vir_exposure_duration">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+        <title>dawn:VIR_Frame_Parameters/dawn:vir_exposure_duration/dawn:vir_exposure_duration</title>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="dawn:VIR_Frame_Parameters/dawn:vir_external_repetition_time">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+        <title>dawn:VIR_Frame_Parameters/dawn:vir_external_repetition_time/dawn:vir_external_repetition_time</title>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="dawn:VIR_Instrument_Status/dawn:vir_vis_start_x_position">
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="dawn:VIR_Instrument_Status/dawn:vir_vis_start_y_position">
     </sch:rule>
   </sch:pattern>
 </sch:schema>
