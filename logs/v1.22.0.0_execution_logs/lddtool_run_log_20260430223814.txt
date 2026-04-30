@@ -3,9 +3,11 @@
 >>  INFO IM Version Id: 1.22.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.0
->>  INFO Date: Thu Apr 30 22:28:08 UTC 2026
+>>  INFO Date: Thu Apr 30 22:38:14 UTC 2026
 >>  INFO PARENT_DIR: /tmp/lddtool-16.1.0/Data/
 
+>>> ERROR Class:0001_NASA_PDS_1.dawn.FC  Association:dawn.FC_Telemetry_Format  Class:dawn.FC_Telemetry_Format - Missing Component Class
+>>> ERROR Association: dawn.FC_Telemetry_Format - Missing Component - Reference Type: component_of
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Mission
 >>> INFO Attribute: <standard_data_product_id> - A 'nillable' attribute was found that is not a required attribute in at least one class.
@@ -103,7 +105,7 @@
 
  -- LDDTool Execution Summary --
      6 warning(s)
-     0 error(s)
+     2 error(s)
      0 fatal error(s)
 
 Input:
@@ -123,4 +125,4 @@ Output:
      - ./PDS4_DAWN_1M00_2000.xml
      - ./export/PDS4_PDS_1M00.JSON
 
->>  INFO Exit(0)
+>>  INFO Exit(1)
