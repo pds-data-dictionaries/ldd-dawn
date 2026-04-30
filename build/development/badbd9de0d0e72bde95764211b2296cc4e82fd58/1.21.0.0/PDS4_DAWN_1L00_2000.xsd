@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:2.0.0.0 - Mon Nov 03 22:45:32 UTC 2025 -->
-  <!-- Generated from the PDS4 Information Model Version 1.22.0.0 - System Build 14.1 -->
+  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:2.0.0.0 - Thu Apr 30 22:28:01 UTC 2026 -->
+  <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.22.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
   <!-- 2.0.0.0 - dawn: - Dawn                                                    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -15,7 +15,7 @@
     attributeFormDefault="unqualified"
     version="2.0.0.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
@@ -126,6 +126,7 @@
       <xs:element name="v_m5_analog" type="dawn:v_m5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="alt_start_time" type="dawn:alt_start_time" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="alt_stop_time" type="dawn:alt_stop_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_Image_Parameters" type="dawn:FC_Image_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="dawn:callamp_enable_flag = ('OFF', 'ON')"/> -->
@@ -144,6 +145,30 @@
     <!-- <xs:assert test="dawn:mcu_motor_flag = ('OFF', 'ON')"/> -->
     <!-- <xs:assert test="dawn:pcu_hardware_id = ('2.04', '3.05')"/> -->
     <!-- <xs:assert test="dawn:use_pre_clear = ('OFF', 'ON')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="FC_Image_Parameters">
+    <xs:annotation>
+      <xs:documentation>The Dawn FC_Image_Parameters class contains
+        attributes describing parameters associated with a Framing
+        Camera image.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="north_azimuth" nillable="true" type="dawn:north_azimuth" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FC_Telemetry_Identification">
+    <xs:annotation>
+      <xs:documentation>The FC_Telemetry_Identification class contains
+        attributes describing the telemetry format.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="telemetry_format_id" nillable="true" type="dawn:telemetry_format_id" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:telemetry_format_id = ('301', '302', '303', '304', '305', '306', '307', '308', '309')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
@@ -919,9 +944,12 @@
 
   <xs:complexType name="north_azimuth">
     <xs:annotation>
-      <xs:documentation>The north_azimuth attribute indicates the north
-        azimuth angle evaluated at the center of the image or
-        spectra.</xs:documentation>
+      <xs:documentation>This element provides the value of the angle
+        between a line from the image center to the north pole and a
+        reference line in the image plane. The reference line is a
+        horizontal line from the image center to the middle right edge
+        of the image. This angle increases in a clockwise
+        direction.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="dawn:north_azimuth_WO_Units">
@@ -1386,6 +1414,21 @@
      <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
+
+  <xs:complexType name="telemetry_format_id">
+    <xs:annotation>
+      <xs:documentation>Provides the version of the UDP library which is
+        loaded into the instrument’s NVRAM. 302 = UDP library v. 3.02
+        303 = UDP library v. 3.03 304 = UDP library v. 3.04 305 = UDP
+        library v. 3.05 Example values: “302”, "303", “304”,
+        “305”</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pds:ASCII_Integer">
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="test_lamp">
     <xs:annotation>

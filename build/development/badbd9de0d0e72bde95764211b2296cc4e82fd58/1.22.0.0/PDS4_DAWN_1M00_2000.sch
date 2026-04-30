@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:dawn  Version:2.0.0.0 - Mon Nov 03 22:45:32 UTC 2025 -->
+  <!-- PDS4 Schematron for Name Space Id:dawn  Version:2.0.0.0 - Thu Apr 30 22:28:08 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.22.0.0 - System Build 14.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -335,6 +335,20 @@
       <sch:assert test="@unit = ('V', 'mV')">
         <title>dawn:FC/dawn:v_m5_analog/dawn:v_m5_analog</title>
         The attribute @unit must be equal to one of the following values 'V', 'mV'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="dawn:FC_Image_Parameters/dawn:north_azimuth">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
+        <title>dawn:FC_Image_Parameters/dawn:north_azimuth/dawn:north_azimuth</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="dawn:FC_Telemetry_Identification/dawn:telemetry_format_id">
+      <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('301', '302', '303', '304', '305', '306', '307', '308', '309')))) then false() else true()">
+        <title>dawn:FC_Telemetry_Identification/dawn:telemetry_format_id/dawn:telemetry_format_id</title>
+        The attribute dawn:FC_Telemetry_Identification/dawn:telemetry_format_id must be nulled or equal to one of the following values '301', '302', '303', '304', '305', '306', '307', '308', '309'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
