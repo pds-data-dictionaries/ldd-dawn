@@ -29,6 +29,8 @@
 	<last_modification_date_time>2025-10-25T03:00:00.000Z</last_modification_date_time>
 
 
+    <!-- Shared attributes -->
+
 	<DD_Attribute>
 		<name>mission_phase_name</name>
 		<version_id>1.0</version_id>
@@ -263,6 +265,22 @@
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>     
+	<DD_Attribute>
+		<name>north_azimuth</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.north_azimuth</local_identifier>
+		<nillable_flag>true</nillable_flag>
+		<submitter_name>J. Mafi</submitter_name>
+		<definition>This element provides the value of the angle between a line from the image center to the north 
+			pole and a reference line in the image plane. The reference line is a horizontal line from the image 
+			center to the middle right edge of the image. This angle increases in a clockwise direction.</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
 
 	<!-- Framing Camera (FC) attributes -->
 	<DD_Attribute>
@@ -1083,6 +1101,60 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
+		<name>telemetry_format_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.telemetry_format_id</local_identifier>
+		<nillable_flag>true</nillable_flag>
+		<submitter_name>J. Mafi</submitter_name>
+		<definition>Provides the version of the UDP library which is 
+			loaded into the instrument’s NVRAM.
+			302 = UDP library v. 3.02
+			303 = UDP library v. 3.03
+			304 = UDP library v. 3.04
+			305 = UDP library v. 3.05
+			Example values: “302”, "303", “304”, “305”</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+			<DD_Permissible_Value>
+				<value>301</value>
+				<value_meaning>UDP library v. 3.01</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>302</value>
+				<value_meaning>UDP library v. 3.02</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>303</value>
+				<value_meaning>UDP library v. 3.03</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>304</value>
+				<value_meaning>UDP library v. 3.04</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>305</value>
+				<value_meaning>UDP library v. 3.05</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>306</value>
+				<value_meaning>UDP library v. 3.06</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>307</value>
+				<value_meaning>UDP library v. 3.07</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>308</value>
+				<value_meaning>UDP library v. 3.08</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>309</value>
+				<value_meaning>UDP library v. 3.09</value_meaning>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
 		<name>test_lamp</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.test_lamp</local_identifier>
@@ -1814,20 +1886,6 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>north_azimuth</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.north_azimuth</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The north_azimuth attribute indicates the north azimuth angle evaluated at 
-			the center of the image or spectra.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
 		<name>scan_mode_id</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.scan_mode_id</local_identifier>
@@ -2262,6 +2320,39 @@
 	
 	<!-- Framing Camera (FC) Class -->
 	<DD_Class>
+		<name>FC_Image_Parameters</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_Image_Parameters</local_identifier>
+		<submitter_name>J. Mafi</submitter_name>
+		<definition>The Dawn FC_Image_Parameters class contains attributes describing parameters 
+		associated with a Framing Camera image.</definition>
+		
+		<element_flag>false</element_flag>
+		
+		<DD_Association>
+			<identifier_reference>dawn.north_azimuth</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>FC_Telemetry_Identification</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_Telemetry_Identification</local_identifier>
+		<submitter_name>J. Mafi</submitter_name>
+		<definition>The FC_Telemetry_Identification class contains attributes describing the telemetry format.</definition>
+		
+		<DD_Association>
+			<identifier_reference>dawn.telemetry_format_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
 		<name>FC</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.FC</local_identifier>
@@ -2634,6 +2725,13 @@
 		<DD_Association>
 			<identifier_reference>dawn.alt_stop_time</identifier_reference>
 			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>dawn.FC_Image_Parameters</identifier_reference>
+			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
