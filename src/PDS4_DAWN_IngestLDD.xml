@@ -1249,10 +1249,6 @@
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
-				<value>0.00</value>
-				<value_meaning>Observed PCU hardware ID value</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
 				<value>2.01</value>
 				<value_meaning>PCU ID value near FC2 (FM2) nominal</value_meaning>
 			</DD_Permissible_Value>
