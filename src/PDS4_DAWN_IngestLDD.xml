@@ -401,6 +401,7 @@
 			<value_data_type>ASCII_Integer</value_data_type>
 			<minimum_value>0</minimum_value>
 			<maximum_value>10000000</maximum_value>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -470,6 +471,7 @@
 			<value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>0.0</minimum_value>
 			<maximum_value>250.0</maximum_value>
+			<unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -490,6 +492,7 @@
 			<value_data_type>ASCII_Integer</value_data_type>
 			<minimum_value>0</minimum_value>
 			<maximum_value>10000000</maximum_value>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -534,6 +537,63 @@
 			<DD_Permissible_Value>
 				<value>Science 4</value>
 				<value_meaning>The image is processed with least priority and streamed into VR8 of the s/c.</value_meaning>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>detector_desc</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.detector_desc</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The detector_desc attribute describes the detector utilized by the Dawn Framing Camera.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>detector_temp</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.detector_temp</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The detector_temp attribute provides the temperature at which the Dawn Framing Camera 
+			detector operated while a measurement was made. The temperature is measured by the FC 
+			sensor and calibrated in Kelvin. This value corresponds to the PDS3 DETECTOR_TEMPERATURE 
+			keyword and is the same as T_CCD.
+			
+			Lower limit red: -95.0 deg C
+			Lower limit yellow: -75.0 deg C
+			Upper limit yellow: +35.0 deg C
+			Upper limit red: +40.0 deg C
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>0.000</minimum_value>
+			<maximum_value>999.999</maximum_value>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>detector_type</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.detector_type</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The detector_type attribute identifies the type of detector used by the Dawn Framing Camera.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<DD_Permissible_Value>
+				<value>SI CCD</value>
+				<value_meaning>Silicon charge-coupled device.</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -583,6 +643,26 @@
 				<value>ON</value>
 				<value_meaning>FEE is enabled, images can be acquired</value_meaning>
 			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>fc_exposure_duration</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.fc_exposure_duration</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The exposure_duration element provides
+			the value of the time interval between the
+			opening and closing of an instrument
+			aperture (such as a camera shutter). In the
+			case of windowed images, this value is the
+			same for all the sub-frames.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -1063,6 +1143,7 @@
 			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
+	
 	<DD_Attribute>
 		<name>mcu_flag</name>
 		<version_id>1.1</version_id>
@@ -1126,6 +1207,23 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
+		<name>observation_id</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.observation_id</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			Uniquely identifies a scientific observation within a 
+			data set. Mostly important for multi-instrument 
+			observation campaigns. The OBSERVATION_ID 
+			comes from the Dawn Science Center (DSC).
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
 		<name>operator</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.operator</local_identifier>
@@ -1141,7 +1239,7 @@
 	</DD_Attribute>
 	<DD_Attribute>
 		<name>pcu_hardware_id</name>
-		<version_id>1.1</version_id>
+		<version_id>1.2</version_id>
 		<local_identifier>dawn.pcu_hardware_id</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>S. Joy</submitter_name>
@@ -1151,12 +1249,52 @@
 			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
+				<value>0.00</value>
+				<value_meaning>Observed PCU hardware ID value</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>2.01</value>
+				<value_meaning>PCU ID value near FC2 (FM2) nominal</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>2.02</value>
+				<value_meaning>PCU ID value near FC2 (FM2) nominal</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>2.03</value>
+				<value_meaning>PCU ID value near FC2 (FM2) nominal</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
 				<value>2.04</value>
 				<value_meaning>PCU ID of FC2 (FM2)</value_meaning>
 			</DD_Permissible_Value>
 			<DD_Permissible_Value>
+				<value>2.05</value>
+				<value_meaning>PCU ID value near FC2 (FM2) nominal</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>3.01</value>
+				<value_meaning>PCU ID value near FC1 (FS1) nominal</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>3.02</value>
+				<value_meaning>PCU ID value near FC1 (FS1) nominal</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>3.03</value>
+				<value_meaning>PCU ID value near FC1 (FS1) nominal</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>3.04</value>
+				<value_meaning>PCU ID value near FC1 (FS1) nominal</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
 				<value>3.05</value>
 				<value_meaning>PCU ID of FC1 (FS1)</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>3.06</value>
+				<value_meaning>PCU ID value near FC1 (FS1) nominal</value_meaning>
 			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
@@ -1171,6 +1309,78 @@
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>reticle_point_declination</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.reticle_point_declination</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			This refers to the declination of the principle points 
+			of the camera. It contains five values, one for the 
+			cameras boresight vector and four for the corners 
+			of the FOV.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>reticle_point_latitude</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.reticle_point_latitude</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			This element provides the latitude of the surface intercept 
+			points of the principle points of the camera. It contains 
+			five values, one for the cameras boresight vector and four 
+			for the corners of the FOV.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>reticle_point_longitude</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.reticle_point_longitude</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			This provides the longitude of the surface intercept points 
+			of the principle points of the camera. It contains five 
+			values, one for the cameras boresight vector and four for 
+			the corners of the FOV.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>reticle_point_ra</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.reticle_point_ra</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			This refers to the right ascension of the
+			principle points of the camera. It contains
+			five values, one for the cameras boresight
+			vector and four for the corners of the FOV.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -1198,60 +1408,6 @@
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
-		<name>telemetry_format_id</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.telemetry_format_id</local_identifier>
-		<nillable_flag>true</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>Provides the version of the UDP library which is 
-			loaded into the instrument’s NVRAM.
-			302 = UDP library v. 3.02
-			303 = UDP library v. 3.03
-			304 = UDP library v. 3.04
-			305 = UDP library v. 3.05
-			Example values: “302”, "303", “304”, “305”</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>true</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-			<DD_Permissible_Value>
-				<value>301</value>
-				<value_meaning>UDP library v. 3.01</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>302</value>
-				<value_meaning>UDP library v. 3.02</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>303</value>
-				<value_meaning>UDP library v. 3.03</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>304</value>
-				<value_meaning>UDP library v. 3.04</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>305</value>
-				<value_meaning>UDP library v. 3.05</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>306</value>
-				<value_meaning>UDP library v. 3.06</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>307</value>
-				<value_meaning>UDP library v. 3.07</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>308</value>
-				<value_meaning>UDP library v. 3.08</value_meaning>
-			</DD_Permissible_Value>
-			<DD_Permissible_Value>
-				<value>309</value>
-				<value_meaning>UDP library v. 3.09</value_meaning>
-			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -1972,20 +2128,6 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
-		<name>local_hour_angle</name>
-		<version_id>1.0</version_id>
-		<local_identifier>dawn.local_hour_angle</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The local_hour_angle attribute indicates the local hour at the center of the 
-			image or spectra.</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	<DD_Attribute>
 		<name>scan_mode_id</name>
 		<version_id>1.0</version_id>
 		<local_identifier>dawn.scan_mode_id</local_identifier>
@@ -2191,6 +2333,89 @@
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Integer</value_data_type>
 			<unit_of_measure_type>Units_of_None</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	<DD_Attribute>
+		<name>vir_instrument_mode</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.vir_instrument_mode</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The value of this keyword identifies the instrument mode
+			and describes the different values.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_H_SPA_F</value>
+				<value_meaning>Science, high spectral high spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_L_SPA_F</value>
+				<value_meaning>Science, high spectral low spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_L_SPA_F_SUM</value>
+				<value_meaning>Science, high spectral low spatial, Summing</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_H_SPA_F</value>
+				<value_meaning>Low spectral high spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_L_SPA_F</value>
+				<value_meaning>Science, Low spectral low spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_L_SPA_F_SUM</value>
+				<value_meaning>Science, Low spectral low spatial, Summing</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_H_SPA_Q</value>
+				<value_meaning>Science, high spectral high spatial, Quarter slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_H_SPA_Q</value>
+				<value_meaning>Science, low spectral high spatial, Quarter slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_H_SPE_L_SPA_F_MEA</value>
+				<value_meaning>Science, high spectral low spatial, Meaning</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>S_L_SPE_L_SPA_F_MEA</value>
+				<value_meaning>Science, low spectral low spatial, Meaning</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_H_SPE_H_SPA_F</value>
+				<value_meaning>Calibration, high spectral high spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_H_SPE_L_SPA_F:</value>
+				<value_meaning>Calibration, high spectral low spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>SPARE</value>
+				<value_meaning>CALIBRATION Spare</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_L_SPE_H_SPA_F:</value>
+				<value_meaning>Calibration, low spectral high spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_L_SPE_L_SPA_F</value>
+				<value_meaning>Calibration, low spectral low spatial, Full slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_H_SPE_H_SPA_Q</value>
+				<value_meaning>Calibration, high spectral high spatial, Quarter slit</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>C_L_SPE_H_SPA_Q</value>
+				<value_meaning>Calibration, low spectral high spatial, Quarter slit</value_meaning>
+			</DD_Permissible_Value>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	<DD_Attribute>
@@ -2418,19 +2643,36 @@
 	  </DD_Class>
 		
 	
-	<!-- Framing Camera (FC) Class -->
+	<!-- Framing Camera (FC) Classes -->
 	<DD_Class>
-		<name>FC_Image_Parameters</name>
+		<name>FC_Instrument_Description</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.FC_Image_Parameters</local_identifier>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The Dawn FC_Image_Parameters class contains attributes describing parameters 
-		associated with a Framing Camera image.</definition>
-		
-		<element_flag>false</element_flag>
-		
+		<local_identifier>dawn.FC_Instrument_Description</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Instrument_Description class contains attributes describing 
+			aspects of the FC instrument.
+		</definition>
 		<DD_Association>
-			<identifier_reference>dawn.north_azimuth</identifier_reference>
+			<identifier_reference>dawn.observation_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.detector_desc</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.detector_temp</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.detector_type</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2438,30 +2680,131 @@
 	</DD_Class>
 	
 	<DD_Class>
-		<name>FC_Telemetry_Identification</name>
+		<name>FC_Image_Parameters</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.FC_Telemetry_Identification</local_identifier>
-		<submitter_name>J. Mafi</submitter_name>
-		<definition>The FC_Telemetry_Identification class contains attributes describing the telemetry format.</definition>
-		
+		<local_identifier>dawn.FC_Image_Parameters</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Image_Parameters class contains Framing Camera image geometry
+			parameters.
+		</definition>
+		<element_flag>false</element_flag>
 		<DD_Association>
-			<identifier_reference>dawn.telemetry_format_id</identifier_reference>
+			<identifier_reference>dawn.reticle_point_declination</identifier_reference>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>5</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.reticle_point_latitude</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>5</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.reticle_point_longitude</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>5</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.reticle_point_ra</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>5</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>FC_System_Hardware_Software_Configuration</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_System_Hardware_Software_Configuration</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_System_Hardware_Software_Configuration class contains
+			attributes describing the Framing Camera hardware identifiers			
+			and onboard software versions used during image acquisition.
+		</definition>
+		<DD_Association>
+			<identifier_reference>dawn.dpu_hardware_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.dpu_software_version</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.fee_hardware_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.mcu_hardware_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.pcu_hardware_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.udplib_software_version</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 	</DD_Class>
 	
 	<DD_Class>
-		<name>FC</name>
+		<name>FC_Mechanism_Status</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dawn.FC</local_identifier>
-		<submitter_name>S. Joy</submitter_name>
-		<definition>The Dawn "FC" class is the container for Dawn Framing Camera (FC) specific metadata elements.
+		<local_identifier>dawn.FC_Mechanism_Status</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Mechanism_Status class contains attributes describing
+			the status and encoder values of Framing Camera mechanisms,
+			including the filter wheel and front door, at the time of
+			image acquisition.
 		</definition>
-		
-		<element_flag>false</element_flag>
-		
+		<DD_Association>
+			<identifier_reference>dawn.filter_encoder</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.front_door_encoder</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.front_door_status_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>FC_Image_Acquisition_Options</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_Image_Acquisition_Options</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Image_Acquisition_Options class contains attributes
+			describing Framing Camera image acquisition settings, including
+			data routing, exposure, pre-clear status, acquisition mode, and
+			callamp configuration.
+		</definition>
 		<DD_Association>
 			<identifier_reference>dawn.callamp_delay_time</identifier_reference>
 			<reference_type>attribute_of</reference_type>
@@ -2470,12 +2813,6 @@
 		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.callamp_duty</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.callamp_enable_flag</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2493,55 +2830,49 @@
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.chamber</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
 			<identifier_reference>dawn.data_routing_id</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.dpu_hardware_id</identifier_reference>
+			<identifier_reference>dawn.fc_exposure_duration</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.dpu_software_version</identifier_reference>
+			<identifier_reference>dawn.image_acquire_mode</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.use_pre_clear</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>FC_Power_Converter_Switch_Status</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_Power_Converter_Switch_Status</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Power_Converter_Switch_Status class contains attributes
+			describing the switch states of Framing Camera power converter
+			components during image acquisition.
+		</definition>
+		<DD_Association>
+			<identifier_reference>dawn.callamp_enable_flag</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.fee_flag</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.fee_hardware_id</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.filter_encoder</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.front_door_status_id</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.front_door_encoder</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2571,11 +2902,28 @@
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.image_acquire_mode</identifier_reference>
+			<identifier_reference>dawn.mcu_flag</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.mcu_motor_flag</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>FC_Power_System_Status</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_Power_System_Status</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Power_System_Status class contains attributes describing
+			Framing Camera power system voltage and current measurements.
+		</definition>
 		<DD_Association>
 			<identifier_reference>dawn.i_12</identifier_reference>
 			<reference_type>attribute_of</reference_type>
@@ -2631,59 +2979,71 @@
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.mcu_flag</identifier_reference>
+			<identifier_reference>dawn.v_12</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.mcu_hardware_id</identifier_reference>
+			<identifier_reference>dawn.v_16</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.mcu_motor_flag</identifier_reference>
+			<identifier_reference>dawn.v_28</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.operator</identifier_reference>
+			<identifier_reference>dawn.v_2_5</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.pcu_hardware_id</identifier_reference>
+			<identifier_reference>dawn.v_3_3</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.purpose</identifier_reference>
+			<identifier_reference>dawn.v_5</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.subject</identifier_reference>
+			<identifier_reference>dawn.v_5_analog</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.target</identifier_reference>
+			<identifier_reference>dawn.v_m5</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.test_lamp</identifier_reference>
+			<identifier_reference>dawn.v_m5_analog</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>FC_Calibrated_Temperatures</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_Calibrated_Temperatures</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Calibrated_Temperatures class contains attributes
+			describing calibrated Framing Camera temperature measurements
+			from instrument thermal sensors.
+		</definition>
 		<DD_Association>
 			<identifier_reference>dawn.t_baffle</identifier_reference>
 			<reference_type>attribute_of</reference_type>
@@ -2750,72 +3110,66 @@
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>FC_Test_Setup_Configuration</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC_Test_Setup_Configuration</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The FC_Test_Setup_Configuration class contains attributes used
+			to describe Framing Camera ground test setup information.
+		</definition>
 		<DD_Association>
-			<identifier_reference>dawn.udplib_software_version</identifier_reference>
+			<identifier_reference>dawn.chamber</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.use_pre_clear</identifier_reference>
+			<identifier_reference>dawn.operator</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.v_12</identifier_reference>
+			<identifier_reference>dawn.purpose</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.v_16</identifier_reference>
+			<identifier_reference>dawn.subject</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.v_28</identifier_reference>
+			<identifier_reference>dawn.target</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
-			<identifier_reference>dawn.v_2_5</identifier_reference>
+			<identifier_reference>dawn.test_lamp</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.v_3_3</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.v_5</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.v_5_analog</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.v_m5</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.v_m5_analog</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
+	</DD_Class>
+	
+	<!-- Framing Camera (FC) Main Class-->
+	<DD_Class>
+		<name>FC</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.FC</local_identifier>
+		<submitter_name>S. Joy</submitter_name>
+		<definition>The Dawn "FC" class is the container for Dawn Framing Camera (FC) specific metadata elements.
+		</definition>
+		
+		<element_flag>false</element_flag>
+		
 		<DD_Association>
 			<identifier_reference>dawn.alt_start_time</identifier_reference>
 			<reference_type>attribute_of</reference_type>
@@ -2828,15 +3182,56 @@
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
-		
 		<DD_Association>
-			<identifier_reference>dawn.FC_Telemetry_Format</identifier_reference>
+			<identifier_reference>dawn.FC_Instrument_Description</identifier_reference>
 			<reference_type>component_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
+			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		<DD_Association>
 			<identifier_reference>dawn.FC_Image_Parameters</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.FC_System_Hardware_Software_Configuration</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.FC_Mechanism_Status</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.FC_Image_Acquisition_Options</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.FC_Power_Converter_Switch_Status</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.FC_Power_System_Status</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.FC_Calibrated_Temperatures</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.FC_Test_Setup_Configuration</identifier_reference>
 			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -2969,6 +3364,12 @@
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>*</maximum_occurrences>
 		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.VIR_Instrument_Mode</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
 	</DD_Class>
 	<DD_Class>
 		<name>Scan_Parameters</name>
@@ -3092,6 +3493,85 @@
 		</DD_Association>
 	  </DD_Class>
 
+	<DD_Class>
+		<name>Dawn_Telemetry</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Telemetry</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The Dawn_Telemetry class contains telemetry-related 
+			metadata used by Dawn instrument data products.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.telemetry_format_id</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		<DD_Association>
+			<identifier_reference>dawn.telemetry_source_name</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>Dawn_Object_Orientation</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Object_Orientation</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The Dawn_Object_Orientation class contains Dawn-specific 
+			attributes that describe the pointing orientation of an image, 
+			spectrum, or scan platform relative to celestial coordinates.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.twist_angle</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>Dawn_Image_Parameters</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Image_Parameters</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The Dawn_Image_Parameters class contains Dawn image geometry 
+			parameters used in Dawn PDS3 labels.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.north_azimuth</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
+	
+	<DD_Class>
+		<name>Dawn_Orbit_Geometry</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dawn.Dawn_Orbit_Geometry</local_identifier>
+		<submitter_name>C. Juarez</submitter_name>
+		<definition>
+			The Dawn_Orbit_Geometry class contains Dawn-specific geometry 
+			attributes describing the spacecraft, target, and solar viewing 
+			geometry for an observation.
+		</definition>
+		<element_flag>false</element_flag>
+		<DD_Association>
+			<identifier_reference>dawn.local_hour_angle</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+	</DD_Class>
 
 	<DD_Class>
 		<name>Dawn</name>
@@ -3125,6 +3605,34 @@
 		<DD_Association>
 			<identifier_reference>dawn.standard_data_product_id</identifier_reference>
 			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Telemetry</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Object_Orientation</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Image_Parameters</identifier_reference>
+			<reference_type>component_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>dawn.Dawn_Orbit_Geometry</identifier_reference>
+			<reference_type>component_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
