@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        16.1.0
+   LDDTool Version        16.1.3
    LDD Version Id:        2.0.0.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Thu Apr 30 22:28:08 UTC 2026
+   Time                   Thu Jul 09 23:48:08 UTC 2026
    Common Schema          [PDS4_PDS_1M00.xsd]
    Common Schematron      [PDS4_PDS_1M00.sch]
    IM Version Id:         1.22.0.0
@@ -28,9 +28,9 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                15
-   Attributes             91
-   Associations           111
+   Classes                26
+   Attributes             103
+   Associations           136
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -62,11 +62,23 @@ Parsed Input - Header:
 
 Parsed Input - Attributes:
 
+   name                   local_hour_angle
+   version                1.22
+   value data type        ASCII_Real
+   description             The local_hour_angle attribute provides a measure of the instantaneous apparent Sun position at the center of the image or spectra. It is the angle between the extension of the vector from the Sun to the target body and the vector projection on the target body's reference plane of a vector from the target body's planetocentric center to the observer, usually the spacecraft. 
+   unit of measure type   Units_of_Angle
+
    name                   mission_phase_name
    version                1.22
    value data type        ASCII_Short_String_Collapsed
    description            The mission_phase_name attribute provides the mission-defined name of a mission phase.
    maximum characters     255
+
+   name                   north_azimuth
+   version                1.22
+   value data type        ASCII_Real
+   description            The north_azimuth attribute provides the value of the north azimuth angle evaluated at the center of the image or spectra. For image products, this is the angle between the line from the image center to the north pole and a horizontal reference line in the image plane extending from the image center to the middle right edge of the image. This angle increases in a clockwise direction.
+   unit of measure type   Units_of_Angle
 
    name                   spacecraft_clock_start_count
    version                1.22
@@ -84,11 +96,22 @@ Parsed Input - Attributes:
    description            The standard_data_product_id keyword is used to identify data products of the same processing level that are not otherwise indentified by being in different collections within the bundle.
    nillable               true
 
-   name                   north_azimuth
+   name                   telemetry_format_id
+   version                1.22
+   value data type        ASCII_Short_String_Collapsed
+   description            Provides the version of the UDP library which is loaded into the instrument’s NVRAM. 302 = UDP library v. 3.02 303 = UDP library v. 3.03 304 = UDP library v. 3.04 305 = UDP library v. 3.05 Example values: “302”, "303", “304”, “305”
+
+   name                   telemetry_source_name
+   version                1.22
+   value data type        ASCII_Short_String_Collapsed
+   description            The telemetry_source_name attribute identifies the Electrical Ground Supporting Equipment (EGSE) used to produce the data file.
+
+   name                   twist_angle
    version                1.22
    value data type        ASCII_Real
-   description            This element provides the value of the angle between a line from the image center to the north pole and a reference line in the image plane. The reference line is a horizontal line from the image center to the middle right edge of the image. This angle increases in a clockwise direction.
-   nillable               true
+   description            The twist_angle attribute provides the angle of rotation about the optical axis relative to celestial coordinates. Together with right ascension and declination, it defines the pointing direction and orientation of an image or scan platform.
+   minimum value          0.000
+   maximum value          360.000
    unit of measure type   Units_of_Angle
 
    name                   callamp_delay_time
@@ -97,6 +120,7 @@ Parsed Input - Attributes:
    description            Callamp switch on delay measured in microseconds after START_TIME. Callamp can be switched on before (less than 193000 µs), at (= 193000 µs), or after (greater than 193000 µs) begin of exposure. 
    minimum value          0
    maximum value          10000000
+   unit of measure type   Units_of_Time
 
    name                   callamp_duty
    version                1.22
@@ -116,6 +140,7 @@ Parsed Input - Attributes:
    description            The callamp frequency is determined by the internal 24 MHz clock and an integer divisor. CALLAMP_FREQUENCY = 24 MHz / Value The standard callamp frequency is 100 kHz (24MHz / 240).
    minimum value          0.0
    maximum value          250.0
+   unit of measure type   Units_of_Frequency
 
    name                   callamp_strobe_time
    version                1.22
@@ -123,6 +148,7 @@ Parsed Input - Attributes:
    description            Callamp strobe time is measured in microseconds after callamp switch on. callamp switch off time = START_TIME + DAWN_CALLAMP_DELAY_TIME + DAWN_CALLAMP_STROBE_TIME
    minimum value          0
    maximum value          10000000
+   unit of measure type   Units_of_Time
 
    name                   chamber
    version                1.22
@@ -133,6 +159,24 @@ Parsed Input - Attributes:
    version                1.22
    value data type        ASCII_Short_String_Collapsed
    description            This keyword describes the priority of the acquired image and thus how it was handled on board.
+
+   name                   detector_desc
+   version                1.22
+   value data type        ASCII_Short_String_Collapsed
+   description             The detector_desc attribute describes the detector utilized by the Dawn Framing Camera. 
+
+   name                   detector_temp
+   version                1.22
+   value data type        ASCII_Real
+   description             The detector_temp attribute provides the temperature at which the Dawn Framing Camera detector operated while a measurement was made. The temperature is measured by the FC sensor and calibrated in Kelvin. This value corresponds to the PDS3 DETECTOR_TEMPERATURE keyword and is the same as T_CCD. Lower limit red: -95.0 deg C Lower limit yellow: -75.0 deg C Upper limit yellow: +35.0 deg C Upper limit red: +40.0 deg C 
+   minimum value          0.000
+   maximum value          999.999
+   unit of measure type   Units_of_Temperature
+
+   name                   detector_type
+   version                1.22
+   value data type        ASCII_Short_String_Collapsed
+   description             The detector_type attribute identifies the type of detector used by the Dawn Framing Camera. 
 
    name                   dpu_hardware_id
    version                1.22
@@ -148,6 +192,12 @@ Parsed Input - Attributes:
    version                1.22
    value data type        ASCII_Short_String_Collapsed
    description            OFF = FEE is disabled, images cannot be acquired ON = FEE is enabled, images can be acquired
+
+   name                   fc_exposure_duration
+   version                1.22
+   value data type        ASCII_Real
+   description             The exposure_duration element provides the value of the time interval between the opening and closing of an instrument aperture (such as a camera shutter). In the case of windowed images, this value is the same for all the sub-frames. 
+   unit of measure type   Units_of_Time
 
    name                   fee_hardware_id
    version                1.22
@@ -285,6 +335,11 @@ Parsed Input - Attributes:
    value data type        ASCII_Short_String_Collapsed
    description            The mcu_motor_flag indicates if the motors for the mechanisms are powered. This switch and flag are independent of the MCU power flag.
 
+   name                   observation_id
+   version                1.22
+   value data type        ASCII_Short_String_Collapsed
+   description             Uniquely identifies a scientific observation within a data set. Mostly important for multi-instrument observation campaigns. The OBSERVATION_ID comes from the Dawn Science Center (DSC). 
+
    name                   operator
    version                1.22
    value data type        ASCII_Short_String_Collapsed
@@ -300,6 +355,30 @@ Parsed Input - Attributes:
    value data type        ASCII_Short_String_Collapsed
    description            This keyword was used during ground tests to describe the purpose of the test.
 
+   name                   reticle_point_declination
+   version                1.22
+   value data type        ASCII_Real
+   description             This refers to the declination of the principle points of the camera. It contains five values, one for the cameras boresight vector and four for the corners of the FOV. 
+   unit of measure type   Units_of_Angle
+
+   name                   reticle_point_latitude
+   version                1.22
+   value data type        ASCII_Real
+   description             This element provides the latitude of the surface intercept points of the principle points of the camera. It contains five values, one for the cameras boresight vector and four for the corners of the FOV. 
+   unit of measure type   Units_of_Angle
+
+   name                   reticle_point_longitude
+   version                1.22
+   value data type        ASCII_Real
+   description             This provides the longitude of the surface intercept points of the principle points of the camera. It contains five values, one for the cameras boresight vector and four for the corners of the FOV. 
+   unit of measure type   Units_of_Angle
+
+   name                   reticle_point_ra
+   version                1.22
+   value data type        ASCII_Real
+   description             This refers to the right ascension of the principle points of the camera. It contains five values, one for the cameras boresight vector and four for the corners of the FOV. 
+   unit of measure type   Units_of_Angle
+
    name                   subject
    version                1.22
    value data type        ASCII_Short_String_Collapsed
@@ -309,12 +388,6 @@ Parsed Input - Attributes:
    version                1.22
    value data type        ASCII_Short_String_Collapsed
    description            This keyword was used during ground tests to describe the target the FC was pointing at during the test
-
-   name                   telemetry_format_id
-   version                1.22
-   value data type        ASCII_Integer
-   description            Provides the version of the UDP library which is loaded into the instrument’s NVRAM. 302 = UDP library v. 3.02 303 = UDP library v. 3.03 304 = UDP library v. 3.04 305 = UDP library v. 3.05 Example values: “302”, "303", “304”, “305”
-   nillable               true
 
    name                   test_lamp
    version                1.22
@@ -507,12 +580,6 @@ Parsed Input - Attributes:
    description            The image_mid_time is the center time of the image or cube.
    nillable               true
 
-   name                   local_hour_angle
-   version                1.22
-   value data type        ASCII_Real
-   description            The local_hour_angle attribute indicates the local hour at the center of the image or spectra.
-   unit of measure type   Units_of_Angle
-
    name                   scan_mode_id
    version                1.22
    value data type        ASCII_Integer
@@ -585,6 +652,11 @@ Parsed Input - Attributes:
    version                1.22
    value data type        ASCII_Integer
    description            The vir_frame_summing attribute is the number of elementary exposures when summing is performed.
+
+   name                   vir_instrument_mode
+   version                1.22
+   value data type        ASCII_Short_String_Collapsed
+   description             The value of this keyword identifies the instrument mode and describes the different values. 
 
    name                   vir_ir_start_x_position
    version                1.22
@@ -722,34 +794,125 @@ Parsed Input - Classes:
       maximum occurrences   *
       reference type        component_of
 
-   name                   FC_Image_Parameters
-   description            The Dawn FC_Image_Parameters class contains attributes describing parameters associated with a Framing Camera image.
+   name                   FC_Instrument_Description
+   description             The FC_Instrument_Description class contains attributes describing aspects of the FC instrument. 
    is abstract            false
    is choice              false
    subclass of            USER
 
    Associations
 
-      local identifier      dawn.north_azimuth
+      local identifier      dawn.observation_id
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-   name                   FC_Telemetry_Identification
-   description            The FC_Telemetry_Identification class contains attributes describing the telemetry format.
+      local identifier      dawn.detector_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.detector_temp
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.detector_type
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   FC_Image_Parameters
+   description             The FC_Image_Parameters class contains Framing Camera image geometry parameters. 
    is abstract            false
    is choice              false
    subclass of            USER
 
    Associations
 
-      local identifier      dawn.telemetry_format_id
-      minimum occurrences   1
+      local identifier      dawn.reticle_point_declination
+      minimum occurrences   0
+      maximum occurrences   5
+      reference type        attribute_of
+
+      local identifier      dawn.reticle_point_latitude
+      minimum occurrences   0
+      maximum occurrences   5
+      reference type        attribute_of
+
+      local identifier      dawn.reticle_point_longitude
+      minimum occurrences   0
+      maximum occurrences   5
+      reference type        attribute_of
+
+      local identifier      dawn.reticle_point_ra
+      minimum occurrences   0
+      maximum occurrences   5
+      reference type        attribute_of
+
+   name                   FC_System_Hardware_Software_Configuration
+   description             The FC_System_Hardware_Software_Configuration class contains attributes describing the Framing Camera hardware identifiers and onboard software versions used during image acquisition. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.dpu_hardware_id
+      minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-   name                   FC
-   description            The Dawn "FC" class is the container for Dawn Framing Camera (FC) specific metadata elements. 
+      local identifier      dawn.dpu_software_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.fee_hardware_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.mcu_hardware_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.pcu_hardware_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.udplib_software_version
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   FC_Mechanism_Status
+   description             The FC_Mechanism_Status class contains attributes describing the status and encoder values of Framing Camera mechanisms, including the filter wheel and front door, at the time of image acquisition. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.filter_encoder
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.front_door_encoder
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.front_door_status_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   FC_Image_Acquisition_Options
+   description             The FC_Image_Acquisition_Options class contains attributes describing Framing Camera image acquisition settings, including data routing, exposure, pre-clear status, acquisition mode, and callamp configuration. 
    is abstract            false
    is choice              false
    subclass of            USER
@@ -766,11 +929,6 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.callamp_enable_flag
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
       local identifier      dawn.callamp_frequency
       minimum occurrences   0
       maximum occurrences   1
@@ -781,47 +939,40 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.chamber
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
       local identifier      dawn.data_routing_id
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.dpu_hardware_id
+      local identifier      dawn.fc_exposure_duration
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.dpu_software_version
+      local identifier      dawn.image_acquire_mode
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.use_pre_clear
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   FC_Power_Converter_Switch_Status
+   description             The FC_Power_Converter_Switch_Status class contains attributes describing the switch states of Framing Camera power converter components during image acquisition. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.callamp_enable_flag
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
       local identifier      dawn.fee_flag
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      dawn.fee_hardware_id
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      dawn.filter_encoder
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      dawn.front_door_status_id
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      dawn.front_door_encoder
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -846,10 +997,23 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.image_acquire_mode
+      local identifier      dawn.mcu_flag
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
+
+      local identifier      dawn.mcu_motor_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   FC_Power_System_Status
+   description             The FC_Power_System_Status class contains attributes describing Framing Camera power system voltage and current measurements. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
 
       local identifier      dawn.i_12
       minimum occurrences   0
@@ -896,50 +1060,58 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.mcu_flag
+      local identifier      dawn.v_12
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.mcu_hardware_id
+      local identifier      dawn.v_16
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.mcu_motor_flag
+      local identifier      dawn.v_28
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.operator
+      local identifier      dawn.v_2_5
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.pcu_hardware_id
+      local identifier      dawn.v_3_3
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.purpose
+      local identifier      dawn.v_5
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.subject
+      local identifier      dawn.v_5_analog
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.target
+      local identifier      dawn.v_m5
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.test_lamp
+      local identifier      dawn.v_m5_analog
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
+
+   name                   FC_Calibrated_Temperatures
+   description             The FC_Calibrated_Temperatures class contains attributes describing calibrated Framing Camera temperature measurements from instrument thermal sensors. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
 
       local identifier      dawn.t_baffle
       minimum occurrences   0
@@ -996,60 +1168,51 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.udplib_software_version
+   name                   FC_Test_Setup_Configuration
+   description             The FC_Test_Setup_Configuration class contains attributes used to describe Framing Camera ground test setup information. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.chamber
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.use_pre_clear
+      local identifier      dawn.operator
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.v_12
+      local identifier      dawn.purpose
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.v_16
+      local identifier      dawn.subject
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.v_28
+      local identifier      dawn.target
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.v_2_5
+      local identifier      dawn.test_lamp
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      dawn.v_3_3
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
+   name                   FC
+   description            The Dawn "FC" class is the container for Dawn Framing Camera (FC) specific metadata elements. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
 
-      local identifier      dawn.v_5
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      dawn.v_5_analog
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      dawn.v_m5
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      dawn.v_m5_analog
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
+   Associations
 
       local identifier      dawn.alt_start_time
       minimum occurrences   0
@@ -1061,7 +1224,47 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
+      local identifier      dawn.FC_Instrument_Description
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
       local identifier      dawn.FC_Image_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.FC_System_Hardware_Software_Configuration
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.FC_Mechanism_Status
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.FC_Image_Acquisition_Options
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.FC_Power_Converter_Switch_Status
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.FC_Power_System_Status
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.FC_Calibrated_Temperatures
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.FC_Test_Setup_Configuration
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
@@ -1156,6 +1359,11 @@ Parsed Input - Classes:
       reference type        attribute_of
 
       local identifier      pds.comment
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.vir_instrument_mode
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -1272,6 +1480,63 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        component_of
 
+   name                   Dawn_Telemetry
+   description             The Dawn_Telemetry class contains telemetry-related metadata used by Dawn instrument data products. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.telemetry_format_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dawn.telemetry_source_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Dawn_Object_Orientation
+   description             The Dawn_Object_Orientation class contains Dawn-specific attributes that describe the pointing orientation of an image, spectrum, or scan platform relative to celestial coordinates. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.twist_angle
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Dawn_Image_Parameters
+   description             The Dawn_Image_Parameters class contains Dawn image geometry parameters used in Dawn PDS3 labels. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.north_azimuth
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Dawn_Orbit_Geometry
+   description             The Dawn_Orbit_Geometry class contains Dawn-specific geometry attributes describing the spacecraft, target, and solar viewing geometry for an observation. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dawn.local_hour_angle
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
    name                   Dawn
    description            The Dawn class is the container for Dawn mission-specific metadata elements. 
    is abstract            false
@@ -1299,6 +1564,26 @@ Parsed Input - Classes:
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
+
+      local identifier      dawn.Dawn_Telemetry
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.Dawn_Object_Orientation
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.Dawn_Image_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dawn.Dawn_Orbit_Geometry
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
 
       local identifier      dawn.FC
       minimum occurrences   0

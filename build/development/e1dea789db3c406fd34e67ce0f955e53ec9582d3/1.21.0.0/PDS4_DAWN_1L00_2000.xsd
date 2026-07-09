@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:2.0.0.0 - Thu Apr 30 22:28:08 UTC 2026 -->
-  <!-- Generated from the PDS4 Information Model Version 1.22.0.0 - System Build 14.1 -->
+  <!-- PDS4 XML/Schema for Name Space Id:dawn  Version:2.0.0.0 - Thu Jul 09 23:48:11 UTC 2026 -->
+  <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.22.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
   <!-- 2.0.0.0 - dawn: - Dawn                                                    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -15,7 +15,7 @@
     attributeFormDefault="unqualified"
     version="2.0.0.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
@@ -49,12 +49,66 @@
       <xs:element name="spacecraft_clock_start_count" type="dawn:spacecraft_clock_start_count" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spacecraft_clock_stop_count" type="dawn:spacecraft_clock_stop_count" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="standard_data_product_id" nillable="true" type="dawn:standard_data_product_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Dawn_Telemetry" type="dawn:Dawn_Telemetry" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Dawn_Object_Orientation" type="dawn:Dawn_Object_Orientation" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Dawn_Image_Parameters" type="dawn:Dawn_Image_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Dawn_Orbit_Geometry" type="dawn:Dawn_Orbit_Geometry" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="FC" type="dawn:FC" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="VIR" type="dawn:VIR" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element ref="dawn:GRaND" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="dawn:mission_phase_name = ('CERES ENCOUNTER', 'CERES EXTENDED GRAND (CXG)', 'CERES EXTENDED JULING (CXJ)', 'CERES EXTENDED LAMO (CXL)', 'CERES EXTENDED MISSION', 'CERES EXTENDED MISSION 2', 'CERES EXTENDED OPPOSITION (CXO)', 'CERES SCIENCE APPROACH (CSA)', 'CERES SCIENCE HAMO (CSH)', 'CERES SCIENCE LAMO (CSL)', 'CERES SCIENCE RC3 (CSR)', 'CERES SCIENCE SURVEY (CSS)', 'CERES TRANSFER TO GRAND (CTG)', 'CERES TRANSFER TO HAMO (CTH)', 'CERES TRANSFER TO HOLDING (CXH)', 'CERES TRANSFER TO JULING (CTJ)', 'CERES TRANSFER TO LAMO (CTL)', 'CERES TRANSFER TO OPPOSITION (CTO)', 'CERES TRANSFER TO SURVEY (CTS)', 'CERES X2 ELLIPTICAL (C2E)', 'CERES X2 HOLDING (CX2)', 'CERES X2 INTERMEDIATE (C2I)', 'CERES X2 TRANSFER TO ELLIPTICAL (CTE)', 'CERES X2 TRANSFER TO INTERMEDIATE (CTI)', 'EARTH-MARS CRUISE (EMC)', 'END OF CERES EXTENDED MISSION 1', 'END OF CERES EXTENDED MISSION 2', 'END OF PRIME MISSION', 'INITIAL CHECKOUT (ICO)', 'Launch', 'MARS GRAVITY ASSIST (MGA)', 'MARS-VESTA CRUISE (MVC)', 'VESTA ENCOUNTER', 'VESTA SCIENCE APPROACH (VSA)', 'VESTA SCIENCE HAMO (VSH)', 'VESTA SCIENCE HAMO 2 (VH2)', 'VESTA SCIENCE LAMO (VSL)', 'VESTA SCIENCE SURVEY (VSS)', 'VESTA TRANSFER TO CERES (VTC)', 'VESTA TRANSFER TO HAMO (VTH)', 'VESTA TRANSFER TO HAMO 2 (VT2)', 'VESTA TRANSFER TO LAMO (VTL)', 'VESTA-CERES CRUISE (VCC)')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Dawn_Image_Parameters">
+    <xs:annotation>
+      <xs:documentation> The Dawn_Image_Parameters class contains Dawn
+        image geometry parameters used in Dawn PDS3 labels.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="north_azimuth" type="dawn:north_azimuth" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Dawn_Object_Orientation">
+    <xs:annotation>
+      <xs:documentation> The Dawn_Object_Orientation class contains
+        Dawn-specific attributes that describe the pointing orientation
+        of an image, spectrum, or scan platform relative to celestial
+        coordinates. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="twist_angle" type="dawn:twist_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Dawn_Orbit_Geometry">
+    <xs:annotation>
+      <xs:documentation> The Dawn_Orbit_Geometry class contains
+        Dawn-specific geometry attributes describing the spacecraft,
+        target, and solar viewing geometry for an observation.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="local_hour_angle" type="dawn:local_hour_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Dawn_Telemetry">
+    <xs:annotation>
+      <xs:documentation> The Dawn_Telemetry class contains
+        telemetry-related metadata used by Dawn instrument data
+        products. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="telemetry_format_id" type="dawn:telemetry_format_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="telemetry_source_name" type="dawn:telemetry_source_name" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:telemetry_format_id = ('301', '302', '303', '304', '305', '306', '307', '308', '309')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
@@ -65,43 +119,27 @@
         </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="callamp_delay_time" type="dawn:callamp_delay_time" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="callamp_duty" type="dawn:callamp_duty" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="callamp_enable_flag" type="dawn:callamp_enable_flag" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="callamp_frequency" type="dawn:callamp_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="callamp_strobe_time" type="dawn:callamp_strobe_time" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="chamber" type="dawn:chamber" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="data_routing_id" type="dawn:data_routing_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="dpu_hardware_id" type="dawn:dpu_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="dpu_software_version" type="dawn:dpu_software_version" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="fee_flag" type="dawn:fee_flag" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="fee_hardware_id" type="dawn:fee_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="filter_encoder" type="dawn:filter_encoder" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="front_door_status_id" type="dawn:front_door_status_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="front_door_encoder" type="dawn:front_door_encoder" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="fsa_shoot_enable_flag" type="dawn:fsa_shoot_enable_flag" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="fsa_shoot_flag" type="dawn:fsa_shoot_flag" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="heater0_flag" type="dawn:heater0_flag" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="heater1_flag" type="dawn:heater1_flag" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="image_acquire_mode" type="dawn:image_acquire_mode" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="i_12" type="dawn:i_12" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="i_16" type="dawn:i_16" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="i_28" type="dawn:i_28" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="i_2_5" type="dawn:i_2_5" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="i_3_3" type="dawn:i_3_3" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="i_5" type="dawn:i_5" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="i_5_analog" type="dawn:i_5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="i_m5" type="dawn:i_m5" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="i_m5_analog" type="dawn:i_m5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="mcu_flag" type="dawn:mcu_flag" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="mcu_hardware_id" type="dawn:mcu_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="mcu_motor_flag" type="dawn:mcu_motor_flag" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="operator" type="dawn:operator" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="pcu_hardware_id" type="dawn:pcu_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="purpose" type="dawn:purpose" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="subject" type="dawn:subject" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="target" type="dawn:target" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="test_lamp" type="dawn:test_lamp" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="alt_start_time" type="dawn:alt_start_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="alt_stop_time" type="dawn:alt_stop_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_Instrument_Description" type="dawn:FC_Instrument_Description" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_Image_Parameters" type="dawn:FC_Image_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_System_Hardware_Software_Configuration" type="dawn:FC_System_Hardware_Software_Configuration" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_Mechanism_Status" type="dawn:FC_Mechanism_Status" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_Image_Acquisition_Options" type="dawn:FC_Image_Acquisition_Options" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_Power_Converter_Switch_Status" type="dawn:FC_Power_Converter_Switch_Status" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_Power_System_Status" type="dawn:FC_Power_System_Status" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_Calibrated_Temperatures" type="dawn:FC_Calibrated_Temperatures" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="FC_Test_Setup_Configuration" type="dawn:FC_Test_Setup_Configuration" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FC_Calibrated_Temperatures">
+    <xs:annotation>
+      <xs:documentation> The FC_Calibrated_Temperatures class contains
+        attributes describing calibrated Framing Camera temperature
+        measurements from instrument thermal sensors. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
       <xs:element name="t_baffle" type="dawn:t_baffle" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="t_ccd" type="dawn:t_ccd" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="t_cover_motor" type="dawn:t_cover_motor" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -113,8 +151,125 @@
       <xs:element name="t_lens_barrel" type="dawn:t_lens_barrel" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="t_rad_motor" type="dawn:t_rad_motor" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="t_structure" type="dawn:t_structure" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="udplib_software_version" type="dawn:udplib_software_version" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FC_Image_Acquisition_Options">
+    <xs:annotation>
+      <xs:documentation> The FC_Image_Acquisition_Options class contains
+        attributes describing Framing Camera image acquisition settings,
+        including data routing, exposure, pre-clear status, acquisition
+        mode, and callamp configuration. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="callamp_delay_time" type="dawn:callamp_delay_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="callamp_duty" type="dawn:callamp_duty" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="callamp_frequency" type="dawn:callamp_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="callamp_strobe_time" type="dawn:callamp_strobe_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="data_routing_id" type="dawn:data_routing_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fc_exposure_duration" type="dawn:fc_exposure_duration" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="image_acquire_mode" type="dawn:image_acquire_mode" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="use_pre_clear" type="dawn:use_pre_clear" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:data_routing_id = ('Op-Nav', 'Science 1', 'Science 2', 'Science 3', 'Science 4')"/> -->
+    <!-- <xs:assert test="dawn:image_acquire_mode = ('DARK', 'FLATFIELD', 'NORMAL', 'SERIAL', 'STORAGE', 'TEST_CH')"/> -->
+    <!-- <xs:assert test="dawn:use_pre_clear = ('OFF', 'ON')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="FC_Image_Parameters">
+    <xs:annotation>
+      <xs:documentation> The FC_Image_Parameters class contains Framing
+        Camera image geometry parameters. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="reticle_point_declination" type="dawn:reticle_point_declination" minOccurs="0" maxOccurs="5"> </xs:element>
+      <xs:element name="reticle_point_latitude" type="dawn:reticle_point_latitude" minOccurs="0" maxOccurs="5"> </xs:element>
+      <xs:element name="reticle_point_longitude" type="dawn:reticle_point_longitude" minOccurs="0" maxOccurs="5"> </xs:element>
+      <xs:element name="reticle_point_ra" type="dawn:reticle_point_ra" minOccurs="0" maxOccurs="5"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FC_Instrument_Description">
+    <xs:annotation>
+      <xs:documentation> The FC_Instrument_Description class contains
+        attributes describing aspects of the FC instrument.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="observation_id" type="dawn:observation_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="detector_desc" type="dawn:detector_desc" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="detector_temp" type="dawn:detector_temp" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="detector_type" type="dawn:detector_type" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:detector_type = ('SI CCD')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="FC_Mechanism_Status">
+    <xs:annotation>
+      <xs:documentation> The FC_Mechanism_Status class contains
+        attributes describing the status and encoder values of Framing
+        Camera mechanisms, including the filter wheel and front door, at
+        the time of image acquisition. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="filter_encoder" type="dawn:filter_encoder" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="front_door_encoder" type="dawn:front_door_encoder" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="front_door_status_id" type="dawn:front_door_status_id" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:front_door_status_id = ('CLOSED', 'OPEN')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="FC_Power_Converter_Switch_Status">
+    <xs:annotation>
+      <xs:documentation> The FC_Power_Converter_Switch_Status class
+        contains attributes describing the switch states of Framing
+        Camera power converter components during image acquisition.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="callamp_enable_flag" type="dawn:callamp_enable_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fee_flag" type="dawn:fee_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fsa_shoot_enable_flag" type="dawn:fsa_shoot_enable_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fsa_shoot_flag" type="dawn:fsa_shoot_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="heater0_flag" type="dawn:heater0_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="heater1_flag" type="dawn:heater1_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mcu_flag" type="dawn:mcu_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mcu_motor_flag" type="dawn:mcu_motor_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="dawn:callamp_enable_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:fee_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:fsa_shoot_enable_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:fsa_shoot_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:heater0_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:heater1_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:mcu_flag = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:mcu_motor_flag = ('OFF', 'ON')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="FC_Power_System_Status">
+    <xs:annotation>
+      <xs:documentation> The FC_Power_System_Status class contains
+        attributes describing Framing Camera power system voltage and
+        current measurements. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="i_12" type="dawn:i_12" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_16" type="dawn:i_16" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_28" type="dawn:i_28" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_2_5" type="dawn:i_2_5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_3_3" type="dawn:i_3_3" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_5" type="dawn:i_5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_5_analog" type="dawn:i_5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_m5" type="dawn:i_m5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="i_m5_analog" type="dawn:i_m5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="v_12" type="dawn:v_12" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="v_16" type="dawn:v_16" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="v_28" type="dawn:v_28" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -124,52 +279,46 @@
       <xs:element name="v_5_analog" type="dawn:v_5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="v_m5" type="dawn:v_m5" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="v_m5_analog" type="dawn:v_m5_analog" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="alt_start_time" type="dawn:alt_start_time" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="alt_stop_time" type="dawn:alt_stop_time" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="FC_Image_Parameters" type="dawn:FC_Image_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FC_System_Hardware_Software_Configuration">
+    <xs:annotation>
+      <xs:documentation> The FC_System_Hardware_Software_Configuration
+        class contains attributes describing the Framing Camera hardware
+        identifiers and onboard software versions used during image
+        acquisition. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="dpu_hardware_id" type="dawn:dpu_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dpu_software_version" type="dawn:dpu_software_version" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="fee_hardware_id" type="dawn:fee_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mcu_hardware_id" type="dawn:mcu_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="pcu_hardware_id" type="dawn:pcu_hardware_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="udplib_software_version" type="dawn:udplib_software_version" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="dawn:callamp_enable_flag = ('OFF', 'ON')"/> -->
-    <!-- <xs:assert test="dawn:data_routing_id = ('Op-Nav', 'Science 1', 'Science 2', 'Science 3', 'Science 4')"/> -->
     <!-- <xs:assert test=")"/> -->
-    <!-- <xs:assert test="dawn:fee_flag = ('OFF', 'ON')"/> -->
     <!-- <xs:assert test="dawn:fee_hardware_id = ('017.09.09', '017.10.10', '063.15.15')"/> -->
-    <!-- <xs:assert test="dawn:front_door_status_id = ('CLOSED', 'OPEN')"/> -->
-    <!-- <xs:assert test="dawn:fsa_shoot_enable_flag = ('OFF', 'ON')"/> -->
-    <!-- <xs:assert test="dawn:fsa_shoot_flag = ('OFF', 'ON')"/> -->
-    <!-- <xs:assert test="dawn:heater0_flag = ('OFF', 'ON')"/> -->
-    <!-- <xs:assert test="dawn:heater1_flag = ('OFF', 'ON')"/> -->
-    <!-- <xs:assert test="dawn:image_acquire_mode = ('DARK', 'FLATFIELD', 'NORMAL', 'SERIAL', 'STORAGE', 'TEST_CH')"/> -->
-    <!-- <xs:assert test="dawn:mcu_flag = ('OFF', 'ON')"/> -->
     <!-- <xs:assert test="dawn:mcu_hardware_id = ('10', '12')"/> -->
-    <!-- <xs:assert test="dawn:mcu_motor_flag = ('OFF', 'ON')"/> -->
-    <!-- <xs:assert test="dawn:pcu_hardware_id = ('2.04', '3.05')"/> -->
-    <!-- <xs:assert test="dawn:use_pre_clear = ('OFF', 'ON')"/> -->
+    <!-- <xs:assert test="dawn:pcu_hardware_id = ('2.01', '2.02', '2.03', '2.04', '2.05', '3.01', '3.02', '3.03', '3.04', '3.05', '3.06')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
-  <xs:complexType name="FC_Image_Parameters">
+  <xs:complexType name="FC_Test_Setup_Configuration">
     <xs:annotation>
-      <xs:documentation>The Dawn FC_Image_Parameters class contains
-        attributes describing parameters associated with a Framing
-        Camera image.</xs:documentation>
+      <xs:documentation> The FC_Test_Setup_Configuration class contains
+        attributes used to describe Framing Camera ground test setup
+        information. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="north_azimuth" nillable="true" type="dawn:north_azimuth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chamber" type="dawn:chamber" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="operator" type="dawn:operator" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="purpose" type="dawn:purpose" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="subject" type="dawn:subject" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="target" type="dawn:target" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="test_lamp" type="dawn:test_lamp" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="FC_Telemetry_Identification">
-    <xs:annotation>
-      <xs:documentation>The FC_Telemetry_Identification class contains
-        attributes describing the telemetry format.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="telemetry_format_id" nillable="true" type="dawn:telemetry_format_id" minOccurs="1" maxOccurs="1"> </xs:element>
-    </xs:sequence>
-    <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="dawn:telemetry_format_id = ('301', '302', '303', '304', '305', '306', '307', '308', '309')"/> -->
-    <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
   <xs:complexType name="GRaND">
@@ -283,7 +432,7 @@
     <xs:sequence>
       <xs:element name="image_mid_time" nillable="true" type="dawn:image_mid_time" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="local_hour_angle" type="dawn:local_hour_angle" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="north_azimuth" nillable="true" type="dawn:north_azimuth" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="north_azimuth" type="dawn:north_azimuth" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="vir_data_quality_id" type="dawn:vir_data_quality_id" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="vir_channel_id" type="dawn:vir_channel_id" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
@@ -324,10 +473,12 @@
       <xs:element name="Scan_Parameters" type="dawn:Scan_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="VIR_Frame_Parameters" type="dawn:VIR_Frame_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="VIR_Component_Temperature" type="dawn:VIR_Component_Temperature" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="vir_instrument_mode" type="dawn:vir_instrument_mode" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test=")"/> -->
     <!-- <xs:assert test=")"/> -->
+    <!-- <xs:assert test="dawn:vir_instrument_mode = ('C_H_SPE_H_SPA_F', 'C_H_SPE_H_SPA_Q', 'C_H_SPE_L_SPA_F:', 'C_L_SPE_H_SPA_F:', 'C_L_SPE_H_SPA_Q', 'C_L_SPE_L_SPA_F', 'SPARE', 'S_H_SPE_H_SPA_F', 'S_H_SPE_H_SPA_Q', 'S_H_SPE_L_SPA_F', 'S_H_SPE_L_SPA_F_MEA', 'S_H_SPE_L_SPA_F_SUM', 'S_L_SPE_H_SPA_F', 'S_L_SPE_H_SPA_Q', 'S_L_SPE_L_SPA_F', 'S_L_SPE_L_SPA_F_MEA', 'S_L_SPE_L_SPA_F_SUM')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
@@ -361,18 +512,26 @@
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="callamp_delay_time">
+  <xs:simpleType name="callamp_delay_time_WO_Units">
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="10000000"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="callamp_delay_time">
     <xs:annotation>
       <xs:documentation>Callamp switch on delay measured in microseconds
         after START_TIME. Callamp can be switched on before (less than
         193000 µs), at (= 193000 µs), or after (greater than 193000 µs)
         begin of exposure. </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="pds:ASCII_Integer">
-     <xs:minInclusive value="0"/>
-     <xs:maxInclusive value="10000000"/>
-	   </xs:restriction>
-  </xs:simpleType>
+    <xs:simpleContent>
+      <xs:extension base="dawn:callamp_delay_time_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="callamp_duty">
     <xs:annotation>
@@ -402,31 +561,47 @@
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="callamp_frequency">
-    <xs:annotation>
-      <xs:documentation>The callamp frequency is determined by the
-        internal 24 MHz clock and an integer divisor. CALLAMP_FREQUENCY
-        = 24 MHz / Value The standard callamp frequency is 100 kHz
-        (24MHz / 240).</xs:documentation>
-    </xs:annotation>
+  <xs:simpleType name="callamp_frequency_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="0.0"/>
      <xs:maxInclusive value="250.0"/>
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="callamp_strobe_time">
+  <xs:complexType name="callamp_frequency">
+    <xs:annotation>
+      <xs:documentation>The callamp frequency is determined by the
+        internal 24 MHz clock and an integer divisor. CALLAMP_FREQUENCY
+        = 24 MHz / Value The standard callamp frequency is 100 kHz
+        (24MHz / 240).</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:callamp_frequency_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="callamp_strobe_time_WO_Units">
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="10000000"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="callamp_strobe_time">
     <xs:annotation>
       <xs:documentation>Callamp strobe time is measured in microseconds
         after callamp switch on. callamp switch off time = START_TIME +
         DAWN_CALLAMP_DELAY_TIME +
         DAWN_CALLAMP_STROBE_TIME</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="pds:ASCII_Integer">
-     <xs:minInclusive value="0"/>
-     <xs:maxInclusive value="10000000"/>
-	   </xs:restriction>
-  </xs:simpleType>
+    <xs:simpleContent>
+      <xs:extension base="dawn:callamp_strobe_time_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="chamber">
     <xs:annotation>
@@ -463,6 +638,53 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="detector_desc">
+    <xs:annotation>
+      <xs:documentation> The detector_desc attribute describes the
+        detector utilized by the Dawn Framing Camera. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="detector_temp_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0.000"/>
+     <xs:maxInclusive value="999.999"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="detector_temp">
+    <xs:annotation>
+      <xs:documentation> The detector_temp attribute provides the
+        temperature at which the Dawn Framing Camera detector operated
+        while a measurement was made. The temperature is measured by the
+        FC sensor and calibrated in Kelvin. This value corresponds to
+        the PDS3 DETECTOR_TEMPERATURE keyword and is the same as T_CCD.
+        Lower limit red: -95.0 deg C Lower limit yellow: -75.0 deg C
+        Upper limit yellow: +35.0 deg C Upper limit red: +40.0 deg C
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:detector_temp_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="detector_type">
+    <xs:annotation>
+      <xs:documentation> The detector_type attribute identifies the type
+        of detector used by the Dawn Framing Camera. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="dpu_hardware_id">
     <xs:annotation>
       <xs:documentation>Both DPUs for FC1 and FC2 have the same DPU ID
@@ -484,6 +706,28 @@
      <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="fc_exposure_duration_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="fc_exposure_duration">
+    <xs:annotation>
+      <xs:documentation> The exposure_duration element provides the
+        value of the time interval between the opening and closing of an
+        instrument aperture (such as a camera shutter). In the case of
+        windowed images, this value is the same for all the sub-frames.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:fc_exposure_duration_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="fee_flag">
     <xs:annotation>
@@ -878,9 +1122,13 @@
 
   <xs:complexType name="local_hour_angle">
     <xs:annotation>
-      <xs:documentation>The local_hour_angle attribute indicates the
-        local hour at the center of the image or
-        spectra.</xs:documentation>
+      <xs:documentation> The local_hour_angle attribute provides a
+        measure of the instantaneous apparent Sun position at the center
+        of the image or spectra. It is the angle between the extension
+        of the vector from the Sun to the target body and the vector
+        projection on the target body's reference plane of a vector from
+        the target body's planetocentric center to the observer, usually
+        the spacecraft. </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="dawn:local_hour_angle_WO_Units">
@@ -944,20 +1192,33 @@
 
   <xs:complexType name="north_azimuth">
     <xs:annotation>
-      <xs:documentation>This element provides the value of the angle
-        between a line from the image center to the north pole and a
-        reference line in the image plane. The reference line is a
-        horizontal line from the image center to the middle right edge
-        of the image. This angle increases in a clockwise
-        direction.</xs:documentation>
+      <xs:documentation>The north_azimuth attribute provides the value
+        of the north azimuth angle evaluated at the center of the image
+        or spectra. For image products, this is the angle between the
+        line from the image center to the north pole and a horizontal
+        reference line in the image plane extending from the image
+        center to the middle right edge of the image. This angle
+        increases in a clockwise direction.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="dawn:north_azimuth_WO_Units">
         <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
-        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <xs:simpleType name="observation_id">
+    <xs:annotation>
+      <xs:documentation> Uniquely identifies a scientific observation
+        within a data set. Mostly important for multi-instrument
+        observation campaigns. The OBSERVATION_ID comes from the Dawn
+        Science Center (DSC). </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="operator">
     <xs:annotation>
@@ -992,6 +1253,90 @@
      <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="reticle_point_declination_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="reticle_point_declination">
+    <xs:annotation>
+      <xs:documentation> This refers to the declination of the principle
+        points of the camera. It contains five values, one for the
+        cameras boresight vector and four for the corners of the FOV.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:reticle_point_declination_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="reticle_point_latitude_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="reticle_point_latitude">
+    <xs:annotation>
+      <xs:documentation> This element provides the latitude of the
+        surface intercept points of the principle points of the camera.
+        It contains five values, one for the cameras boresight vector
+        and four for the corners of the FOV. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:reticle_point_latitude_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="reticle_point_longitude_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="reticle_point_longitude">
+    <xs:annotation>
+      <xs:documentation> This provides the longitude of the surface
+        intercept points of the principle points of the camera. It
+        contains five values, one for the cameras boresight vector and
+        four for the corners of the FOV. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:reticle_point_longitude_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="reticle_point_ra_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="reticle_point_ra">
+    <xs:annotation>
+      <xs:documentation> This refers to the right ascension of the
+        principle points of the camera. It contains five values, one for
+        the cameras boresight vector and four for the corners of the
+        FOV. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:reticle_point_ra_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="scan_mode_id">
     <xs:annotation>
@@ -1415,7 +1760,7 @@
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="telemetry_format_id">
+  <xs:simpleType name="telemetry_format_id">
     <xs:annotation>
       <xs:documentation>Provides the version of the UDP library which is
         loaded into the instrument’s NVRAM. 302 = UDP library v. 3.02
@@ -1423,12 +1768,23 @@
         library v. 3.05 Example values: “302”, "303", “304”,
         “305”</xs:documentation>
     </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="pds:ASCII_Integer">
-        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="telemetry_source_name">
+    <xs:annotation>
+      <xs:documentation>The telemetry_source_name attribute identifies
+        the Electrical Ground Supporting Equipment (EGSE) used to
+        produce the data file.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="test_lamp">
     <xs:annotation>
@@ -1440,6 +1796,28 @@
      <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="twist_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0.000"/>
+     <xs:maxInclusive value="360.000"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="twist_angle">
+    <xs:annotation>
+      <xs:documentation>The twist_angle attribute provides the angle of
+        rotation about the optical axis relative to celestial
+        coordinates. Together with right ascension and declination, it
+        defines the pointing direction and orientation of an image or
+        scan platform.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dawn:twist_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="udplib_software_version">
     <xs:annotation>
@@ -1790,6 +2168,18 @@
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>
      <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vir_instrument_mode">
+    <xs:annotation>
+      <xs:documentation> The value of this keyword identifies the
+        instrument mode and describes the different values.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 
