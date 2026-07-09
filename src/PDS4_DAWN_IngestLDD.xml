@@ -2342,7 +2342,7 @@
 			and describes the different values.
 		</definition>
 		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
+			<enumeration_flag>true</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
 			<DD_Permissible_Value>
 				<value>S_H_SPE_H_SPA_F</value>
