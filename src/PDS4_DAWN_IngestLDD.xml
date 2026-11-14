@@ -29,6 +29,8 @@
 	<last_modification_date_time>2025-10-25T03:00:00.000Z</last_modification_date_time>
 
 
+	<!-- Shared attributes -->
+
 	<DD_Attribute>
 		<name>local_hour_angle</name>
 		<version_id>1.0</version_id>
@@ -50,9 +52,6 @@
 			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
-	
-    <!-- Shared attributes -->
-
 	<DD_Attribute>
 		<name>mission_phase_name</name>
 		<version_id>1.0</version_id>
@@ -1143,7 +1142,6 @@
 			<unit_of_measure_type>Units_of_Current</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
-	
 	<DD_Attribute>
 		<name>mcu_flag</name>
 		<version_id>1.1</version_id>
@@ -3264,18 +3262,6 @@
 			VIR data file.</definition>
 		<DD_Association>
 			<identifier_reference>dawn.image_mid_time</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.local_hour_angle</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		<DD_Association>
-			<identifier_reference>dawn.north_azimuth</identifier_reference>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
